@@ -1,0 +1,30 @@
+' !, %       - file name without extension
+' !.!, %.%   - file name
+' !\, %\     - path
+' !:, %:     - drive
+' !@, %@     - file list
+' !~, %~     - short file name without extension
+' !~.!, %~.% - short file name
+' !~\, %~\   - short path
+' !~@, %~@   - list of short file names
+' ![text]    - input string
+' !0...!9    - use input string #0...9 again
+
+F1:	ZIP Archive Menu...
+	zip.mnu
+
+F2:     ACE Archive Menu...
+        ace.mnu
+
+F3:     ARJ Archive Menu...
+        arj.mnu
+
+F4:     Create a list of files...
+        list.mnu
+
+F5:     Special Menu for NTFSDOS drives...
+        ntfsdos.mnu
+
+F8:     Format floppy disk...
+	format.mnu
+

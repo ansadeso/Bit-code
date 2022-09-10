@@ -1,0 +1,17 @@
+N:      Compress with ZIP (input archive name)
+        PKZIP -Pex -whs ![(path) archive name] @!@
+
+A:      Compress with ZIP (auto archive name)
+        PKZIP -Pex -whs !~ @!@
+
+L:      Compress files from current selected list
+        PKZIP -Pex -whs ![(path) archive name] @!~.!
+
+V:      View text files in current ZIP archive
+        PKUNZIP !.! -cm *.txt file_id.diz *.nfo
+
+F3:     List all files in current ZIP archive
+        PKZIP -vm !.!
+
+F10:	Main Menu
+	vc.mnu

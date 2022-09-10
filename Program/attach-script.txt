@@ -1,0 +1,2 @@
+select vdisk file="C:\Users\S\VirtualBox VMs\ms-dos\ms-dos.vdi"
+attach vdisk

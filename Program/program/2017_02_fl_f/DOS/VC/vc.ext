@@ -1,0 +1,37 @@
+' !, %       - file name without extension
+' !.!, %.%   - file name
+' !\, %\     - path
+' !:, %:     - drive
+' !@, %@     - file list
+' !~, %~     - short file name without extension
+' !~.!, %~.% - short file name
+' !~\, %~\   - short path
+' !~@, %~@   - list of short file names
+' ![text]    - input string
+' !0...!9    - use input string #0...9 again
+
+asm:	asm.mnu
+txt:  edit.com !~.!
+jpg:  pictview.exe !~.!
+jpe:  pictview.exe !~.!
+jpeg:  pictview.exe !~.!
+bmp:  pictview.exe !~.!
+gif:  pictview.exe !~.!
+psd:  pictview.exe !~.!
+ico:  pictview.exe !~.!
+log:  edit.com !~.!
+sys:  edit.com !~.!
+ini:  edit.com !~.!
+inf:  edit.com !~.!
+htm:  edit.com !~.!
+html:  edit.com !~.!
+diz:  edit.com !~.!
+nfo:  edit.com !~.!
+mpg:  qv.exe !~.!
+mpe:  qv.exe !~.!
+mpeg:  qv.exe !~.!
+avi:  qv.exe !~.!
+mov:  qv.exe !~.!
+div:  qv.exe !~.!
+qt:  qv.exe !~.!
+uha:  uharcd.exe x !~.!

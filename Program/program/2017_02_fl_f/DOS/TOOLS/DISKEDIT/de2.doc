@@ -1,0 +1,648 @@
+----------------------------------------------------------------------------
+SECTOR? <Alone-F5>
+
+     Enter new sector to view (ESC to abort) [0-xxxxxxxxxx]: _
+
+Please note that the very first sector is actually SECTOR 0 !
+The "Total Sectors:" display, at the lower left-hand corner of the screen,
+is the total 1-based sector quantity. Which is how normal people count.
+xxxxxxxxx = the maximum sector number that you can input, in decimal.
+To input the desired sector number in hexidecimal, end it with an "h".
+For example: 1111h<Enter>
+
+If you have an individual file loaded for editing, the allowable sectors
+are restricted to the sectors that belong to that file.
+(This is done via <Alone-F7> FileDir, and the file is known as the
+"Current File".) And the prompt would then be:
+
+     Enter new file sector to view (ESC or ENTER alone to exit): _
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+----------------------------------------------------------------------------
+DRIVE?  <Alone-F6>
+
+     To select a new drive, either user the right and left arrow keys to
+highlight the desired drive letter and press Enter. Or Double left mouse
+click over the desired drive to view. A right mouse click equals ESC (exit)!
+     Please note, if you have a CD drive installed, its drive letter will
+not be shown. Their structure and access methods (programming wise) are
+entirely different from that of a magnetic disk.
+     If the requested drive exceeds the limitations of this program, you
+would see one of the messages below, and the drive change would be aborted.
+
+             +-|ESC|---------------------------------+
+             |   Error:  Sector size of requested    |
+             |           drive exceeds 4096 bytes.   |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             |   Error:  Cluster size of requested   |
+             |           drive exceeds 128 sectors.  |
+             +---------------------------------------+
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+     NOTE: If you select a drive and the (floppy) drive bay is empty,
+the default DOS INT 24h handler will temporarily take control of the system
+and display:    Not ready reading drive x <---- A or B or whatever.
+                Abort, Retry, Fail?  (DOS v3.2- = Abort, Retry, Ignore?)
+The only safe route then is to press "F", "I", or insert a disk and press "R".
+ABORT will crash the program, leaving you with no command line cursor and
+a useless active mouse cursor!                                   Page 14
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU
+
+     The FileDir Menu is fairly powerful. The maximum number of files that
+can be read and displayed, in each directory, is 1191. This includes, and
+displays, 1.) Volume Labels, 2.) hidden files and directories, 3.) read only
+files and directories, 4.) system files, 5.) long filenames, and 6.) erased
+files (these begin with the E5h character).
+     FYI. The first byte of a 32 byte directory entry being 00h (binary 0)
+indicates that there are no more files in that directory. NEVER do this
+yourself, or you may render any remaining files inaccessable!
+     The "File: xxxx" display, at the lower left-hand corner of the screen,
+shows exactly which 32 byte directory entry that the highlighted file or
+<DIR> is, within the Root Directory sectors or the Sub-Directory cluster.
+     The "LEGEND", at the right side of the FileDir Menu, is a simple help
+screen of allowable key presses. If using a mouse, a right or left click
+over any command, will execute that command.
+     If the logged drive is empty of files, you would see this message:
+             +-|ESC|---------------------------------+
+             |  There are no files to display!       |
+             +---------------------------------------+
+     To access and load a <DIR>, either move the highlight bar to the desired
+directory filename and press Enter. Or use the mouse and double left or right
+click over the desired directory filename. The maximum number of
+sub-directory levels is 6. If an attempt is made to go any deeper, you would
+see this message:
+             +-|ESC|---------------------------------+
+             |            !!!  SORRY !!!             |
+             |  The maximum nested level in viewing  |
+             |         sub-directories is 6.         |
+             +---------------------------------------+
+     To load and initialize a particular file for viewing/editing, either
+move the highlight bar to the desired file and press Enter. Or use the
+mouse and double left or right click over the desired file. The selected
+file then becomes the "Current File". To exit back to the FileDir Menu,
+press either <Shift-F10> Exit CF or <Alone-F10> Exit DE.
+     a.) The maximum number of file clusters that can be read, from the FAT,
+         is 16,383. This would be a minimum file size of 8,388,096 bytes
+         (with 512 bytes per sector and 1 sector per cluster). As far as I
+         know, this minimum could only be accomplished with a 32-bit FAT.
+         If the number of file clusters DOES exceed 16,383 you would see
+         this message:
+             +-|ESC|---------------------------------+
+             | Sorry!! Could not load all of the file|
+             | clusters. This program can only handle|
+             | up to 16,383 file clusters.           :
+             +---------------------------------------+
+         You would still be able to continue, but would not be able to
+         access the entire file.
+
+
+
+
+                                                                 Page 15
+FILEDIR <Alone-F7> MENU (cont.)
+
+     If the file or <DIR> is an erased file or <DIR>, and its starting cluster
+has been re-allocated to a newer file, you would see this message:
+             +-|ESC|---------------------------------+
+             | Sorry!! The starting cluster of this  |
+             | erased file or directory has already  |
+             | been re-allocated.                    |
+             +---------------------------------------+
+         NOTE: You must use <U>nerase in order to access and view the
+               clusters of an erased file! If not, and the first cluster
+               is still free, it is the only cluster that can be viewed.
+     The below are other messages that would be displayed if an error was
+detected while parsing the FAT (File Allocation Table, this is the disks
+internal chain of all of the files and directories on a disk):
+
+             +-|ESC|---------------------------------+
+             | The starting cluster for this file or |
+             | directory is marked as FREED          |
+             | by the operating system (DOS).        |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | The starting cluster for this file or |
+             | directory is out of the range of the  |
+             | cluster numbering scheme of this disk.|
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | The starting cluster for this file or |
+             | directory is marked as RESERVED       |
+             | by the operating system (DOS).        |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | The starting cluster for this file or |
+             | directory is marked as BAD            |
+             | by the operating system (DOS).        |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | This file or directory is prematurely |
+             | ended by pointing to a cluster number |
+             | that is marked as FREED by DOS.       |
+             |                                       |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+
+
+
+
+                                                                 Page 16
+FILEDIR <Alone-F7> MENU (cont.)
+
+             +-|ESC|---------------------------------+
+             | This file or directory is prematurely |
+             | ended by pointing to a cluster number |
+             | that is out of the range of the       |
+             | cluster numbering scheme of this disk.|
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | This file or directory is prematurely |
+             | ended by pointing to a cluster number |
+             | that is marked as RESERVED by DOS.    |
+             |                                       |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+             +-|ESC|---------------------------------+
+             | This file or directory is prematurely |
+             | ended by pointing to a cluster number |
+             | that is marked as BAD by DOS.         |
+             |                                       |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU - Change a files size prompt.
+
+     Enter the files new size [xxxxxxxxxx]: _
+
+xxxxxxxxxx = the selected files current size, in bytes (and in decimal).
+Pressing ESC aborts changing the selected files size.
+Enter the files new size (in decimal or hexidecimal) and press Enter.
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU - Change a files date prompt.
+
+     Enter the files new date [ 5-29-1998]: _
+
+??-??-???? = the selected files current date.
+Pressing ESC aborts changing the selected files date.
+Enter the files new date (in the format shown above) and press Enter.
+NOTE: This program is not affected by the year 2000 bug.
+
+
+
+                                                                 Page 17
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU - Change a files time prompt.
+
+     Enter the files new time [ 9:00pm]: _
+
+??:??am or pm = the selected files current time.
+Pressing ESC aborts changing the selected files time.
+Enter the files new time (in the format shown above) and press Enter.
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU - Change a files attribute prompt.
+
+     [F1=Help] Enter the files new attribute  [+/-]  [ASHR]: _
+
+Pressing ESC aborts changing the selected files attribute(s).
+Enter the files new attribute(s) and press Enter.
+Press F1 for the help screen. If using a mouse, left click over "[F1=Help]".
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU - Change a files attribute HELP SCREEN.
+
+  +-|ESC|---------------------------------+
+  | Changing a files Attribute(s):        |
+  |                                       |
+  |     + = Set.       - = Clear.         |
+  |                                       |
+  |     A = Archive.   H = Hidden.        |
+  |     S = System.    R = Read-Only.     |
+  |                                       |
+  | Examples: (1) +H +S -A  (2) -h-s+a    |
+  +---------------------------------------+
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> MENU HELP SCREEN TOPICS
+
+     While in the FileDir screen, either press F1 or left mouse click over
+<F1> at the bottom left-hand corner of the screen. This brings up a Main Menu
+of help topics. To view one of the topics, either use the up and down arrow
+to move the highlight bar to the desired topic and press Enter. Or use the
+mouse and double left click over the desired topic. A right mouse click
+equals ESC (exit)!
+
+  FILEDIR <Alone-F7> MENU - Main Help Screen.
+
+  +-|ESC|---------------------------------+
+  | About the two Highlight Bars          |
+  | Loading a file for Viewing/Editing    |
+  | How to Change Directories             |
+  | Changing a files Size                 |
+  | Changing a files Date                 |
+  | Changing a files Time                 |
+  | Changing a files Attribute            |
+  | Unerasing an Erased File              |
+  +---------------------|Dn |-|Up |-|CR |-+                      Page 18
+FILEDIR <Alone-F7> MENU HELP SCREEN TOPICS (cont.)
+
+  FILEDIR <Alone-F7> MENU - About the two Highlight Bars.
+
+  +-|ESC|---------------------------------+
+  | Pressing "." toggles in between the   |
+  | two Highlight Bars which are:         |
+  |                                       |
+  | The -FULL SCREEN- Highlight Bar.      |
+  |   Which is the default.               |
+  |                                       |
+  | The -SINGLE ITEM- Highlight Bar.      |
+  |   Which allows the use of the Left    |
+  |   and Right Arrow keys to select an   |
+  |   individual item to edit.            |
+  +---------------------------------------+
+
+
+  FILEDIR <Alone-F7> MENU - Loading a file for Viewing/Editing.
+
+  +=|ESC|=================================+
+  | Position either Highlight Bar over    |
+  | the file to View/Edit and press Enter.|
+  +=======================================+
+
+
+  FILEDIR <Alone-F7> MENU - How to Change Directories.
+
+  +-|ESC|---------------------------------+
+  | To step down a Directory level:       |
+  |   Position either Highlight Bar over  |
+  |   the filename of the <DIR> to view   |
+  |   and press Enter.                    |
+  |                                       |
+  | To step up a Directory level:         |
+  |   Position either Highlight Bar over  |
+  |   "." or ".." at the top of the       |
+  |   current subdirectory listing and    |
+  |   press Enter.                        |
+  +---------------------------------------+
+
+
+  FILEDIR <Alone-F7> MENU - Changing a files Size.
+
+  +=|ESC|=================================+
+  | Position the -SINGLE ITEM-            |
+  | Highlight Bar over the files Size     |
+  | and press Enter.                      |
+  +=======================================+
+
+
+
+
+                                                                 Page 19
+FILEDIR <Alone-F7> MENU HELP SCREEN TOPICS (cont.)
+
+
+  FILEDIR <Alone-F7> MENU - Changing a files Date.
+
+  +=|ESC|=================================+
+  | Position the -SINGLE ITEM-            |
+  | Highlight Bar over the files Date     |
+  | and press Enter.                      |
+  +=======================================+
+
+
+  FILEDIR <Alone-F7> MENU - Changing a files Time.
+
+  +=|ESC|=================================+
+  | Position the -SINGLE ITEM-            |
+  | Highlight Bar over the files Time     |
+  | and press Enter.                      |
+  +=======================================+
+
+
+  FILEDIR <Alone-F7> MENU - Changing a files Attribute.
+
+  +=|ESC|=================================+
+  | Position the -SINGLE ITEM-            |
+  | Highlight Bar over the files Attribute|
+  | and press Enter. [Press F1 for help.] |
+  +=======================================+
+
+
+  FILEDIR <Alone-F7> MENU - Unerasing an Erased File.
+
+  +=|ESC|=================================+
+  | Position either Highlight Bar over    |
+  | the file to be unerased and press     |
+  | <U>nerase. Erased files start with an E5 hex character. |
+  +=======================================+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 20
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> PRINT OUT MENU SCREEN OPTIONS
+
+     While in the FileDir screen, either press "P" or left mouse click over
+<P> at the bottom left-hand corner of the screen. This brings up a Main Menu
+of print out options. To execute one of the options, press either "G", "ESC",
+"C", or "E" on the keyboard. Or left mouse click over the desired option.
+A right mouse click equals ESC (exit)!
+     If "<E>ntire directory listing." is chosen, it will print 48 listings
+per printed page. To see how many that would be printed: press ESC (if you
+are in the print out menu only!), press Ctrl-PgDn, and then look at the
+statement "File: xxxx". NOTE: As the highlight bar is moved, this shows
+exactly which 32 byte directory entry that that particular file is, within
+the Root Directory sectors or the Sub-Directory cluster (erased files and
+long filenames included).
+
+
+  FILEDIR <Alone-F7> PRINT OUT MENU - Main Screen.
+
+  +-|ESC|---------------------------------+
+  | <G>eneral note(s).                    |
+  | <Esc> to exit. No print out desired.  |
+  |                                       |
+  | Print out:                            |
+  |   <C>urrent screen listing only.      |
+  |   <E>ntire directory listing.         |
+  +---------------------------------------+
+
+
+  FILEDIR <Alone-F7> PRINT OUT MENU - <G>eneral note(s).
+
+  +=|ESC|=================================+
+  | In addition to Sector Start, the      |
+  | print-out also includes Cluster Start.|
+  | Sector Start is printed in both       |
+  | hexidecimal and decimal notation.     |
+  +=======================================+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 21
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE
+
+     To unerase an erased file or <DIR>, move the highlight bar to the erased
+file or <DIR> and press "U" on the keyboard. If using a mouse, left click
+once (if necessary) over the desired file or <DIR>, to move the highlight bar
+there. Then left click over "<U>" at the lower left-hand corner of the screen.
+NOTE: This does not automatically unerase the file! This can only be done via
+the 2nd option in the Unerase Menu Screen (see below). To abort erasing of
+the file or <DIR>, press ESC.
+     If the first cluster has already been re-allocated to another file or
+<DIR>, you will see the message below, and the unerase session will end.
+             +-|ESC|---------------------------------+
+             | Sorry!! Cannot unerase the requested  |
+             | file or directory. Its clusters have  |
+             | already been re-allocated.            |
+             +---------------------------------------+
+     If a portion of the erased files clusters have already been re-allocated,
+you will see the message below, and given the option of continuing with the
+unerase. NOTE: The quantity of file clusters needed, is determined by the
+files size. Since a <DIR> does not have a file size, it is always 1 cluster.
+             +-|ESC|---------------------------------+
+             | Am unable to locate all of the erased |
+             | files clusters! Press Y if you wish   |
+             | to continue. Press N or ESC to abort. |
+             |                                       |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+     If all goes well, you will see the following menu.
+
+     NOTE: This session is purposely set up as it is, in order that an
+erased file may be pieced together on a fragmented disk. At the very least,
+you will be able to salvage a portion of the erased file!
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU SCREEN OPTIONS - Main menu.
+
+     To select one of options, use the up and down arrows to move the
+highlight bar to the desired option, and press Enter. If using a mouse,
+double left click over the desired option. A right mouse click equals ESC
+(exit)!
+
+  +-|ESC|---------------------------------+
+  | Display Help Screen                   |
+  | Unerase the selected file             |
+  | View Cluster data of the erased file  |
+  | View Cluster numbers of erased file   |
+  | Omit Cluster(s) of the erased file    |
+  | Find Next Cluster of the erased file  |
+  +---------------------|Dn |-|Up |-|CR |-+
+
+
+                                                                 Page 22
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - Display Help Screen.
+
+  +-|ESC|--------------------------------------------------------------| P |-+
+  | Display Help Screen  = Display this help screen.                         |
+  | Unerase file         = Unerase the selected file.                        |
+  |                        Note: If the number of clusters found or selected |
+  |                              is less than the actual number required, as |
+  |                              indicated by the files size, the file size  |
+  |                              is updated accordingly.                     |
+  | View Cluster data    = View the found Clusters/Sectors of erased file.   |
+  |                        Note: Not all FnKey commands will be allowed.     |
+  |                              Press ESC to exit back to the Unerase Menu. |
+  | View Cluster numbers = Display files Clusters and Sectors. <Shift> F7.   |
+  | Omit Cluster(s)      = Omit found or selected Cluster number(s).         |
+  | Find Next Cluster    = Search for next free Cluster.                     |
+  |                        Note: Will either add Cluster or replace the last |
+  |                              Cluster found (cannot exceed file size).    |
+  +--------------------------------------------------------------------------+
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - Unerase the selected file.
+
+     If the number of clusters found or selected matches the number of
+clusters required, as indicated by the files size, the prompt shown below
+will appear, along with the filename and extension of the erased file or <DIR>.
+Pressing ESC here will pass control back to the FileDir Unerase main menu.
+To continue, enter the new first letter for the filename and press Enter.
+If an invalid character is entered, the PC speaker will beep. Once a valid
+character is entered, DE will update the Root Directory or the appropriate
+Sub-Directory (with the new first character and the new file size; see below),
+update the FAT(s), update the FileDir Menu, and then exit out of the
+unerase session.
+
+         Enter the new first letter (A-Z): _NERASE.TST
+
+     If the number of clusters found or selected is less than the actual
+number required, as indicated by the files size, you will see the message
+below. Pressing "Y" to continue, will proceed as explained above, and the
+file size will be updated accordingly.
+             +-|ESC|---------------------------------+
+             | The number of clusters found is less  |
+             | than what was originally allocated.   |
+             | If you wish to continue, the files    |
+             | size will also change accordingly.    |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+
+
+
+
+                                                                 Page 23
+FILEDIR <Alone-F7> UNERASE MENU - Unerase the selected file. (cont.)
+
+     If DE detects that you are trying to unerase within an erased sub-
+directory, the message below will appear.
+             +=|ESC|============================================+
+             | ERROR: You cannot unerase a file or subdirectory |
+             | that is nested inside of an erased subdirectory. |
+             | The subdirectory must be unerased first!         |
+             +==================================================+
+
+     NOTE: If after unerasing a file or <DIR>, you exit to DOS, and the
+directory that you are in is the same directory as the unerased file or
+<DIR>, you will need to do this: 
+         C:\>dir "the unerased filename.ext" <Enter>
+The reason for this, is that DOS keeps an internal memory buffer of the
+current directory. And unless DOS itself does the file handling, this
+internal buffer is not updated. Therefore, DOS will not recognize the
+newly unerased file or <DIR>! This forces DOS to update the buffer.
+
+     NOTE: This has been successfully tested on an 18 megabyte Windows swap
+file. With a partially fragmented cluster chain.
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - View Cluster data of the erased file.
+
+     This option will load the erased file or <DIR> as the "Current File".
+Not all Function Key commands will be allowed, but this allows you to:
+1.) view the found or selected clusters/sectors, to see if they are valid,
+and 2.) test the integrity of the clusters/sectors.
+Press ESC to exit back to the Unerase Menu.
+
+     In exiting back to the Unerase Menu, if there are unsaved sector
+changes, the procedure is the same as <Alone-F10> Exit DE.
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - View Cluster numbers of erased file.
+
+     Displays the erased file or <DIR>'s clusters and sectors. This IS the
+<Shift-F7> CF Info menu. Press F1 for the help screen. Moving the highlight
+bar to the cluster or sector to view, and pressing Enter, will load the
+erased file or <DIR> as the "Current File" (see above).
+Also see CF INFO <SHIFT-F7> for more information.
+Press ESC to exit back to the Unerase Menu.
+
+     In exiting back to the Unerase Menu, if there are unsaved sector
+changes, the procedure is the same as <Alone-F10> Exit DE.
+
+
+
+
+
+
+
+                                                                 Page 24
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - Omit Cluster(s) of the erased file.
+
+     Will display the erased file or <DIR>'s clusters and sectors. Choose
+the cluster that you want to omit and press Enter. Any cluster, except the
+very first cluster, may be omitted. Remember that you have to use option #2
+of the Unerase Menu in order to save the changes to disk. If you mess up
+here, use the printer option so that you aren't restarting from scratch,
+ESC all the way back to the FileDir Menu, and start over again.
+     The "LEGEND", at the right side of the Omit Cluster Menu, is a simple
+help screen of allowable key presses. If using a mouse, a right or left
+click over any command, will execute that command.
+     Press ESC, when done, to exit back to the Unerase Menu.
+     Pressing F1 brings up the help screen below. If using a mouse, press
+both the left and right buttons at the same time.
+             +-|ESC|---------------------------------+
+             | Position the cursor over the desired  |
+             | Cluster to omit and press <Enter>.    |
+             +---------------------------------------+
+
+----------------------------------------------------------------------------
+FILEDIR <Alone-F7> UNERASE MENU - Find Next Cluster of the erased file.
+
+     Will parse the FAT (File Allocation Table) for the next free cluster.
+Will either add the new cluster to the list or replace the last cluster
+found (you cannot exceed the file size).
+     If DE will need to replace the last found file cluster, with the new
+free cluster, you will see the message below asking for permission to do so:
+             +=|ESC|=================================+
+             |  Replace the last cluster found ?     |
+             |  Press Y if you wish to do so, else   |
+             |  Press N or ESC to abort.             |
+             |                                       |
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +=======================================+
+     If there are no more free clusters, you will see the message below.
+             +-|ESC|---------------------------------+
+             |  The are no more available clusters!  |
+             +---------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 25

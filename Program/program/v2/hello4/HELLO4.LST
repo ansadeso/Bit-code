@@ -1,0 +1,69 @@
+Turbo Assembler	 Version 4.0	    09/09/16 21:45:57	    Page 1
+Hello4.Asm
+
+
+
+      1	0000				     .model tiny
+      2	0000				     .code
+      3					     org 100h
+      4					     ;org 7C00h
+      5	0100			     start:
+      6	0100  BE 0316r			     mov     si, offset	message
+      7	0103  FC			     cld
+      8	0104  B4 0E			     mov     ah, 0Eh
+      9	0106  B7 00			     mov     bh, 00h
+     10	0108			     Lab1:   ;lodsb
+     11	0108  8A 04			     mov     al,[si]
+     12	010A  46			     inc     si
+     13	010B  84 C0			     test    al,al
+     14	010D  74 04			     jz	     Lab2
+     15	010F  CD 10			     int 10h
+     16	0111  EB F5			     jmp Lab1
+     17	0113  EB FE		     Lab2:   jmp Lab2
+     18
+     19	0115  C3			     ret
+     20	0116  0200*(08)		      message0	       db 512 dup(8)
+     21	0316  48 65 6C 6C 6F 2C	20+  message	     db	"Hello,	World 1!2!!3!!4!!!!!!!!", 0Dh, 0Ah, '$',00h
+     22	      57 6F 72 6C 64 20	31+
+     23	      21 32 21 21 33 21	21+
+     24	      34 21 21 21 21 21	21+
+     25	      21 21 0D 0A 24 00
+     26
+     27				     end start
+Turbo Assembler	 Version 4.0	    09/09/16 21:45:57	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??date				  Text	 "09/09/16"
+??filename			  Text	 "Hello4  "
+??time				  Text	 "21:45:57"
+??version			  Number 0400
+@32Bit				  Text	 0
+@CodeSize			  Text	 0
+@Cpu				  Text	 0101H
+@DataSize			  Text	 0
+@FileName			  Text	 Hello4
+@Interface			  Text	 00h
+@Model				  Text	 1
+@WordSize			  Text	 2
+@code				  Text	 DGROUP
+@curseg				  Text	 _TEXT
+@data				  Text	 DGROUP
+@stack				  Text	 DGROUP
+Lab1				  Near	 DGROUP:0108
+Lab2				  Near	 DGROUP:0113
+_DEBUG				  Text
+message				  Byte	 DGROUP:0316
+message0			  Byte	 DGROUP:0116
+start				  Near	 DGROUP:0100
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  _DATA				  16  0000 Word	  Public  DATA
+  _TEXT				  16  0338 Word	  Public  CODE
+

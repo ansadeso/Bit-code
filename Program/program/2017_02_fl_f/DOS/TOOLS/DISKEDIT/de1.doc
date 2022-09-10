@@ -1,0 +1,702 @@
+             ******************************************************
+             *                                                    *
+             *         DE.EXE     v3.0     by Jim Webster         *
+             *                                                    *
+             ******************************************************
+
+
+Table of contents:
+  3 .... Summary
+  4 .... Errorlevels returned by DE.EXE
+  4 .... Version History
+  4 .... Disclaimers
+  5 .... Credits
+  5-6... Miscellaneous
+  6 .... The Function Key Menus
+  7 .... MAIN MENU HELP SCREEN TOPICS - Introduction.
+  7 .... MAIN MENU - Main Help Screen.
+  7 .... MAIN MENU - DE version and requirements.
+  8 .... MAIN MENU - All about On-Line HELP.
+  8 .... MAIN MENU - Function Key Assignments (All):
+  8 .... MAIN MENU - How to switch between the FnKey Menus.
+  9 .... MAIN MENU - Alone - F1 through F10.
+  9 .... MAIN MENU - Shift - F1 through F10.
+  9 .... MAIN MENU - Ctrl  - F1 through F10.
+ 10 .... MAIN MENU - Alt   - F1 through F10.
+ 10 .... MAIN MENU - Explaining the HEADER.
+ 10 .... MAIN MENU - All about PRINTING.
+ 11 .... MAIN MENU - All about the DOS shell.
+ 11 .... MAIN MENU - Cursor movement in the sector window.
+ 11 .... MAIN MENU - All about SCROLL LOCK.
+ 12 .... MAIN MENU - All about Edit Mode.
+ 12 .... MAIN MENU - Using the Mouse.
+ 13 .... MAIN MENU - All about keyboard input with Prompts.
+ 14 .... SECTOR? <Alone-F5>
+ 14 .... DRIVE?  <Alone-F6>
+ 15-17.. FILEDIR <Alone-F7> MENU
+ 17 .... FILEDIR <Alone-F7> MENU - Change a files size prompt.
+ 17 .... FILEDIR <Alone-F7> MENU - Change a files date prompt.
+ 18 .... FILEDIR <Alone-F7> MENU - Change a files time prompt.
+ 18 .... FILEDIR <Alone-F7> MENU - Change a files attribute prompt.
+ 18 .... FILEDIR <Alone-F7> MENU - Change a files attribute HELP SCREEN.
+ 18 .... FILEDIR <Alone-F7> MENU HELP SCREEN TOPICS - Introduction.
+ 19 .... FILEDIR <Alone-F7> MENU - About the two Highlight Bars.
+ 19 .... FILEDIR <Alone-F7> MENU - Loading a file for Viewing/Editing.
+ 19 .... FILEDIR <Alone-F7> MENU - How to Change Directories.
+ 19 .... FILEDIR <Alone-F7> MENU - Changing a files Size.
+ 20 .... FILEDIR <Alone-F7> MENU - Changing a files Date.
+ 20 .... FILEDIR <Alone-F7> MENU - Changing a files Time.
+ 20 .... FILEDIR <Alone-F7> MENU - Changing a files Attribute.
+ 20 .... FILEDIR <Alone-F7> MENU - Unerasing an Erased File.
+ 21 .... FILEDIR <Alone-F7> PRINT OUT MENU SCREEN OPTIONS - Introduction.
+ 21 .... FILEDIR <Alone-F7> PRINT OUT MENU - Main Screen.
+ 21 .... FILEDIR <Alone-F7> PRINT OUT MENU - <G>eneral note(s).
+                                                                 Page  1
+Table of contents: (cont.)
+
+ 22 .... FILEDIR <Alone-F7> UNERASE
+ 22 .... FILEDIR <Alone-F7> UNERASE MENU SCREEN OPTIONS - Main menu.
+ 23 .... FILEDIR <Alone-F7> UNERASE MENU - Display Help Screen.
+ 23-24.. FILEDIR <Alone-F7> UNERASE MENU - Unerase the selected file.
+ 24 .... FILEDIR <Alone-F7> UNERASE MENU - View Cluster data of the erased
+                                             file.
+ 24 .... FILEDIR <Alone-F7> UNERASE MENU - View Cluster numbers of erased
+                                             file.
+ 25 .... FILEDIR <Alone-F7> UNERASE MENU - Omit Cluster(s) of the erased
+                                             file.
+ 25 .... FILEDIR <Alone-F7> UNERASE MENU - Find Next Cluster of the erased
+                                             file.
+ 26 .... EXIT DE <Alone-F10>
+ 27 .... SAVECLR <Shift-F2> - Introduction.
+ 27 .... SAVECLR <Shift-F2> - Save the sector changes made to disk! 
+ 27 .... SAVECLR <Shift-F2> - Clear the Edit Byte buffer!
+ 28-29.. CLUSTER <Shift-F5>
+ 29 .... DSKSTAT <Shift-F6>
+ 30 .... CF INFO <Shift-F7>
+ 30 .... EXIT CF <Shift-F10>
+ 31 .... ABSGOTO <Ctrl-F5>
+ 31-33.. TESTCF  <Ctrl-F6>
+ 33-35.. FILTEST <Ctrl-F7>
+ 36 .... DOSHELL <Ctrl-F10>
+ 37-38.. STRNFAT <Alt-F4>
+ 39 .... FNDNFAT <Alt-F5>
+ 40 .... CMPFATS <Alt-F6>
+ 41-43.. SECTEST <Alt-F7>
+ 43-44.. Miscellaneous - Disk read or write error messages.
+ 45 .... Miscellaneous - Printer messages.
+ 45-46.. Other programs by the author.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page  2
+SUMMARY
+
+    DiskEditor is a full function disk editor that supports (A) graphics or
+non-graphics printing of all data displayed onto the screen (B) a DOS shell
+(C) Directory: displaying, viewing, and editing, (D) On-Line Help, and
+(E) Mouse support. Pressing the F1 function key or pressing both mouse
+buttons (at the same time) will pop-up the main help screen. I hereby pro-
+claim, being of unsound mind and body, this program a freebie. Enjoy!
+Please send any suggestions or correspondences to the address shown below.
+
+Syntax:   DE  [drive:]  [/f  /p  /mo  /ml  /mn  /ms  /h  /?]
+
+       drive = Requested drive to view. If other than the default drive.
+           f = Program generated formfeeds during full sector print-outs.
+               Use ONLY w/ a laser printer or w/ continious feed paper!
+               NOTE: Since the multitude of computer owners can't afford
+                     to run out and buy the latest and greatest hardware,
+                     am leaving this switch as is. At least until I take
+                     the time to work out a coding solution.
+               NOTE: All printer output is sent to LPT1, via INT 17h.
+           p = Supports printing of additional extended characters 128-159.
+               NOTE: Inserted this switch because older printers will not
+                     treat these characters as the IBM Extended Character
+                     Set, but instead will strip off the high bit and
+                     treat these as printer control codes.
+          mo = Disable initialization of the mouse driver.
+               NOTE: Use this switch if DE aborts with the message,
+                     "Error:    Mouse driver does not recognize the
+                     installed mouse. Use /MO." Mouse drivers (even Micro-
+                     softs) can sometimes exhibit some very erratic
+                     behavior.
+               NOTE: A mouse IS NOT REQUIRED to use this program. Even with
+                     a mouse, all keyboard commands enabled. But using a
+                     mouse does make this program easier to use.
+          ml = Disable light pen emulation.
+               NOTE: Use this switch if you have light pen emulation loaded.
+                     Will be reenabled upon program exit.
+          mn = Set mouse cursor at normal speed. Default is double-speed.
+               NOTE: Use this switch if the mouse cursor moves too fast.
+          ms = Set mouse cursor at half-speed.
+               NOTE: Use this switch if /MN is still too fast.
+      ? or h = This help screen.
+
+DiskEditor by: James R. Webster  113 Riverview Dr  Lafollette, TN  37766
+               EMAIL: jwebste3@bellsouth.net
+               NOTE: Who is this guy?
+
+
+
+
+
+
+
+                                                                 Page  3
+----------------------------------------------------------------------------
+ERRORLEVELS
+
+     Errorlevels returned by this program are:
+
+     0 = No errors.
+     1 = Syntax requested or needed.
+     2 = The drive you requested to view does not exist.
+     3 = Invalid character entered. Must be letters A-Z or a-z.
+     4 = Cannot find DEHELP.BIN!
+     5 = Not enough free memory. Requires a minimum of 256k free.
+     6 = Mouse driver does not recognize the installed mouse. Use /MO.
+     7 = Sector size exceeds 4096 bytes.
+     8 = Cluster size exceeds 128 sectors.
+
+----------------------------------------------------------------------------
+VERSION HISTORY
+
+  v2.4   04/29/98  Initial release to ZDNET.
+  v3.0   06/12/98  2nd release to ZDNET. 1st release to AOL.
+                   1st release for shareware distribution.
+         1.) Completed recoded the program (and interface) in order to
+             handle large capacity drives and files.
+         2.) Added <Ctrl-F6> TestCF, which allows you to load and run a
+             sector (cluster) read test on just the "Current File".
+             Whereas, <Ctrl-F7> FilTest performs a sector (cluster) read
+             test on ALL directories and files.
+         3.) Added a display of the current cluster number(s) being tested,
+             via <Ctrl-F6> TestCF, <Ctrl-F7> FilTest, and <Alt-F7> SecTest.
+             That way you'll know that that particular session IS actually
+             doing something.
+         4.) Increased the maximum sector size from 1024 bytes to 4096 bytes.
+             Had intended to make this 8192 bytes, but the compiler wouldn't
+             allow it. Will need to work out a solution (or overcoding
+             compromise) for this.
+         5.) Discovered (and corrected) a bug in the code that caused all of
+             the sector testing sessions to run too slow and/or buggy.
+         6.) Corrected the mouse routine that handled program exit if there
+             were unsaved sector changes.
+
+----------------------------------------------------------------------------
+DISCLAIMERS
+
+ 1.) I hereby disclaim being of sound mind and body.
+ 2.) Any simialarity between this program and any marketed program is
+     completely coincidental. I do not steal other peoples ideas!
+ 3.) All algorithms in this program are of mine own creation. Excluding bits
+     and pieces of code taken from the multitude of programming books that
+     I own (from MS Press, The Waite Group, McGraw-Hill, TAB, etc.).
+
+
+
+
+                                                                 Page  4
+----------------------------------------------------------------------------
+CREDITS
+
+     This program has been a pet project of mine since late 1988 or
+early 1989 (I forget). Causing me to dig through whatever technical books
+and magazines I can get my hands on in order to keep abreast of the latest
+disk hardware specifications and the newest DOS function calls. This all
+started from Peter Norton and John Socha's book "Peter Norton's Assembly
+Language Book for the IBM PC." In the process of learning assembler, you
+wrote a small disk editor program called DSKPATCH. So, if the interface
+looks familiar, DSKPATCH was the basis. Originally my extended version was
+called ED (for EDITDISK) until Norton Utilities came out with a program of
+the same name.
+     I had uploaded DE v2.4 to ZDNET just to see what kind of response I
+would get and it was simply overwhelming. If anything, that motivated me to
+at least make DE stable and useable for the multitude of PC platforms.
+I would like to thank the staff at ZDNET (especially Dwayne, who reviewed
+it) for the great write-up and response that they generated.
+     I would also like to thank Aaron Baird, Ronnie Byrd, and Eric Neumann.
+These are fellows that I work with, who are also programmers. They allowed
+me to ramble on and on about my latest work to DE v3.0. Plus helped by
+running DE through the treadmill, offering suggestions for improvement,
+and proof-reading the documentation.
+     I would also like to thank Buddy Piercy of Hacker Hut, whom I met at
+a computer show in Knoxville, TN (EMAIL: hackrhut@usit.net). Buddy travels
+the computer show circuit throughout the south and southeast, selling name
+brand software. He also offers shareware software at $2.50 a disk, with well
+done labeling that he generates himself. Buddy offered to distribute DE
+for me, plus sharing it with other shareware venders that he knows, giving
+DE far greater exposure.
+
+----------------------------------------------------------------------------
+MISCELLANEOUS
+
+     This program is written entirely in MASM 5.1. Any suggestions ?
+
+     This program is designed to read disks with 12 or 16-bit FATs only!
+     Please do not attempt to edit DEHELP.BIN! As long as you run DE while
+logged into the directory of DE.EXE and DEHELP.BIN #or# their directory is in
+your PATH statement, DE will be able to locate DEHELP.BIN. As a side note,
+DEHELP.BIN is created by another program that I wrote called DAT2BIN.EXE.
+It is available from ZDNET (DAT2BIN.ZIP), and includes TESTD2B.EXE, plus
+TESTD2B2.EXE with complete source code that shows how to take advantage of
+a binary file to hold messages, pop-up help screens, etc.
+     To anyone that downloaded v2.4 from ZDNET and found the program buggy
+and limited, this corrects all of that. I hope that you find v3.0 satis-
+factory! Please let me know.
+
+
+
+
+
+
+                                                                 Page  5
+MISCELLANEOUS (cont.)
+
+     DE recognizes long filenames. However, long filenames are just a subset
+of the 11 character maximum filename that they precede (come before) in the
+Root Directory or a Sub-Directory. This is for backward compatiability with
+12-bit and 16-bit code and DOS versions. The quantity of characters in a long
+filename determines how many 32 byte long directory entries are used for just
+that one filename. And it is stored as UNICODE. The only special field used
+in each of its 32 byte directory entries is the "Attribute" byte. Its value
+will always be 0Fh. FYI.
+     To be added or enhanced are greater than a 4096 byte sector size,
+completeing the cross-linked files routine, adding a hook to INT 24h for
+when an empty drive bay is requested (the default DOS handler temporarily
+takes control of the program and displays:
+          Not ready reading drive x <---- A or B or whatever
+          Abort, Retry, Fail?  (DOS v3.2- = Abort, Retry, Ignore?)
+The only safe route then is to press "F", "I", or insert a disk and press "R".
+ABORT will crash the program, leaving you with no command line cursor and
+a useless active mouse cursor.), adding the capability to view and edit the
+MBR (Master Boot Record), and someday a defrager.
+     In v2.4's DOC file, I mentioned adding the capability to read from and
+write to CD drives. Have since discovered that that would be unfeasable.
+Since a CD's structure is completely different from that of a magnetic disk,
+I would be better off writing an independent CD editor. No promises on this.
+
+----------------------------------------------------------------------------
+THE FUNCTION KEY MENUS
+
+     The four different Function Key Menus are shown below. They are for
+visual reference only, if using the keyboard instead of the mouse. To toggle
+to a different menu, from the keyboard, press either <F1>, <Shift-F1>,
+<Ctrl-F1>, or <Alt-F1>. If pressed a second time, a pop-up help screen for
+that particular menu will appear (except for <F1>, which will pop-up a
+Main Menu of help topics).
+     If using a mouse, left clicking over <F1> will toggle forward through
+the menus. And right clicking over <F1> will toggle backwards through the
+menus. To bring up a help screen, move the mouse cursor to an empty spot on
+the screen, then press both the right and left mouse buttons at the same time.
+
+
+1Alone 2       3PrevSec4NextSec5Sector?6Drive? 7FileDir8EdtMode9PrnWdwA0Exit DE
+
+1Shift 2SaveClr31st Sec4LastSec5Cluster6DskStat7CF Info8       9PrnWdwG0Exit CF
+
+1Ctrl  2       3Sec_Up44Sec_Dn45AbsGoto6TestCF 7FilTest8ReFresh9PrnSecA0DOShell
+
+1Alt   2       3       4StrNFAT5FndNFAT6CmpFATs7SecTest8AsciiCh9PrnSecG0MemFree
+
+
+
+
+
+
+                                                                 Page  6
+----------------------------------------------------------------------------
+MAIN MENU HELP SCREEN TOPICS
+
+     At program start, either press F1 or press both the right and left mouse
+buttons at the same time. This brings up a Main Menu of help topics. To view
+one of the topics, either use the up and down arrow to move the highlight bar
+to the desired topic and press Enter. Or use the mouse and double left click
+over the desired topic. A right mouse click equals ESC (exit)!
+     A "P" in the upper right-hand corner of any help screen means that you
+can send its contents to the printer by pressing "P" on the keyboard, or by
+a left mouse click on the "P" of the menu. If the printer is not On Line,
+this will just beep the PC speaker.
+
+  MAIN MENU - Main Help Screen.
+
+  +-|ESC|---------------------------------+
+  | DE version and requirements.          |
+  | All about On-Line HELP                |
+  | Function Key Assignments (All):       |
+  |    How to switch between Menus        |
+  |    Alone - F1 through F10             |
+  |    Shift - F1 through F10             |
+  |    Ctrl  - F1 through F10             |
+  |    Alt   - F1 through F10             |
+  | Explaining the HEADER                 |
+  | All about PRINTING                    |
+  | All about the DOS shell               |
+  | Cursor movement in the sector window  |
+  | All about SCROLL LOCK                 |
+  | All about Edit Mode                   |
+  | Using the Mouse                       |
+  | All about keyboard input with Prompts |
+  +---------------------|Dn |-|Up |-|CR |-+
+
+
+  MAIN MENU - DE version and requirements.
+
+  +-|ESC|---------------------------------+
+  | DiskEditor    v3.0    by  Jim Webster |
+  |                                       |
+  | Minimum/Maximum System Requirements:  |
+  | ------------------------------------- |
+  |    Processor   : 8088 XT minimum      |
+  |    Video       : Monochrome minimum   |
+  |    Memory free : 384k maximum         |
+  |    DOS version : 2.xx through 7.xx    |
+  |    Bytes@Sector: 4096 maximum         |
+  | Sectors@Cluster:  128 maximum         |
+  |    FAT type    : 12 or 16-bit only!   |
+  |                                       |
+  |      This program is a freebee!       |
+  |      .........Enjoy!!!.........       |
+  +---------------------------------------+
+                                                                 Page  7
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - All about On-Line HELP.
+
+  +-|ESC|---------------------------------+
+  | Help Screens are available in almost  |
+  | every level of this program by press- |
+  | ing the F1 key or Right+Left button   |
+  | if using a mouse. Command set:        |
+  |  Esc  = Exit the current Help Screen. |
+  |  P    = Send its contents to printer. |
+  |  udCR = Use the arrow keys to select  |
+  |         the wanted Help Screen and    |
+  |         press <Enter>.                |
+  | If using a mouse, Right or Left click |
+  | over the above command set or Double  |
+  | click over the desired menu item.     |
+  +---------------------------------------+
+
+  MAIN MENU - Function Key Assignments (All):
+
+  +-|ESC|---------------------------| P |-+
+  | Key  Alone   Shift +  Ctrl +  Alt +   |
+  | ---  ------- ------- ------- -------  |
+  | F1   Alone   Shift   Ctrl    Alt      |
+  | F2           SaveClr                  |
+  | F3   PrevSec 1stSec  Sec_Up4          |
+  | F4   NextSec LastSec Sec_Dn4 StrNFAT  |
+  | F5   Sector? Cluster AbsGoto FndNFAT  |
+  | F6   Drive?  DskStat TestCF  CmpFATs  |
+  | F7   FileDir CF Info FilTest SecTest  |
+  | F8   EdtMode         ReFresh AsciiCh  |
+  | F9   PrnWdwA PrnWdwG PrnSecA PrnSecG  |
+  | F10  Exit DE Exit CF DOShell MemFree  |
+  +---------------------------------------+
+
+  MAIN MENU - How to switch between the FnKey Menus.
+
+  +-|ESC|---------------------------| P |-+
+  | To switch between the Function Key    |
+  | Menus at the bottom of the screen,    |
+  | press F1 alone or with a combination  |
+  | of Shift, Ctrl, or Alt.               |
+  | The Menus are for reference only.     |
+  |                                       |
+  | If using a mouse:                     |
+  |   Left  button = next FnKey set.      |
+  |   Right button = previous FnKey set.  |
+  |   Both buttons = pop-up a Help Screen.|
+  |   A left button click over F2-F10 will|
+  |   execute that particular command.    |
+  +---------------------------------------+
+
+                                                                 Page  8
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - Alone - F1 through F10.
+
+  +-|ESC|------------------------------------------------| P |-+
+  | Key  Item     Description                                  |
+  | ---  -------  -------------------------------------------- |
+  | F1   Alone    Presses: Once = menu. Twice = Help.          |
+  | F2                                                         |
+  | F3   PrevSec  Display the previous sector.                 |
+  | F4   NextSec  Display the next sector.                     |
+  | F5   Sector?  Allows you to choose the sector to view.     |
+  | F6   Drive?   Allows you to change the current drive.      |
+  | F7   FileDir  Display a directory of the current drive.    |
+  | F8   EdtMode  Toggle between HEX and ASCII edit modes.     |
+  | F9   PrnWdwA  Print the current window in ASCII format.    |
+  | F10  Exit DE  Quit this session and return to DOS.         |
+  +------------------------------------------------------------+
+
+  MAIN MENU - Shift - F1 through F10.
+
+  +-|ESC|------------------------------------------------| P |-+
+  | Key  Item     Description                                  |
+  | ---  -------  -------------------------------------------- |
+  | F1   Shift    Presses: Once = menu. Twice = Help.          |
+  | F2   SaveClr  Save changes to disk or empty edit buffer.   |
+  | F3   1st Sec  Load the first Disk or "Current File" sector.|
+  | F4   LastSec  Load the last Disk or "Current File" sector. |
+  | F5   Cluster  Allows you to choose the cluster to view.    |
+  | F6   DskStat  Display statistics for the current drive.    |
+  | F7   CF Info  Display clusters & sectors of "Current File".|
+  | F8                                                         |
+  | F9   PrnWdwG  Print the current window in Graphics format. |
+  | F10  Exit CF  Exit viewing of "Current File" (via F7 key). |
+  +------------------------------------------------------------+
+
+  MAIN MENU - Ctrl  - F1 through F10.
+
+  +-|ESC|------------------------------------------------| P |-+
+  | Key  Item     Description                                  |
+  | ---  -------  -------------------------------------------- |
+  | F1   Ctrl     Presses: Once = menu. Twice = Help.          |
+  | F2                                                         |
+  | F3   Sec_Up4  Decrement sector display by 4 sectors.       |
+  | F4   Sec_Dn4  Increment sector display by 4 sectors.       |
+  | F5   AbsGoto  Goto absolute [starting] sector of x.        |
+  | F6   TestCF   TEST READ of "Current File" clusters.        |
+  | F7   FilTest  TEST READ of all Directory and File clusters.|
+  | F8   ReFresh  Refresh the screen display.                  |
+  | F9   PrnSecA  Print the current sector in ASCII format.    |
+  | F10  DOShell  Enter DOS shell. Type EXIT to return to DE.  |
+  +------------------------------------------------------------+
+  
+                                                                 Page  9
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - Alt   - F1 through F10.
+
+  +-|ESC|------------------------------------------------| P |-+
+  | Key  Item     Description                                  |
+  | ---  -------  -------------------------------------------- |
+  | F1   Alt      Presses: Once = menu. Twice = Help.          |
+  | F2                                                         |
+  | F3                                                         |
+  | F4   StrNFAT  Locates Stray and Cross-Linked clusters.     |
+  | F5   FndNFAT  Locates Bad, Reserved, and Invalid clusters. |
+  | F6   CmpFATs  Compare both copies of the FAT for errors.   |
+  | F7   SecTest  TEST READ of all disk sectors.               |
+  | F8   AsciiCh  Display ASCII chart. (May also press Alt-A)  |
+  | F9   PrnSecG  Print the current sector in Graphics format. |
+  | F10  MemFree  Amount of free memory for DOS shell.         |
+  +------------------------------------------------------------+
+
+
+  MAIN MENU - Explaining the HEADER.
+
+  +-|ESC|---------------------------------+
+  | The HEADER (the top two lines of the  |
+  | screen) displays the current drive,   |
+  | cluster, sector, time, day-of-the-    |
+  | week, date, and "Current File".       |
+  | The HEADER is included in all         |
+  | (partial or full) sector print outs.  |
+  +---------------------------------------+
+
+
+  MAIN MENU - All about PRINTING.
+
+  +-|ESC|---------------------------------+
+  | Except for partial or full sector     |
+  | print-outs using Shift-F9 or Alt-F9,  |
+  | no special printer setup is required. |
+  | An ASCII print-out means the Standard |
+  | ASCII characters 32d-126d. All other  |
+  | chars are replaced with a period (.). |
+  | A Graphics print-out will include the |
+  | Extended IBM characters 160d and      |
+  | above.                                |
+  | Window = the 256 bytes of the sector  |
+  | currently shown on the screen.        |
+  | Sectors normally equal 512 bytes.     |
+  +---------------------------------------+
+
+
+
+
+
+                                                                 Page 10
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - All about the DOS shell.
+  +-|ESC|---------------------------------+
+  | Pressing Ctrl-F10 invokes a second-   |
+  | ary copy of COMMAND.COM. There must   |
+  | be at least 64k of free memory.       |
+  | Pressing Alt-F10 will display the     |
+  | amount of free memory. NOTE: If you   |
+  | are using a floppy-drive only machine,|
+  | COMMAND.COM must be present on        |
+  | drive A: in order to successfully     |
+  | invoke the shell.                     |
+  | Typing "EXIT <Return>" at the         |
+  | DOS prompt will return you to DE.     |
+  | Nothing will have been changed.       |
+  +---------------------------------------+
+
+  MAIN MENU - Cursor movement in the sector window.
+
+  +-|ESC|--------------------------------------------------------------| P |-+
+  | Key           Pressed alone                  Ctrl + Key                  |
+  | -----------   ----------------------------   --------------------------- |
+  | Right Arrow   Cursor right one byte.         Cursor right 4 bytes.       |
+  | Left  Arrow   Cursor left  one byte.         Cursor left  4 bytes.       |
+  | Down  Arrow   Cursor down one line (paragraph; equals 16 bytes).         |
+  | Up    Arrow   Cursor up   one line.                                      |
+  | Shift+Down    Anchors cursor at exact byte and scrolls down one line.    |
+  | Shift+Up      Anchors cursor at exact byte and scrolls up   one line.    |
+  | Ins           Cursor down 4 lines.                                       |
+  | Del           Cursor up   4 lines.                                       |
+  | Home          Cursor to beginning of line.   Cursor to top    of window. |
+  | End           Cursor to end of line.         Cursor to bottom of window. |
+  | Pg Up         Scroll up   one screen.        Cursor to top of sector.    |
+  | Pg Dn         Scroll down one screen.        Cursor to end of sector.    |
+  | BackSpace     Restores an edited byte back to its original value.        |
+  +--------------------------------------------------------------------------+
+
+  MAIN MENU - All about SCROLL LOCK
+  +-|ESC|---------------------------------+
+  | Pressing SCROLL LOCK anchors the      |
+  | cursor position in the window and     |
+  | activates display scrolling; versus   |
+  | the display being fixed and the       |
+  | cursor moving up or down.             |
+  | SCROLL LOCK is in effect only during  |
+  | sector or file directory viewing.     |
+  | When SCROLL LOCK is on, "SCROLL" is   |
+  | displayed at the upper left-hand      |
+  | corner of the screen.                 |
+  | If using a mouse, clicking on SCROLL  |
+  | will toggle it on and off.            |
+  +---------------------------------------+
+                                                                 Page 11
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - All about Edit Mode.
+
+  +-|ESC|---------------------------------+
+  | Pressing F8 will toggle in between    |
+  | HEX and ASCII Edit Mode. The current  |
+  | mode governs how input is interpreted |
+  | when editing the loaded sector.       |
+  | A maximum of 1024 edited bytes are    |
+  | allowed. Shift-F2 must be pressed in  |
+  | order to save an edited sector to the |
+  | disk or to clear the Edit Byte buffer.|
+  | Backspace restores an edited byte back|
+  | to its original value!                |
+  | If using a mouse, clicking on HEX or  |
+  | ASCII will toggle between modes.      |
+  +---------------------------------------+
+
+
+  MAIN MENU - Using the Mouse.
+
+  +-|ESC|---------------------------------+
+  | ..........If using a mouse........... |
+  | -Right+Left Click = pop-up help.      |
+  | -Clicking anywhere within the Sector  |
+  |  Window moves the Sector cursor there.|
+  | -Cursor Keys menu or Legend:          |
+  |    Left  click =  key or command.     |
+  |    Right click = ^key or command.     |
+  | -Function Key menus:                  |
+  |    Left or Right click = command.     |
+  | -Prompt for input:                    |
+  |    Left  click = Enter.               |
+  |    Right click = Esc.                 |
+  +---------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 12
+MAIN MENU HELP SCREEN TOPICS (cont.)
+
+  MAIN MENU - All about keyboard input with Prompts.
+
+  +-|ESC|--------------------------------------------------------------| P |-+
+  | Key           Description                                                |
+  | ------------  ---------------------------------------------------------- |
+  | Enter         Accept input. If input line is blank, is same as ESC.      |
+  | Esc           Erase entire line or Exit.                                 |
+  | Ins           Toggle Insert mode on and off.                             |
+  | Del           Delete character at cursor. Other input shifts left.       |
+  | Backspace     Characters at and beyond cursor are moved leftward.        |
+  | Ctrl + End    Erases all input at and beyond the cursor.                 |
+  | Right Arrow   Move cursor right one character.                           |
+  | Left  Arrow   Move cursor left one character.                            |
+  | ^Right Arrow  Move cursor right to beginning of next word.               |
+  | ^Left  Arrow  Move cursor left to beginning of previous word.            |
+  | Home          Move cursor to beginning of line.                          |
+  | End           Move cursor to end of line.                                |
+  |                                                                          |
+  | Note: All keyboard input for sector or cluster selection is assumed to   |
+  |       be Decimal unless it is ended by an "h". Example: 1111h            |
+  +--------------------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 13

@@ -1,0 +1,390 @@
+1:      Compress with ACE (file names not converted!)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!~\" "!~@"
+        ACE a ![(path) archive name  (not in NTFS partitions)] @COMBILST.LST
+        @del COMBILST.LST
+        !:
+        cd !~\.
+
+2:      Compress with ARJ (file names not converted!)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!~\" "!~@"
+        ARJ A -a ![(path) archive name  (not in NTFS partitions)] !!COMBILST.LST
+        @del COMBILST.LST
+        !:
+        cd !~\.
+
+3:      Compress with ZIP (file names not converted!)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!~\" "!~@"
+        PKZIP -Pex -whs -n ![(path) archive name  (not in NTFS partitions)] @COMBILST.LST
+        @del COMBILST.LST
+        !:
+        cd !~\.
+
+4:      Compress as Multi Volume Archive with ACE (names not conv.)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!~\" "!~@"
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        ACE a !0 -v![Volume Size in kB  (nothing for autodetecting)] @COMBILST.LST
+        @del COMBILST.LST
+        !:
+        cd !~\.
+
+5:      Compress into 1.38 MByte blocks with ARJ (names not conv.)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!~\" "!~@"
+        ARJ A -a -v1440 -y ![(path) archive name  (not in NTFS partitions)] !!COMBILST.LST
+        @del COMBILST.LST
+        !:
+        cd !~\.
+
+-----------------------------------------------------------
+        NTFSDOS.MNU
+
+A:      Compress with ACE (include LFN RESTORE.BAT)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+        @del DIR_LIST.TXT
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        ACE a !0 @FILELIST.TXT FILELIST.TXT RESTORE.BAT
+        !:
+        cd !~\.
+
+J:      Compress with ARJ (include LFN RESTORE.BAT)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+        @del DIR_LIST.TXT
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        ARJ A -a !0 !!FILELIST.TXT FILELIST.TXT RESTORE.BAT
+        !:
+        cd !~\.
+
+Z:      Compress with ZIP (include LFN RESTORE.BAT)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+        @del DIR_LIST.TXT
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        PKZIP -Pex -whs -n !0 @FILELIST.TXT FILELIST.TXT RESTORE.BAT
+        !:
+        cd !~\.
+
+V:      Multi Volume Archive with ACE (include LFN RESTORE.BAT)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+        @del DIR_LIST.TXT
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        ACE a !0 -v![Volume Size in kB  (nothing for autodetecting)] @FILELIST.TXT FILELIST.TXT RESTORE.BAT
+        !:
+        cd !~\.
+
+B:      Compress into 1.38 MB blocks with ARJ (include RESTORE.BAT)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+        @del DIR_LIST.TXT
+        @REM ![(path) archive name  (not in NTFS partitions)]
+        ARJ A -a -v1440 -y !0 !!FILELIST.TXT FILELIST.TXT RESTORE.BAT
+        !:
+        cd !~\.
+
+R:      Create only the RESTORE.BAT (in the temporary directory)
+        @ECHO  Change to work into the temporary directory...
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @ECHO  Delete old temp files...
+        @IF EXIST COMBILST.LST del COMBILST.LST
+        @IF EXIST FLSTEDIT.LST del FLSTEDIT.LST
+        @IF EXIST REC_LFN.LST del REC_LFN.LST
+        @IF EXIST FILELIST.TXT del FILELIST.TXT
+        @IF EXIST DIR_LIST.TXT del DIR_LIST.TXT
+        @IF EXIST RESTORE.BAT del RESTORE.BAT
+        @IF EXIST MKDIRLST.BAT del MKDIRLST.BAT
+        @ECHO  Create Filelist.txt...
+        combilst.exe !:!~\ !~@
+        rename combilst.lst filelist.txt
+        flstedit.exe filelist.txt /noDoubleC /noFiles /split
+        combilst.exe "@dir /A " "flstedit.lst" " >> DIR_LIST.TXT"
+        rename combilst.lst mkdirlst.bat
+        copy flstedit.lst flstedit.old
+        @ECHO.
+        @ECHO  Create Dir_List.txt, Please wait ...
+        @call mkdirlst.bat
+        @ECHO  Create Restore.bat...
+        flstedit.exe flstedit.old /noDouble /noDrive
+        combilst.exe "attrib -r -s -h " "flstedit.lst"
+        type combilst.lst > restore.bat
+        combilst.exe "combilst.lst" "\*.*"
+        type combilst.lst >> restore.bat
+        flstedit.exe filelist.txt /m2
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        flstedit.exe flstedit.old /m2 /reverse
+        del flstedit.old
+        rec_lfn.exe flstedit.lst dir_list.txt /namebeside
+        flstedit.exe rec_lfn.lst /m1
+        combilst.exe "rename " "flstedit.lst"
+        type combilst.lst >> restore.bat
+        @ECHO  Delete temp files...
+        @del COMBILST.LST
+        @del FLSTEDIT.LST
+        @del REC_LFN.LST
+        @del MKDIRLST.BAT
+
+I:      Information to the usage of the LFN RESTORE.BAT
+        ntfsdosi.mnu
+
+-----------------------------------------------------------
+        NTFSDOS.MNU
+
+F10:	Main Menu
+	vc.mnu

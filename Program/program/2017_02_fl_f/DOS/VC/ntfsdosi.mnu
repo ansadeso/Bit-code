@@ -1,0 +1,17 @@
+How to use the compress/restore function for NTFSDOS drives?:
+        ntfsdos.mnu
+=============================================================
+- Start DOS 7.10 and define a temporary directory: SET TEMP=
+(if you start DOS from a floppy disk or CD-ROM and you do
+not have a FAT16/32 partition use a RAM drive)
+- Load smartdrv.exe (Do not start it, if you use a RAM drive)
+- Load NTFSDOS.EXE (Do not start DOSLFN after NTFSDOS)
+- Start Volkov Commander
+- Select your files on a NTFSDOS drive and press F2 User menu
+- Select "F5 Special Menu for NTFSDOS drives..."
+- Select "Compress with ... (include LFN RESTORE.BAT)"
+Then select a path on a disk/drive to write 
+- The created archive itself contains only short file names,
+to restore the long file names (LFNs) extract the archive
+and start the batch file "RESTORE.BAT" in Windows only!
+DO NOT start the LFN RESTORE.BAT file under DOS!

@@ -1,0 +1,120 @@
+             ******************************************************
+             *                                                    *
+             *         DE         v3.0     by Jim Webster         *
+             *                                                    *
+             ******************************************************
+
+
+    DiskEditor is a full function disk editor that supports (A) graphics or
+non-graphics printing of all data displayed onto the screen (B) a DOS shell
+(C) Directory: displaying, viewing, and editing, (D) On-Line Help, and
+(E) Mouse support. Pressing the F1 function key or pressing both mouse
+buttons (at the same time) will pop-up the main help screen. I hereby pro-
+claim, being of unsound mind and body, this program a freebie. Enjoy!
+Please send any suggestions or correspondences to the address shown below.
+
+Syntax:   DE  [drive:]  [/f  /p  /mo  /ml  /mn  /ms  /h  /?]
+
+       drive = Requested drive to view. If other than the default drive.
+           f = Program generated formfeeds during full sector print-outs.
+               Use ONLY w/ a laser printer or w/ continious feed paper!
+           p = Supports printing of additional extended characters 128-159.
+          mo = Disable initialization of the mouse driver.
+          ml = Disable light pen emulation.
+          mn = Set mouse cursor at normal speed. Default is double-speed.
+          ms = Set mouse cursor at half-speed.
+     ? or h = This help screen.
+
+DiskEditor by: James R. Webster  113 Riverview Dr  Lafollette, TN  37766
+               EMAIL: jwebste3@bellsouth.net
+
+----------------------------------------------------------------------------
+
+     Errorlevels returned by this program are:
+
+     0 = No errors.
+     1 = Syntax requested or needed.
+     2 = The drive you requested to view does not exist.
+     3 = Invalid character entered. Must be letters A-Z or a-z.
+     4 = Cannot find DEHELP.BIN!
+     5 = Not enough free memory. Requires a minimum of 256k free.
+     6 = Mouse driver does not recognize the installed mouse. Use /MO.
+     7 = Sector size exceeds 4096 bytes.
+     8 = Cluster size exceeds 128 sectors.
+
+----------------------------------------------------------------------------
+
+     Minimum/Maximum System Requirements:
+     -------------------------------------
+        Processor   : 8088 XT minimum
+        Video       : Monochrome minimum 
+        Memory free : 256k minimum/384k maximum
+        DOS version : 2.xx through 7.xx
+        Bytes@Sector: 4096 maximum
+     Sectors@Cluster:  128 maximum
+        FAT type    : 12 or 16-bit only!
+
+----------------------------------------------------------------------------
+
+     This program is written entirely in MASM 5.1. Any suggestions ?
+
+     This program has been a pet project of mine since late 1988 or
+early 1989 (I forget). Causing me to dig through whatever technical books
+and magazines I can get my hands on in order to keep abreast of the latest
+disk hardware specifications and the newest DOS function calls. This all
+started from Peter Norton and John Socha's book "Peter Norton's Assembly
+Language Book for the IBM PC." In the process of learning assembler, you
+wrote a disk editor program called DSKPATCH. So, if the interface looks
+familiar, DSKPATCH was the basis. Originally my extended version was called
+ED (for EDITDISK) until Norton Utilities came out with a program of the
+same name.
+     This program is only designed to read disks with 12 or 16-bit FATs!
+     Please do not attempt to edit DEHELP.BIN! As long as you run DE while
+logged into the directory of DE.EXE and DEHELP.BIN or their directory is in
+your PATH statement, DE will be able to locate DEHELP.BIN. As a side note,
+DEHELP.BIN is created by another program that I wrote called DAT2BIN.EXE.
+It is available from ZDNET (DAT2BIN.ZIP), and includes TESTD2B.EXE, plus
+TESTD2B2.EXE with complete source code that shows how to take advantage of
+a binary file to hold messages, pop-up help screens, etc.
+     The program will now read large drives and files. I have completely
+redone the code and the interface! To anyone that downloaded v2.4 from
+ZDNET and found the program buggy and limited, this corrects all of that.
+I had uploaded DE just to see what kind of response I would get and it was
+simply overwhelming. If anything, that motivated me to at least make DE
+stable and useable for the multitude of PC platforms.
+     Also added <Ctrl-F6> TestCF, which allows you to load and run a sector
+(cluster) read test on just that file. Whereas <Ctrl-F7> FilTest performs a
+sector (cluster) read test on ALL directories and files.
+     Also added a display of the current cluster number(s) being tested, via
+<Ctrl-F6> TestCF, <Ctrl-F7> FilTest, and <Alt-F7> SecTest. That way you'll
+know that that particular session IS actually doing something.
+     Also increased the maximum sector size to 4096 bytes. Had intended to
+make this 8192 bytes, but the compiler wouldn't allow it. Will need to work
+out a solution (or overcoding compromise) for this.
+
+     The program contains an Unerase (with extended features), several
+FAT related routines that report different types of information, testing of
+all disk sectors (and MUCH faster than v2.4, discovered a bug), testing of
+all clusters related to all files on the disk with the option of relocating
+the file data that is in any bad clusters to a safe area of the disk (and
+updating the FAT(s) accordingly), reporting and viewing cross-linked files
+(will locate and view only at present, have not finished coding the rest),
+changing a files size, date, time, and attributes, multiple pop-up help
+screens and printer options, and recognizing long filenames.
+     To be added or enhanced are greater than a 4096 byte sector size,
+completeing the cross-linked files routine, adding a hook to INT 24h for
+when an empty drive bay is requested (the default DOS handler temporarily
+takes control of the program and displays:
+          Not ready reading drive x <---- A or B or whatever
+          Abort, Retry, Fail?  (DOS v3.2- = Abort, Retry, Ignore?)
+The only safe route then is to press "F", "I", or insert a disk and press "R".
+ABORT will crash the program, leaving you with no command line cursor and
+a useless active mouse cursor.), adding the capability to view and edit the
+MBR (Master Boot Record), and someday a defrager.
+     In v2.4's DOC file, I mentioned adding the capability to read from and
+write to CD drives. Have since discovered that that would be unfeasable.
+Because a CD's structure is completely different than a magnetic disk, I
+would be better off writing an independent CD editor. No promises on this.
+
+----------------------------------------------------------------------------
+

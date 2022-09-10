@@ -1,0 +1,540 @@
+----------------------------------------------------------------------------
+STRNFAT <Alt-F4>
+
+     Parses the cluster chain of all Directories and Files, in the logged
+drive, comparing their cluster chain with the FAT (File Allocation Table).
+And locating all clusters that are Strays (not associated with any file) or
+that are Cross-Linked (two files are sharing the same clusters).
+As the cluster chain of each Directory or File is parsed, it is displayed
+as the "Current File". You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the session will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | This session parses all Directories,  |
+             | along with the FAT (File Allocation   |
+             | Table), locating all clusters that    |
+             | are Strays (not associated with any   |
+             | file) or that are Cross-Linked (two   |
+             | files are sharing the same clusters). |
+             | All output is sent to the screen and  |
+             | optionally the printer.               |
+             | ESC = abort this session.             |
+             +---------------------------------------+
+
+     After selecting the printer option, the prompt below will appear.
+The "Current File" display, at the top left-hand corner of the screen,
+will show the Directory or File that is currently being parsed.
+To abort this session, before it is finished, press ESC.
+
+         >>>>  Locating Stray and Cross-Linked clusters in the FAT.  <<<<
+
+     If there are Stray and/or Cross-Linked clusters found, the 2 examples
+below show the format of what you would see.
+NOTE: This is the only session in this program that is not yet complete.
+But will at least detect, show the information on the screen, and send the
+information to the printer. Once completed, will be able to unCross-Link
+the found files. As a side note, if you have instances of both, then more
+than likely at least some of the Stray clusters belong to one of the
+Cross-Linked files.
+
+
+
+
+
+
+
+                                                                 Page 37
+STRNFAT <Alt-F4> (cont.)
+
+  +------------+-----------+-----------+------------+-------------------
+  | Find stray clusters in the FAT for drive A:                        |
+  | ------------------------------------------------------------------ |
+  | Stray clusters       :  None.                                      |
+  |                                                                    |
+  | Cross-Linked clusters:     Eh     Fh    10h    11h    12h          |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  +------------+-----------+-----------+------------+-------------------
+                    Press any key to continue...
+
+  +------------+-----------+-----------+------------+-------------------
+  | Cross-Linked file(s) 1 of 1.                                       |
+  |   A:CLINK1.FIL                                                     |
+  |     Files directory sector   : 7 (7h)                              |
+  |     File entry in this sector: 6 (Offset: A0h)                     |
+  |     Starting cluster number  : 14 (Eh)                             |
+  |   A:CLINK2.FIL                                                     |
+  |     Files directory sector   : 7 (7h)                              |
+  |     File entry in this sector: 2 (Offset: 20h)                     |
+  |     Starting cluster number  : 13 (Dh)                             |
+  |   Files are Cross-Linked at clusters:     Eh     Fh    10h    11h  |
+  |                                          12h                       |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  |                                                                    |
+  +------------+-----------+-----------+------------+-------------------
+                    Press any key to continue...
+
+     NOTE: In order to limit the file size of DE, it uses memory allocation
+to perform this test. If in running this session with the least amount of
+memory required, there would still not be enough free memory, you would see
+see the message below. Press "ESC" on the keyboard, or a left mouse click
+over "ESC", to end the StrNFAT session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: There is not enough free memory|
+             | to run the Stray cluster session!     |
+             +---------------------------------------+
+
+                                                                 Page 38
+----------------------------------------------------------------------------
+FNDNFAT <Alt-F5>
+
+     Parses the FAT (File Allocation Table), of the logged drive, to find
+any clusters that are marked as BAD (FF7h for a 12-bit FAT or FFF7h for a
+16-bit FAT), clusters that are marked as RESERVED (FF0-FF6h for a 12-bit
+FAT or FFF0-FFF6h for a 16-bit FAT), or cluster numbers that exceed the
+maximum cluster number allowed for the logged drive. FYI. The following are
+the cluster values, so to speak, that indicate that there are no more
+clusters in the file cluster chain (FF8-FFFh for a 12-bit FAT and FFF8-FFFFh
+for a 16-bit FAT; FFFh or FFFFh are the most commonly used values).
+You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the session will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | This session locates all clusters in  |
+             | the FAT (File Allocation Table) that  |
+             | are marked as Bad, Reserved by DOS,   |
+             | or that exceed the maximum cluster    |
+             | number that is allowed for this drive.|
+             | "Value" = the hexidecimal value that  |
+             | is stored at that "Cluster" number;   |
+             | each cluster in the FAT is actually   |
+             | a pointer to the next cluster!        |
+             | All output is sent to the screen and  |
+             | optionally the printer.               |
+             | ESC = abort this session.             |
+             +---------------------------------------+
+
+     After selecting the printer option, the prompt below will appear.
+
+         >>>>  Locating special clusters in the FAT.  <<<<
+
+     The output, which doesn't take long, will look something like this:
+
+         Find special FAT clusters for drive C:
+         ------------------------------------------------------------------
+         Clusters marked as bad:  xxxxh  xxxxh  xxxxh  xxxxh  xxxxh  xxxxh
+
+                                             Cluster  Value  Cluster  Value
+                                             -------  -----  -------  -----
+         Clusters marked as reserved by DOS:  xxxxh   xxxxh   xxxxh   xxxxh
+
+         Invalid cluster numbers in the FAT:  None.  <---- If none found.
+
+                                                                 Page 39
+----------------------------------------------------------------------------
+CMPFATS <Alt-F6>
+
+     Compares both copies of the FAT (File Allocation Table), of the logged
+drive, for any differences. Both copies are supposed to be identical.
+If there is only 1 FAT on the disk, will just beep the PC speaker.
+FYI. DOS instituted there being a second copy of the FAT around DOS v2.
+The intension was that if the first (or master) FAT were to be corrupted,
+there would be a backup copy. The problem with this is that when DOS performs
+file handling, both copies of the FAT are updated. Meaning that the second
+copy is really useless. It is not a DOS requirement that a disk have 2 FAT's,
+but RAMDISKS are all that I've ever seen that have only 1 FAT.
+You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the session will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | This session compares the two copies  |
+             | of the FAT (File Allocation Table).   |
+             | The FAT contains the Cluster numbering|
+             | layout (or Chain) of all files on the |
+             | disk. If any differences are found,   |
+             | they are reported to the screen and   |
+             | optionally the printer.               |
+             | ESC = abort this session.             |
+             +---------------------------------------+
+
+     If there are no differences found, you will see the message below.
+
+         No errors found in comparing the 2 FAT's.
+
+     If there are differences found, the output (which doesn't take long),
+will look something like this:
+
+         FAT compare for drive C:
+         ------------------------------------------------------
+         > Error reading FAT's at hex offset: xxxxh <-- 0 based offset with-
+            Byte value in FAT #1, Sector xxxxx = xxh      in the sector(s).
+            Byte value in FAT #2, Sector xxxxx = xxh
+
+
+
+
+
+
+
+                                                                 Page 40
+----------------------------------------------------------------------------
+SECTEST <Alt-F7>
+
+     Performs a test read of all sectors on the logged drive, to determine
+the integrity of their contents (data). You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the sector test will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below. Please note that older hard drives will be a
+bit slow. This is because of the hard drives ciruitry, not DE.
+
+             +-|ESC|---------------------------------+
+             | This session performs a physical read |
+             | of all sectors on the disk.           |
+             | All read errors are reported to the   |
+             | screen and optionally the printer.    |
+             | Time frame of test:                   |
+             |   Floppy disk    =  1 minute  (+/-).  |
+             |   2 GB hard disk = 20 minutes (+/-).  |
+             | ESC = do not perform the Sector Test. |
+             +---------------------------------------+
+
+     After selecting the printer option, the prompt below will appear.
+n/a  = we are not in the DATA sectors yet (where the cluster scheme begins).
+xxxx = the cluster number (in hexidecimal) that is currently being tested.
+The "Cluster: xxxx" display may seem to be skipping clusters, but it is not.
+Since most clusters (groups of sectors) on a disk will be good, this program
+takes advantage of DMA (Direct Memory Access) by reading large groups of
+sectors at once. If an error occurs during one of these reads, the program
+backs up, reads each set of clusters from that group in order to isolate
+the bad cluster (aka, sectors within that cluster), and then goes to the next
+large group of sectors. If the "Cluster: xxxx" is skipping along just fine,
+and then starts to crawl through the cluster numbers, you'll know that DE
+received a sector read error. If no read errors are reported to the screen,
+and the "Cluster: xxxx" display starts to skipping along again, then the
+magnetic field (called: flux) of the errant sector is probably getting weak.
+A trick I learned a few years ago, with bad floppy disks, was to put the
+disk in the drive bay, close the door, and leave it there for about 5 or 10
+minutes. The heat generated within the computer case seems to energize the
+magnetic field (flux) on the disk. Then is a good time to copy its contents
+to a fresh disk. If in doing so, DOS brings up its infamous "<A>bort,
+<R>etry, <I>gnore" message, choose <I>gnore. DOS will attempt to read a bad
+disk sector 3 times before you see this message. And since DOS will always
+assume a worse case scenerio, choosing anything but <I>gnore would be
+fruitless. NEVER use DISKCOPY to transfere files from a bad disk to a good
+disk. You will end up with a duplicate of the bad disk. Use COPY instead.
+To abort the sector test, before it is finished, press ESC.
+
+                                                                 Page 41
+SECTEST <Alt-F7> (cont.)
+
+Performing >> READ SECTOR TEST <<..please wait..[ESC to abort]  Cluster: n/a
+                                      or
+Performing >> READ SECTOR TEST <<..please wait..[ESC to abort]  Cluster: xxxx
+
+     The below is a sample of what you would see. With some sector read
+errors thrown in. Please note that the sector numbers are displayed in
+decimal and the cluster numbers in hexidecimal. The number that appears
+after the sector number is the 1 or 2-digit error code that was returned
+by the operating system. On a color moniter this error code will be yellow
+and on a monochrome moniter, high intensity (real bright). If the print-out
+option is chosen, the error code will be enclosed in brackets: [ 4].
+NOTE: This session tests ALL sectors on the disk, whether the area they are
+in is marked as bad in the FAT (File Allocation Table) or not. If you have
+an older computer, it would be a good idea to run <Alt-F5> FndNFAT, with the
+print-out option, the first time around. This will give you a print-out of
+any clusters that are marked as bad in the FAT (this prevents DOS from using
+these clusters).
+
+  Reading BOOT sector(s): OK
+  Reading FAT #1 sectors: OK
+  Reading FAT #2 sectors: Error reading SECTOR 1234567890  4
+  Reading ROOT DIRECTORY sectors : OK
+  Reading DATA clusters & sectors: Error reading CLUSTER---> FFFFh
+                                                 SECTOR 1234567890  4
+
+     The message below will appear once the sector test is complete.
+To exit the sector test, press "ESC" on the keyboard. Or a left mouse click
+over "ESC". To view the Sector Error Code Definition screen, press "F1" on
+the keyboard. Or left mouse click over "F1".
+
+         ...Press F1 for help, ESC to exit...
+
+     Below is the Sector Error Code Definition screen. To exit this screen,
+press "ESC" on the keyboard. Or left mouse click over "ESC". To send its
+contents to the printer, press "P" on the keyboard. Or left mouse click
+over "P".
+NOTE: A sector error code of 4 does not necessarily mean that the sectors
+magnetic field (flux) is about to fail. But if the sector test reports a
+great number of these, its probably a good time to perform a complete backup,
+and then low-level format the drive. This will restore the magnetic field of
+the disk. Now if any other of the error codes are reported (6, 7, 8, 11, or
+12), and the clusters that they are in are not marked as bad in the FAT, then
+it would be very wise to have a professional PC technician examine the
+circuitry of the drive. And if necessary, replace the drive.
+
+
+
+
+
+
+
+                                                                 Page 42
+SECTEST <Alt-F7> (cont.)
+
+         +-|ESC|------------------------------------------------| P |-+
+         | Error codes returned by the operating system if a sector   |
+         | read or write error occured.                               |
+         | ---------------------------------------------------------- |
+         |  0 = Disk is write-protected.                              |
+         |  1 = Invalid drive number.                                 |
+         |  2 = Drive not ready (drive door is open).                 |
+         |  4 = Bad CRC (data read is usually valid; not guaranteed). |
+         |  6 = Couldn't access track.                                |
+         |  7 = Unrecognizable disk format.                           |
+         |  8 = Sector not found (corrupted sector/media).            |
+         | 10 = Write error.                                          |
+         | 11 = Read error.                                           |
+         | 12 = General unknown error (corrupted sector/media).       |
+         +------------------------------------------------------------+
+
+     NOTE: In order to limit the file size of DE, it uses memory allocation
+to perform this test. If in running this session with the least amount of
+memory required, there would still not be enough free memory, you would see
+see the message below. Press "ESC" on the keyboard, or a left mouse click
+over "ESC", to end the SecTest session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: There is not enough free memory|
+             | to run the Read Sector Test!          |
+             +---------------------------------------+
+
+----------------------------------------------------------------------------
+MISCELLANEOUS - Disk read or write error messages.
+
+     You would see the below message if you attempted to save sector changes
+to a floppy disk with the write-protect tab enabled. To abort saving the
+sector changes, press "ESC" or "N" on the keyboard. Or a left mouse click
+over "ESC" or "N". To continue with the sector changes, disable the write-
+protect tab and press "Y" on the keyboard. Or left mouse click over "Y".
+
+             +-|ESC|---------------------------------+
+             | Unable to write sector changes to the |
+             | disk! Write protect tab is enabled.   |
+             | Disable and press Y if you wish to    |
+             | save changes. Press N or ESC to abort.|
+             |                                       |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+         You would see one of the combinations of these messages for a
+sector read or write error. Press "ESC" on the keyboard to continue. Or
+left mouse click over "ESC".
+
+
+
+                                                                 Page 43
+MISCELLANEOUS - Disk read or write error messages. (cont.)
+
+             +-|ESC|---------------------------------+
+             | Error reading sector:                 |
+
+             +-|ESC|---------------------------------+
+             | Error reading disk boot sector:       |
+
+             +-|ESC|---------------------------------+
+             | Error reading FAT sectors:            |
+
+             +-|ESC|---------------------------------+
+             | Error reading directory sector:       |
+
+             +-|ESC|---------------------------------+
+             | Error writing sector changes:         |
+
+             +-|ESC|---------------------------------+
+             | Error writing FAT sectors:            |
+
+             +-|ESC|---------------------------------+
+             | Error writing directory sector:       |
+
+
+             | Invalid drive number.                 |
+             +---------------------------------------+
+
+             | Unknown error.                        |
+             +---------------------------------------+
+
+             | Bad CRC (data read is usually valid). |
+             +---------------------------------------+
+
+             | Couldn't access track.                |
+             +---------------------------------------+
+
+             | Unrecognizable disk format.           |
+             +---------------------------------------+
+
+             | Sector not found (corrupted media).   |
+             +---------------------------------------+
+
+             | Write error.                          |
+             +---------------------------------------+
+
+             | Read error.                           |
+             +---------------------------------------+
+
+             | General error (corrupted sector/media)|
+             +---------------------------------------+
+
+
+
+                                                                 Page 44
+----------------------------------------------------------------------------
+MISCELLANEOUS - Printer messages.
+
+Printer is not ON LINE!!  Press ESC to quit. Any other key to continue...
+
+Please insert a new sheet.  Then: ESC to quit. Any other key to continue...
+
+----------------------------------------------------------------------------
+Other programs by the author.
+
+DAT2BIN.EXE  Converts an ASCII text file into an ASCIIZ binary file that
+             may be used to hold messages for Pop-Up Help screens, etc.
+             NOTE: DAT2BIN.ZIP includes DAT2BIN.EXE, TESTD2B.EXE, and 
+             TESTD2B2.EXE with accompanying source code.
+
+EDITENV.EXE  A general purpose utility that allows one to edit, delete, or
+             add Enviroment Variables. This utility also expands the maximum
+             length of an Enviroment Variable from 127 characters to 255
+             characters! Pressing F1 while in the Variable or Editing Window
+             will pop-up a help screen.
+
+GMENU.EXE    A general purpose utility that is used to create custom "menu
+             and shell" programs for games, utility programs, or whatever.
+
+LISTDEV.EXE  v2.0 displays the Device Driver Chain and the contents of each
+             Device Header. Redirection to a file or the printer is allowed.
+             Source code included.
+
+LISTIVT.EXE  v2.0, short for List the Interrupt Vector Table, provides a
+             simple way to obtain the Segment:Offset addresses from the IVT
+             in the first 1024 bytes of computer memory. A brief explanation
+             of each Interrupt is also shown. For ease of use, the bottom most
+             line is highlighted, showing the allowable key presses. An option
+             for a print-out of the current screen or the entire IVT listing
+             is provided via the F2 function key. A complete print-out is 10
+             pages.
+
+MEMSPY.EXE   A general purpose utility that is used to peek and poke around
+             in memory. Output can also be sent to: [1] a file (binary image)
+             or PRN > file or [2] to the printer, with options that accom-
+             modate the capabilities of the printer being used.
+
+PMENU.EXE    Displays a menu of choices for printer configuration. Press the
+             appropriate key that is shown to the left of the wanted selection.
+             In all cases, an uppercase letter = "Set" and where applicable,
+             a lowercase letter = "Cancel".
+
+PMENU_E.EXE  Is identical to PMENU.EXE except it adds an additional
+             EPSON-specific command that allows the printer to be set to
+             extended ASCII printing without physically changing a dip-switch.
+
+
+
+                                                                 Page 45
+Other programs by the author. (cont.)
+
+SEC2FILE.EXE A general purpose utility that is used to copy the contents of
+             of an absolute sector (or sectors) to an output file for viewing
+             or editing. It is compatiable for any 12 or 16-FAT, with DOS
+             versions 2.xx through 7.xx.
+
+TESTATTR.EXE A general purpose utility that allows a programmer to see the
+             colors that different "character attributes" generate,
+             the easy way!
+
+----------------------------------------------------------------------------
+THE END      JOB 28:28   ROMANS 1:16-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 46

@@ -1,0 +1,158 @@
+[REGVHELP]
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; Registry Viewer Help File
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; File must begin with [REGVHELP]
+; If first character is ';' then this string is comment
+; All sections begin with [...] and its name
+; String may be no longer 65 characters
+;Ä[keys panel]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+[KEYS]
+
+    Cursor movements
+    ----------------
+
+    Left,Right,Tab          Switching between panels
+
+    Up                      Line up
+    Down                    Line down
+    PgUp                    Page up
+    PgDn                    Page down
+    Home                    Start of list
+    End                     End of list
+
+    Enter                   Level down
+    Gray plus
+    Ctrl-PgDn
+
+    Ctrl-Enter              Level up
+    Backspace
+    Gray minus
+    Ctrl-PgUp
+
+    Ctrl-\                  To root
+
+    Viewing
+    --------
+
+    Alt-Left                Character left
+    Alt-Right               Character right
+    Alt-Home                Start of line
+    Alt-End                 End of line
+
+    Ctrl-Up,Ctrl-Down       Path scrolling
+
+    Other operations
+    ----------------
+
+    F1                      Help
+    Shift-F1                Class name & security info block
+    F2                      Export to text file
+    F4                      Edit key name
+    Shift-F4                Insert new key (NT only)
+    double Enter            Insert new subkey (NT only)
+    double Tab              Insert new parameter (NT only)
+    Del                     Delete key with subkeys
+
+    Esc                     Quit
+    F10
+    Alt-X
+
+;Ä[parameters panel]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+[PARAM]
+
+    Cursor movements
+    ----------------
+
+    Left,Right,Tab          Switching between panels
+
+    Up                      Line up
+    Down                    Line down
+    PgUp                    Page up
+    PgDn                    Page down
+    Home                    Start of list
+    End                     End of list
+
+    Viewing
+    -------
+
+    Alt-Left                Character left
+    Alt-Right               Character right
+    Alt-Home                Start of line
+    Alt-End                 End of line
+
+    Enter                   Extended view
+
+    Ctrl-Up,Ctrl-Down       Path scrolling
+
+    Other operations
+    ----------------
+
+    F1                      Help
+    Shift-F1                Class name & security info block
+    F4                      Edit parameter name
+    Ctrl-F4                 Change parameter type(NT only)
+    Shift-F4                Insert new parameter (NT only)
+    Del                     Delete parameter
+
+    Ctrl-Enter              Level up
+    Backspace
+    Gray minus
+    Ctrl-PgUp
+
+    Ctrl-\                  To root
+
+    Esc                     Quit
+    F10
+    Alt-X
+
+;Ä[extended view]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+[VIEW]
+
+    Cursor movements
+    ----------------
+
+    Up                      Line up
+    Down                    Line down
+    PgUp                    Page up
+    PgDn                    Page down
+    Home                    Start of value 
+    End                     End of value
+
+    Viewing
+    --------
+
+    Enter                   Changing a view mode (string/binary)
+
+    Parameter name scrolling:
+
+    Alt-Left,Left           Character left
+    Alt-Right,Right         Character right
+    Alt-Home                Start of line
+    Alt-End                 End of line
+
+    Ctrl-PgUp               1 parameter up
+    Gray minus
+
+    Ctrl-PgDn               1 parameter down
+    Gray plus
+
+    Ctrl-Home               Start of parameters list
+    Ctrl-End                End of parameters list   
+
+    Other operations
+    ----------------
+
+    F1                      Help
+    F4                      Edit parameter value
+    Alt-P                   Select plugin
+
+    Esc                     Return
+    F10
+    Backspace
+    Ctrl-Enter
+
+[END]
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; mailto:mail@paullee.ru ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ http://paullee.ru
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

@@ -1,0 +1,30 @@
+F1:	ZIP Archive Menu...
+	zip.mnu
+
+F2:     ACE Archive Menu...
+        ace.mnu
+
+F3:     ARJ Archive Menu...
+        arj.mnu
+
+F4:     Create a list of files...
+        list.mnu
+
+F5:     Special Menu for NTFSDOS drives...
+        ntfsdos.mnu
+Z:	Compress with ZIP(LongFileName)
+	PKZIP -Pex -whs ! @!@
+Y:	Compress with ZIP(LongFi~1)
+	PKZIP -Pex -whs ! @!~@
+A:	Compress with ARJ
+	ARJ A !~ !!!~@
+L:	Compress with LHA
+	LHA A -x !~ @!~@
+C:	Create the list of files(LongFileName)
+	@ECHO The list of files was created in VC.LST file
+	@COPY !@ VC.LST > nul
+S:	Create the list of files(LongFi~1)
+	@ECHO The list of files was created in VC.LST file
+	@COPY !~@ VC.LST > nul
+F10:	Main Menu
+	vc.mnu

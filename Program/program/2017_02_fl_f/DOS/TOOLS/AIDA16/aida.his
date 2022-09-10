@@ -1,0 +1,1239 @@
+Version: 2.14 - Released: Feb-02-2004
+ - added Celeron 4E (aka Prescott-256)
+ - added Celeron M (aka Banias-512)
+ - added nVIDIA GeForce FX Go5250 video chip
+ - added nVIDIA GeForce FX Go5200 32M/64M video chip
+ - added nVIDIA GeForce FX Go5300 video chip
+ - added S3 AlphaChrome 333, AlphaChrome M video chips
+ - added S3 AlphaChrome Mc, AlphaChrome Micro video chips
+ - added S3 AlphaChrome-SavageXP, DeltaChrome 4 video chips
+ - added S3 DeltaChrome, DeltaChrome M video chips
+ - added S3 DeltaChrome S4, DeltaChrome X9m video chips
+ - added XGI Volari video chip
+ - added Abit Siluro FX5600XT, FX5700, FX5700 Ultra video cards
+ - added Asus A7000, A9200, A9200SE video cards
+ - added Asus A9600SE, A9800SE video cards
+ - added ELSA Falcox 920FX, 920SE video cards
+ - added ELSA Falcox 960FX, 960SE, 960XT video cards
+ - added ELSA Falcox 980FX, 980XT video cards
+ - added Leadtek WinFast A310XT, A350XT video card
+ - added chipset information for ATI Radeon 9100 IGP
+ - added chipset information for Intel i915G/GL/GV/P, i925X
+ - added chipset information for VIA KM400A, K8M400, K8N800
+ - added chipset information for VIA K8T800Pro, K8T890
+ - fixed lockup on K8
+ - fixed cache sizes of K8
+
+Version: 2.12 - Released: Nov-26-2003
+ - added new AMD Athlon XP (aka Thorton)
+ - added ATI Radeon 9600 XT (RV360) video chip
+ - added ATI Radeon 9800 XT (R360) video chip
+ - added nVIDIA GeForce4 MX 4000 video chip
+ - added nVIDIA GeForce FX 5900 XT video chip
+ - added Asus A9600XT, A9800XT video cards
+ - added Asus AGP-V9570, AGP-V9570 Ultra video cards
+ - added Asus AGP-V9980, AGP-V9980 Ultra video cards
+ - added Hercules 3D Prophet 9600 XT video card
+ - added Hercules 3D Prophet 9800 XT video card
+ - added Matrox Parhelia HR128, Parhelia HR256 video cards
+ - added Matrox P-256 Edge Overlap Controller, QID video cards
+ - added chipset information for SiS 655TX, SiS 755FX
+
+Version: 2.11 - Released: Oct-30-2003
+ - added nVIDIA GeForce FX 5600 XT, Quadro FX 1100 video chips
+ - added nVIDIA Quadro NVS 280 PCI video chip
+ - added Gainward FX PowerPack! Ultra/960XP video card
+ - added Gainward FX PowerPack! Ultra/1800XP video card
+ - added Leadtek WinFast A360, A360 Ultra video cards
+ - added Leadtek WinFast A380, A380 Ultra video cards
+ - added MSI FX5700, FX5700U, FX5950, FX5950U video cards
+ - fixed CPU multiplier detection for K8
+ - fixed SMBus support for nForce2/nForce3
+ - removed sensor support
+
+Version: 2.10 - Released: Oct-17-2003
+ - added nVIDIA GeForce FX 5700, GeForce FX 5700 Ultra video chips
+ - added chipset information for SiS 760
+ - added physical CPU info for ClawHammer
+ - fixed physical CPU info for SledgeHammer
+ - fixed AMD Hammer chipset information
+ - fixed V-Link clock detection for KT600
+
+Version: 2.09 - Released: Sep-18-2003
+ - added AMD Athlon 64 FX (aka ClawHammer FX)
+ - added new AMD Duron (aka Applebred)
+ - added Intel Pentium4 EE (aka Northwood Extreme Edition)
+ - added Intel Xeon-B MP (aka Gallatin)
+ - added nVIDIA GeForce FX 5200 SE, NV36, NV36GL video chips
+ - added nVIDIA GeForce FX 5950, GeForce FX 5950 Ultra video chips
+ - added ATI Radeon 9200 SE (RV280) video chip
+ - added ATI Radeon 9800 SE (R350) video chip
+ - added ATI Mobility Radeon 9200 (M9+) video chip
+ - added ATI Mobility Radeon 9600 (M10) video chip
+ - added chipset information for i848P
+ - added chipset information for nVIDIA nForce3
+ - added chipset information for SiS 741
+
+Version: 2.08 - Released: Aug-08-2003
+ - added nVIDIA GeForce4 448 Go, GeForce FX 5200 Go video chips
+ - added nVIDIA GeForce FX 5600 SE, Quadro FX Go700 video chips
+ - added chipset information for VIA KT400A, KT600
+
+Version: 2.07 - Released: Jun-26-2003
+ - added Asus AGP-V9950, AGP-V9950 Ultra video cards
+ - added Matrox Millennium P650 video card
+ - added Matrox Millennium P750 video card
+ - added chipset information for i852GME, i852PM
+
+Version: 2.06 - Released: May-28-2003
+ - added nVIDIA GeForce FX 5900, GeForce FX 5900 Ultra video chips
+ - added nVIDIA GeForce FX 5600 Go, Quadro FX 500 video chips
+ - added nVIDIA Quadro FX 3000, SiS 340 Xabre II video chips
+ - added Creative 3D Blaster 4 Titanium 4800 SE video card
+ - added Gainward FX PowerPack! Pro/660 video card
+ - added Gainward FX PowerPack! Pro/760 video card
+ - added Gainward FX PowerPack! Ultra/760/780 video card
+ - added Gainward FX PowerPack! Ultra/760XP video card
+ - added Gainward FX PowerPack! Ultra/1200XP video card
+ - added Gainward FX PowerPack! Ultra/1600XP video card
+ - added chipset information for i845MP, i845MZ
+ - added chipset information for nVIDIA nForce2 400
+ - added chipset information for nVIDIA nForce2 Ultra 400
+ - added chipset information for SiS 648FX, SiS 655FX, SiS 746FX
+
+Version: 2.05 - Released: May-09-2003
+ - added new VIA C3 (aka Nehemiah)
+ - added Creative 3D Blaster 5 GeForce FX 5200 video card
+ - added Creative 3D Blaster 5 GeForce FX 5200 Ultra video card
+ - added Creative 3D Blaster 5 GeForce FX 5600 video card
+ - added Creative 3D Blaster 5 GeForce FX 5600 Ultra video card
+ - added Leadtek WinFast A310, A310 Ultra video cards
+ - added Leadtek WinFast A340, A340 Ultra video cards
+ - added Matrox Parhelia Engineering Sample video card
+ - added Matrox Parhelia Production Sample video card
+ - added detection of SledgeHammer rating (1xx/2xx/8xx)
+ - added physical CPU info for SledgeHammer
+ - added physical CPU info for Nehemiah
+ - added improved support for Intel Canterwood i875P motherboard chipset
+ - added improved support for Intel Springdale i865G/P/PE motherboard chipsets
+ - added extended chipset information for Intel E7205, E7501, E7505
+ - added SMBus support for AMD, Intel, nVIDIA, ServerWorks, SiS, VIA chipsets
+ - added sensor support for 48 sensor chips
+ - fixed nForce2 chipset information
+ - fixed detection of ClawHammer
+ - fixed detection of SledgeHammer
+ - fixed L2 cache size of Nehemiah
+
+Version: 2.02 - Released: Mar-28-2003
+ - added Intel Pentium M (aka Banias)
+ - added /D command-line option to disable debug information
+ - added Intel Prescott
+ - added ATI M9+, M9+GL, M9+X video chips
+ - added ATI Radeon 9100 (R200) video chip
+ - added ATI Radeon 9200 (RV280) video chip
+ - added ATI Radeon 9200 Pro (RV280) video chip
+ - added ATI Radeon 9600 (RV350) video chip
+ - added ATI Radeon 9800 (R350) video chip
+ - added ATI RS300, RS300M, RS300ML, RS300VE video chips
+ - added nVIDIA GeForce FX 5200, GeForce FX 5200 Ultra video chips
+ - added nVIDIA GeForce FX 5600, GeForce FX 5600 Ultra video chips
+ - added nVIDIA GeForce4 410 Go 16M, GeForce4 4200 Go video chips
+ - added nVIDIA NV35, NV35GL, Quadro4 700 GoGL video chip
+ - added 3Dfx Voodoo3 1000, Matrox G450 Multi-Monitor video cards
+ - added Asus AGP-V9520, AGP-V9520M video cards
+ - added Asus AGP-V9560, AGP-V9560 Ultra video cards
+ - added ELSA GLadiac 728, GLadiac FX 930 video cards
+ - added Gainward GeForce4 PowerPack! Ultra/750-8X video card
+ - added Gainward FX PowerPack! Ultra/800 video card
+ - added Gainward FX PowerPack! Ultra/1000 video card
+ - added Gigabyte GV-R9100, GV-R9200, GV-R9600, GV-R9800 video cards
+ - added Hercules 3D Prophet 9200, 3D Prophet 9600 video cards
+ - added Hercules 3D Prophet 9800 video card
+ - added Matrox RT.X10 G550 Flex3D, RT.X100 G550 Flex3D video cards
+ - added MSI Ti4800SE-TD8X, FX5800, FX5800 Ultra video cards
+ - added chipset information for Intel i855GM, i855PM
+ - added chipset information for SiS 748
+ - fixed Matrox Parhelia memory size
+ - fixed ATI video card detection
+ - fixed Matrox video card detection
+ - fixed report creation under FreeDOS
+
+Version: 2.00 - Released: Feb-19-2003
+ - added nVIDIA GeForce FX 5800, GeForce FX 5800 Ultra video chips
+ - added nVIDIA Quadro FX 1000, Quadro FX 2000 Ultra video chips
+ - added nVIDIA NV31, NV31GL, NV34, NV34GL video chips
+ - added Abit Siluro FX 5800, Siluro FX 5800 Ultra video cards
+ - added Asus AGP-V9900, AGP-V9900 Ultra video cards
+ - added ATI All-in-Wonder 9700 video card
+ - added Leadtek WinFast A300, A300 Ultra video cards
+ - added chipset information for Intel i852GM
+ - added chipset information for SiS 655, SiS 746
+ - added chipset information for VIA Apollo CLE266
+ - added DRAM timing info for i430TX, i430VX
+ - added physical CPU info for Barton
+ - added CPU stepping detection
+ - fixed detection of VIA C3 (Ezra-T)
+ - fixed chipset information for ALi M1647
+ - fixed lockup on P4 and Celeron-4
+
+Version: 1.73 - Released: Dec-18-2002
+ - added AMD Athlon 64 (aka ClawHammer)
+ - added AMD Opteron (aka SledgeHammer)
+ - added nVIDIA GeForce4 Ti 4800 video chip
+ - added nVIDIA GeForce4 Ti 4800 SE video chip
+ - added Abit Siluro GF4 MX-8X, GF4 Ti4200-8X video cards
+ - added Asus AGP-V9180, AGP-V9280 video cards
+ - added ELSA GLadiac 9000, GLadiac 9700 Pro video cards
+ - added ELSA Winner 7000, Winner 7500 video cards
+ - added Gainward GeForce4 PowerPack! Pro/600-8X video card
+ - added Gainward GeForce4 PowerPack! Ultra/650 video card
+ - added Gainward GeForce4 PowerPack! Ultra/650-8X video card
+ - added Leadtek WinFast A180 video card
+ - added Leadtek WinFast A180 DDR video card
+ - added Leadtek WinFast A180 SE DDR video card
+ - added Leadtek WinFast A250 LE video card
+ - added Leadtek WinFast A280 LE video card
+ - added Leadtek WinFast A280 Ultra video card
+ - added MSI Ti4200-TD8X video card
+ - added chipset information for ALi M1644
+ - added chipset information for Intel E7205, E7505
+ - added chipset information for SiS 650GL
+ - added chipset information for SiS 650GX
+ - added chipset information for Transmeta Virtual Northbridge
+ - added chipset information for VIA Apollo Pro266(T)
+ - added chipset information for ServerWorks Champion chipsets
+ - added chipset information for ServerWorks Grand Champion chipsets
+ - added DRAM timing info for SiS 620, SiS 630, SiS 635, SiS 645(DX)
+ - added DRAM timing info for SiS 648, SiS 650, SiS 650GL, SiS 650GX
+ - added DRAM timing info for SiS 651, SiS 730S, SiS 735, SiS 740
+ - added DRAM timing info for SiS 745, SiS 746
+
+Version: 1.72 - Released: Oct-20-2002
+ - added new AMD Athlon XP (Athlon XP with 512 KB L2 cache)
+ - added new AMD Athlon MP (Athlon MP with 512 KB L2 cache)
+ - added Intel Celeron 4A (aka Northwood-128)
+ - added Intel Pentium 4HT (aka Northwood HyperThreading)
+ - added 3Dlabs P9, Trident CyberBlade/XPm video chips
+ - added Matrox Parhelia 8x video chip
+ - added nVIDIA GeForce4 Ti 4200 with AGP8X video chip
+ - added nVIDIA GeForce4 Ti 4600 with AGP8X video chip
+ - added nVIDIA Quadro4 980 XGL, Quadro4 780 XGL video chips
+ - added nVIDIA NV30, NV30GL video chips
+ - added chipset information for i845GE, i845GV, i845PE
+ - added chipset information for VIA KT400, K8T800, K8T800M
+ - added physical CPU info for Celeron 4
+
+Version: 1.70 - Released: Jul-31-2002
+ - added Intel Celeron 4 (aka Willamette-128)
+ - added Intel Pentium 4M (aka Mobile Northwood)
+ - added Intel Xeon MP (aka Foster with SMP support)
+ - added Intel Xeon-A MP (aka Prestonia with SMP support)
+ - added 3Dlabs P10, Matrox Parhelia, ST PowerVR Kyro II SE video chips
+ - added ATI RV250, R300, Radeon Mobility M9, M9-GL video chips
+ - added nVIDIA NV18, NV18GL video chips
+ - added 3Dlabs Miranda P10, Vizyx T65 video cards
+ - added 3Dlabs Wildcat VP760, Wildcat VP870, Wildcat VP970 video cards
+ - added ELSA Winner4 200NVS, Winner4 400NVS video cards
+ - added ELSA Synergy4 500XGL, Synergy4 550XGL video cards
+ - added ELSA GLoria4 700XGL, GLoria4 750XGL, GLoria4 900XGL video cards
+ - added Hercules 3D Prophet 4800, Matrox Parhelia 128MB video cards
+ - added platform ID for uFCPGA478 of Pentium 4M
+ - added chipset information for ALi M1631, M1632M, M1646, M1647, M1651
+ - added chipset information for i845E, i845GLL, SiS 730S
+ - added chipset information for VIA ProMedia, P4N333, P4X333, KT333
+ - added DRAM timing info for AMD-750, AMD-760, AMD-760MP(X)
+ - added DRAM timing info for i810(E), i815(E), i830M
+ - added DRAM timing info for i845(E), i845G(L), i845GLL, iE7500
+ - added DRAM timing info for VIA KT133(A), KM133(A), KL133(A)
+ - added DRAM timing info for VIA KT266(A), KT333
+ - removed whole benchmarking functionality
+ - removed tweakings for Linux DOSEMU
+
+Version: 1.60 - Released: May-12-2002
+ - added new AMD Athlon XP (Athlon XP at 0.13 micron)
+ - added new AMD Athlon MP (Athlon MP at 0.13 micron)
+ - added ATI R200W, S3 Twister, S3 Twister-K, SiS 315 video chipsets
+ - added Abit AS315D, AS315P, AS315T, AS315V, AS315E video cards
+ - added Abit Siluro GF4 MX SD, GF4 MX, GF4 MX Pro video cards
+ - added ATI Fire GL 8700, Fire GL 8800 video cards
+ - added Giga-Byte GV-AP64D, GV-AP64S video cards
+ - added Matrox Marvel G550 eTV video card
+ - added CPU multiplier detection for Pentium 4A, Xeon-A
+ - added platform ID for Socket 603 of Xeon
+ - added physical CPU info for Pentium 4A, Xeon, Xeon-A
+ - added physical CPU info for new Athlon XP, new Athlon MP
+ - added chipset information for i830M, i830MP, i830MG
+ - added chipset information for i845D, i845G, i860, iE7500
+ - added chipset information for P4M266, P4X266, P4X266A
+ - added chipset information for SiS 635, SiS 645, SiS 646
+ - added chipset information for SiS 648, SiS 649, SiS 650
+ - added chipset information for SiS 733, SiS 735, SiS 740, SiS 745
+ - added detection of registered SDRAM for KX133, KT133, KT133A
+ - added detection of registered DDR SDRAM for AMD-760 and AMD-760MP
+ - added detection of registered DDR SDRAM for KT266, KT266A, KT333
+ - added identification of Phoenix BIOS Tyan motherboards
+ - fixed UDMA 6 (ATA-133) mode detection
+ - fixed detection of Athlon XP on old motherboards
+ - fixed CPU multiplier detection for Tualatin 1200 MHz
+ - fixed CPU multiplier detection for Willamette
+ - fixed CPU & FPU benchmarks on P4
+
+Version: 1.56 - Released: Mar-01-2002
+ - added nVIDIA GeForce4 MX 420, GeForce4 MX 440 video chipsets
+ - added nVIDIA GeForce4 MX 460, GeForce4 Ti 4200 video chipsets
+ - added nVIDIA GeForce4 Ti 4400, GeForce4 Ti 4600 video chipsets
+ - added nVIDIA GeForce4 440 Go, Quadro4 500 GoGL video chipsets
+ - added nVIDIA Quadro4 200/400NVS, Quadro4 500XGL video chipsets
+ - added nVIDIA Quadro4 550XGL, Quadro4 700XGL video chipsets
+ - added nVIDIA Quadro4 750XGL, Quadro4 900XGL video chipsets
+ - added Abit Siluro GF4 MX440, GF4 Ti4600 video cards
+ - added Asus AGP-V8170, AGP-V8440, AGP-V8460 video cards
+ - added Creative 3D Blaster 4 MX420, 3D Blaster 4 MX440 video cards
+ - added Creative 3D Blaster 4 MX460, 3D Blaster 4 Ti4400 video cards
+ - added Creative 3D Blaster 4 Ti4600 video card
+ - added ELSA GLadiac 517, GLadiac 725, GLadiac 925 video cards
+ - added Leadtek WinFast A170, A250 TD, A250 Ultra TD video cards
+ - added Leadtek WinFast Titanium TH, Titanium 200 TDH video cards
+ - fixed lockup on AMI BIOS based motherboards
+ - fixed detection of Celeron-S
+ - fixed detection of Pentium III-S
+
+Version: 1.54 - Released: Jan-30-2002
+ - added AMD AC'97 integrated audio device
+
+Version: 1.53 - Released: Dec-21-2001
+ - added UDMA 6 (ATA-133) mode detection
+
+Version: 1.52 - Released: Dec-04-2001
+ - added Creative EMU10K2 Audigy sound chip
+ - added Avance Logic ALS007, ALS200 sound cards
+ - added SiS AC'97 integrated audio device
+
+Version: 1.51 - Released: Oct-30-2001
+ - added AMD Athlon 4 (mobile Athlon with 3DNow! Professional)
+ - added AMD Athlon XP (desktop Athlon with 3DNow! Professional)
+ - added AMD Athlon MP (Athlon with 3DNow! Professional and SMP support)
+ - added AMD Duron 4 (mobile Duron with 3DNow! Professional)
+ - added AMD Duron XP (desktop Duron with 3DNow! Professional)
+ - added AMD Duron MP (Duron with 3DNow! Professional and SMP support)
+ - added Intel Celeron-S (value version of Tualatin)
+ - added ATI R200, Matrox G550 video chipsets
+ - added nVIDIA GeForce2 Ti, GeForce3 Ti 200, GeForce3 Ti 500 video chipsets
+ - added future nVIDIA NV25 video chipset
+ - added Abit Siluro GF256DDR, GF3, GF3 Ti200, GF3 Ti500, V400 video cards
+ - added Asus AGP-V7700TI, AGP-V8200T2, AGP-V8200T5 video cards
+ - added ATI Radeon 7500 DDR, Radeon 8500 DDR, Radeon FSC video cards
+ - added ATI All-in-Wonder Radeon 8500 DV Edition video card
+ - added Creative 3D Blaster GeForce2 Titanium video card
+ - added Creative 3D Blaster GeForce3 Titanium 200 video card
+ - added Creative 3D Blaster GeForce3 Titanium 500 video card
+ - added ELSA GLadiac 516, GLadiac 721, GLadiac 921 video cards
+ - added Hercules 3D Prophet II Titanium video card
+ - added Hercules 3D Prophet III Titanium 200 & 500 video cards
+ - added Leadtek WinFast Titanium 500 video card
+ - added Matrox Millennium G450 LX, Millennium G550 video cards
+ - added detection of AMD 3DNow! Professional instruction set
+ - added detection of Hyper-Threading Technology
+ - added physical CPU info Athlon 4, Athlon XP, Athlon MP
+ - added physical CPU info Duron 4, Duron XP
+ - added physical CPU info Celeron-S
+ - added new versions of Intel & VIA AC'97 audio controllers
+ - added tweakings for better Windows XP support
+ - fixed lockup on Palomino & Morgan
+ - fixed incorrect detection of C3 L2 cache size
+ - fixed Tualatin L2 cache size
+
+Version: 1.50 - Released: Sep-07-2001
+ - added AMD Duron 4 (aka Morgan, Duron with 3DNow! Professional)
+ - added Intel Pentium III-S (aka Tualatin)
+ - added Intel Pentium 4A (aka Northwood)
+ - added Intel Xeon-A (aka Prestonia)
+ - added new Intel Pentium 4 (Willamette in Socket 478)
+ - added new Intel Xeon (Foster in Socket 478)
+ - added nVIDIA GeForce2 Go, nForce, Quadro DCC video chipsets
+ - added Trident CyberBlade-Ai1, CyberBlade-XP video chipsets
+ - added Abit Siluro GF2 MX200, MX400, T200, T400 video cards
+ - added Asus AGP-V7100M video card
+ - added ELSA GLadiac 311, GLoria DCC, Synergy 2000 video cards
+ - added Hercules 3D Prophet 4000XT, 3D Prophet 4500 video cards
+ - added CPU multiplier detection for Cyrix III
+ - added identification of Virtual Channel DDR SDRAM modules for VIA chipsets
+ - added Athlon 4 P rating (Pxxxx+)
+ - added physical CPU info for C3
+ - added platform ID for Socket 478 of Pentium 4
+ - added chipset information for AMD-760, AMD-760MP, i845
+ - added chipset information for KL133, KM133, KT133A, KT266
+ - added AIDA32 routines for comm. ports detection under WinNT/Win2k/WinXP
+ - added AIDA32 routines for COM PnP devices detection under WinNT/Win2k/WinXP
+ - added AIDA32 routines for ISA PnP devices detection under WinNT/Win2k/WinXP
+ - added AIDA32 routines for USB devices detection under WinNT/Win2k/WinXP
+ - fixed physical CPU info for Cyrix III
+ - fixed CPU multiplier detection for Thunderbird 1.3B and 1.4B
+
+Version: 1.43 - Released: Jun-27-2001
+ - added VIA C3 (aka Cyrix IIIA)
+ - added CPU multiplier detection for Tualatin
+ - added CPU multiplier detection for C3
+ - fixed detection of Tualatin
+ - fixed CPU multiplier detection for PIIIE Xeon-A
+
+Version: 1.42 - Released: May-26-2001
+ - added AMD Athlon 4 (aka Palomino, Athlon with 3DNow! Professional)
+ - added physical CPU info for Athlon 4
+ - fixed lockup on Asus CUV4X series motherboards
+
+Version: 1.41 - Released: May-01-2001
+ - added IBM RC1000 Rasterizer
+ - added nVIDIA GeForce2 MX Ultra video chipset
+ - added Abit Siluro GF256 GTS & GF2 MX video cards
+ - added ATI All-in-Wonder 128 Pro, Radeon Workstation video cards
+ - added ATI Rage Fury MAXX, Rage Fury Pro video cards
+ - added Diamond Fire GL 2 & 3 video cards
+ - added ELSA TNT2 Vanta video card
+ - added S3 SuperSavage 128/IX, SuperSavage 128/IX DDR video cards
+ - added S3 SuperSavage 128/MX, SuperSavage/IX, SuperSavage/IX DDR video cards
+ - added S3 SuperSavage/IXC SDR, SuperSavage/IXC DDR video cards
+
+Version: 1.40 - Released: Apr-05-2001
+ - added Intel Tualatin (next version of Pentium III)
+ - added Matrox Millennium G450 DualHead LX video card
+ - added IA Platform ID detection under Win9x/Me/NT/2000/XP
+ - added CPU multiplier & FSB detection under Win9x/Me/NT/2000/XP
+ - added uptime detection under Win9x/Me
+ - added EIDE & ATAPI devices detection under Win9x/Me/NT/2000/XP
+ - added total & free memory detection under Win9x/Me/NT/2000/XP
+ - added total & free swap space detection under Win9x/Me
+ - added free swap space detection under WinNT/2000/XP
+ - added video memory size detection under WinNT/2000/XP
+ - fixed system memory size detection under WinNT/2000/XP
+
+Version: 1.32 - Released: Mar-08-2001
+ - added AMD Palomino (next version of Athlon)
+ - added AMD Morgan (next version of Duron)
+ - added chipset information for i815E(P), i820E
+ - added detection model number, serial number and BIOS version for IBM BIOS
+ - fixed i81x chipset info
+
+Version: 1.31 - Released: Mar-05-2001
+ - added Intel Xeon (aka Foster, high-end Pentium 4)
+ - added ATI Radeon VE, ELSA GLadiac 920, Giga-Byte GV-GF3000 video cards
+ - added Hercules 3D Prophet III, Leadtek WinFast 3D GeForce3 video cards
+ - added Micro-Star StarForce 822, VideoLogic Vivid! video cards
+ - added UDMA 5 (ATA-100) mode detection
+ - fixed PowerVR Kyro memory size
+
+Version: 1.30 - Released: Feb-12-2001
+ - added Intel Pentium IIIE Xeon-A (Pentium III Xeon with int. 2 MB L2 cache)
+ - added ATI M6 & RV100, nVIDIA GeForce3, ST PowerVR Kyro & Kyro II video chips
+ - added Asus AGP-V8200, ATI All-in-Wonder Radeon video cards
+ - added physical CPU info for Pentium IIIE Xeon-A & Pentium 4
+ - added maximum allowed frequency detection for Pentium 4
+ - added platform ID for Socket 423 of Pentium 4
+ - added IDE hard disk information for Samsung drives
+ - fixed nVIDIA chips detection
+ - fixed Pentium 4 multiplier & FSB speed
+ - fixed lockup on Pentium 4
+
+Version: 1.2B - Released: Jan-26-2001
+ - added VIA Cyrix IIIA (aka WinChip 5, aka Samuel 2)
+ - added Micro-Star MS-StarForce 815, 816, 817, 818 video cards
+ - added a couple of Pentium 4 motherboards
+ - added SFS (Stepless Freq Selection) feature detection for Asus mobos
+
+Version: 1.23 - Released: Nov-15-2000
+ - added 3Dfx VSA-100 & VSA-200, nVIDIA NV20 video chips
+ - added 3Dfx Voodoo5, Voodoo5 5500 and Voodoo4 SD video cards
+ - added L3 cache support for Pentium 4
+ - added chipset information for SiS 630 & VIA PM133
+ - added more tweakings for better Linux DOSEMU support
+ - fixed detection of Asus V3800 Pro & SiS 300
+ - fixed CPU clock speed detection in V86 mode
+ - fixed Pentium 4 L1 & L2 cache size, L2 cache type & speed
+ - fixed DRAM list of i440MX chipset
+
+Version: 1.21 - Released: Sep-21-2000
+ - added Matrox G450 video chipset
+ - added Matrox Millennium G450 DualHead (DVI, LE) video cards
+ - added Matrox Marvel G450 eTV, Orion video cards
+ - added DMI based motherboard identification
+ - added IDE device support for PCI IDE controllers (11 controllers supported)
+ - added detection of AGP speed (2x/4x)
+ - added BIOS type Award Medallion
+ - added SMBus support for VIA 596B
+ - fixed Athlon FSB speed detection
+ - fixed HDD read speed routines
+ - fixed nVIDIA TNT and GeForce family based cards memory size
+ - fixed long delay on machines with missing or wrong DMI data
+ - fixed BIOS support for over 8 GB hard disks
+ - fixed lockup using certain PCI devices (e.g. Promise Ultra100)
+
+Version: 1.16 - Released: Aug-15-2000
+ - added nVIDIA GeForce2 Ultra, Quadro2 MXR video chipsets
+ - added Creative 3D Blaster Annihilator Ultra video card
+ - added ELSA GLadiac Ultra video card
+ - fixed CPU clock speed detection
+
+Version: 1.15 - Released: Aug-14-2000
+ - added AMD K8 Sledgehammer (64-bit Athlon successor)
+ - added new VIA Cyrix III (VIA Samuel)
+ - added ATI Rage 6, nVIDIA GeForce2 MX, MX DDR, MX GL video chipsets
+ - added Matrox G800 video chipset
+ - added Asus V7100, ATI Radeon & King City video cards
+ - added Creative Graphics Blaster GeForce2 MX video card
+ - added Gainward CARDEXpert GeForce2 GTS & MX video cards
+ - added ELSA GLadiac MX, Leadtek WinFast 3D Geforce2 MX video cards
+ - added physical CPU info for Duron & new Cyrix III
+ - added detection of TransMeta CPUs
+ - added Intel & VIA AC'97 integrated audio devices
+ - added CNR slot support for i815 mobos
+ - added NOVUS & NOVUS II features support for FIC mobos
+ - added SMBus support for Intel ICH2
+ - added chipset information for i440MX
+ - added detection of IA-64 instruction set
+ - added detection of x86-64 Long Mode support
+ - added new method of measuring CPU clock speed under Win9x/Me
+ - fixed motherboard chipset detection for Asus A7V & FIC AZ11
+ - fixed old & new Cyrix III L1 cache size, clock rate
+ - fixed K6-2+, K6-III+, new Cyrix III L2 cache size
+ - fixed VESA lockup on Voodoo Rush cards
+ - fixed phantom PCI devices detection on non-PCI machines
+ - fixed free environment lockup
+
+Version: 1.10 - Released: Jul-02-2000
+ - added AMD Athlon-PECM (Athlon with performance-enhancing L2 cache memory)
+ - added AMD K6-2+ (K6-2 0.18 micron with integrated 128 KB L2 cache)
+ - added AMD K6-III+ (K6-III 0.18 micron with integrated 256 KB L2 cache)
+ - added Intel Pentium 4
+ - added VIA WinChip 4
+ - added Number Nine SR9 Pro, Pro+, Xtreme, Diamond Fire GL 1 video cards
+ - added Aureal Montego, Montego II sound cards
+ - added Avance Logic ALS-300, ALS-300+, ALS-4000 sound cards
+ - added Diamond Sonic Impact S100, Monster Sound II sound cards
+ - added Diamond Monster Sound MX400, Ensoniq ES5880  sound cards
+ - added ESS Allegro-1.COMM, Maestro-3i, Maestro-3.COMM sound cards
+ - added NeoMagic NM2200, Rockwell Riptide audio devices
+ - added L3 cache support for K6-2+ and K6-III+
+ - added platform ID for Mobile Pentium III uPGA2 module
+ - added Phoenix BIOS based motherboard identification
+ - added chipset information for i815 Solano, i840 Carmel chipsets
+ - added chipset information for OPTi Viper-MAX, VIA Apollo KT133 chipsets
+ - added 5.5x, 5.75x, 6.0x, 6.25x multipliers for Thunderbird & Duron
+ - added maximum allowed frequency detection for Coppermine & Celeron II
+ - added original CPU clock detection for Celeron II
+ - added marking "B" for 133 MHz FSB Katmai & Coppermine
+ - added VESA DDC monitor vendor & model detection
+ - added extended VESA DDC monitor horizontal & vertical frequencies detection
+ - added identification of Virtual Channel SDRAM modules for VIA chipsets
+ - added speed rating identification of Rambus DRAM modules (PC600-800)
+ - fixed motherboard chipset detection for Asus K7V & K7V-RM
+ - fixed rounded clock speed detection beyond 1 GHz
+ - fixed ALi M1487/1489, M1531, M1541, M1621 chipset info
+ - fixed original CPU clock detection for Katmai & Coppermine
+ - fixed CPU multiplier detection for Celeron II
+ - fixed Duron L2 cache size detection
+ - fixed Athlon FSB speed detection
+ - fixed lockup on Klamath CPUs
+ - fixed Asus V7700 & 7800 detection
+ - fixed DRAM slot list of mobile machines
+ - fixed ISA & COM PnP devices list under Windows NT & 2000
+
+Version: 1.00 - Released: May-11-2000
+ - added Intel Celeron II (Pentium III with integrated 128 KB L2 cache)
+ - added Intel Pentium IIIE Xeon (Pentium III Xeon with int. 256 KB L2 cache)
+ - added AMD Duron (low-end Athlon with integrated L2 cache)
+ - added AMD Thunderbird (mid-range Athlon with integrated L2 cache)
+ - added VIA Cyrix III (advanced MII core with integrated 256 KB L2 cache)
+ - added nVIDIA GeForce2 GTS, GTS DDR, GTS Bladerunner, Quadro2 video chipsets
+ - added Asus V7700 & V7800, Creative 3D Blaster Annihilator 2 video cards
+ - added ELSA GLadiac, Hercules 3D Prophet II video cards
+ - added Leadtek WinFast 3D Geforce2 GTS video card
+ - added Avance Logic ALS-100, ALS-100+, ALS-120 sound cards
+ - added CrystalClear SoundFusion, ForteMedia FM801 sound cards
+ - added OPTi 82C924, 82C925 sound cards
+ - added Intel Platform ID detection
+ - added physical CPU info for Pentium IIIE FC-PGA and Xeon
+ - added physical CPU info & PR-ratings for VIA Cyrix III
+ - added USB devices detection under Windows NT & 2000
+ - added ISA PnP devices detection under Linux DOSEMU
+ - added new method of detecting PCI devices under Linux DOSEMU
+ - added more tweakings for better Linux DOSEMU support
+ - added IDE hard disk information
+ - added ATAPI CD-ROM/CD-R/CD-RW/DVD-ROM/DVD-RAM information
+ - added operating system information (Win9x, WinMe, WinNT, Win2k, Linux)
+ - added RDRAM detection for i820 chipset
+ - added PTI slot, "One Jumper" & "Bye-Bye Jumper" features for Iwill mobos
+ - added new method of browsing (using W and S keys)
+ - fixed i820 chipset info
+ - fixed SB PCI128 detection
+ - fixed ISA PnP devices detection
+ - fixed PCI devices list under Windows 2000 Hungarian Version
+
+Version: 1091A - Released: Mar-01-2000
+ - added Giga-Byte GA-SV2000 video card
+ - added chipset information for VIA Apollo KX133 chipset
+ - fixed VESA DDC monitor detection under Windows 2000
+ - fixed PCI devices list under Windows 2000
+
+Version: 1090A - Released: Feb-16-2000
+ - added Intel Willamette
+ - added detection of IA SSE 2 instruction set
+ - added tweakings for Linux DOSEMU
+ - added original CPU clock detection for Katmai & Coppermine
+ - added more sophisticated AMI BIOS based motherboard detection
+ - fixed COM and LPT port detection under Windows NT
+ - fixed PCI lockup under Windows NT
+ - fixed Micro-Star video cards detection
+ - fixed ALi M1541 L2 cache size
+ - fixed Athlon L2 cache speed detection
+ - fixed detection of Pentium III Xeon
+
+Version: 1085A - Released: Feb-03-2000
+ - added Diamond Viper II Z200 video card
+ - added Micro-Star 8802, 8806, 8807, 8808, 8809 video cards
+ - fixed COM port PnP devices detection
+
+Version: 1081A - Released: Jan-13-2000
+ - added 3Dfx Velocity 100, Velocity 200 video cards
+ - added Diamond SpeedStar A200, Stealth III S540 Xtreme video cards
+ - added ELSA GLoria II, GLoria II-32, GLoria II-64, Erazor Xý video cards
+ - added Giga-Byte GA-600, GA-612, GA-MG400 video cards
+ - added Leadtek WinFast 3D GeForce256 DDR video card
+ - added 3D accelerator info for GeForce 256, Quadro, Savage2000
+ - added chipset information for VIA 694X chipset
+ - added motherboard model detection via Award BIOS message
+ - added 30 AOpen motherboard models
+ - new MIPS16, MIPSPO, MMMIPS & M3DIPS to measure real speed of Athlon
+ - fixed SB PCI128 detection
+ - fixed Cyrix MII detection
+ - fixed Intel Triton chipset info
+ - fixed BIOS support for over 8 GB hard disks
+
+Version: 1080A - Released: Dec-21-1999
+ - added AMD Athlon K75 (Athlon 0.18 micron)
+ - added Rise mP6 0.18 micron
+ - added nVIDIA GeForce 256 DDR video chipset
+ - added ATI Rage128 4x, 3D-Rage XC, 3D-Rage XL video chipsets
+ - added ATI 3D-Rage L Mobility, ATI 3D-Rage P/M Mobility video chipsets
+ - added Asus V6800 DDR video card
+ - added Creative SB PCI512 sound card
+ - added physical CPU info for K75 and Rise mP6 0.18 micron
+ - added chipset information for ALi M1621 Apollo Pro chipset
+ - added Win95/Win98/WinNT/Win2000 network drive detection
+ - added BIOS support for over 8 GB hard disks
+ - fixed K6/K6-2/K6-III cache benchmarks
+
+Version: 1075A - Released: Nov-09-1999
+ - added 3Dfx Voodoo3 3500 TV, Canopus SPECTRA 7400 video cards
+ - added Creative SB Live! Player sound card
+ - added SoftMenu & JumperFree BIOS detection
+ - added physical CPU info for Coppermine
+ - added chipset information for i810e Whitney chipset
+ - fixed nVIDIA Vanta memory size
+ - fixed VIA 586B SMBus detection
+
+Version: 1074A - Released: Oct-14-1999
+ - added Intel Pentium IIIE (Pentium III with integrated 256K L2 cache)
+ - added AMD Athlon Ultra (Athlon with full speed L2 cache)
+ - fixed Pentium IIIE L2 cache size
+
+Version: 1073A - Released: Oct-03-1999
+ - added CPU multiplier detection for AMD Athlon
+ - added Athlon L2 cache speed 1/3
+ - added Athlon motherboards & info: BCM QS750, FIC SD-11, GA-7IX, MS-6167
+ - added nVIDIA Crush, GeForce 256, Quadro, TNT2 Pro video chipsets
+ - added ATI Rage128 Pro, S3 Savage2000 video chipsets
+ - added Asus V6600, AGP-V3800C, AGP-V3800M, AGP-V3800U video cards
+ - added Asus PCI-V3800, PCI-V3800U video cards
+ - added Canopus Total3D 128V & SPECTRA 2500 video cards
+ - added Creative GeForce Annihilator, Diamond Viper 2 video cards
+ - added ELSA Erazor X, Guillemot Maxi Gamer Prophet video cards
+ - added Giga-Byte GA-620, GA-622, GA-630, GA-650, GA-660 video cards
+ - added Leadtek WinFast 3D S320, S320 II, S320 II Ultra, S325 video cards
+ - added Leadtek WinFast 3D GeForce256 video card
+ - added Matrox Millennium G400 DualHead Max & Marvel G400 video cards
+ - added Matrox Millennium G250 LE video card
+ - added chipset information for AMD-750 Irongate chipset
+ - added detection of AMD-755 south bridge
+ - added intelligent CPU clock adjustment
+ - added support for PC166 & PC200 SDRAM
+ - added Windows Millennium detection
+ - added ACPI detection
+ - added PCI IRQ Routing Table detection
+ - added more comparison data to MIPS16/MIPS32/MIPSPO/FPU24/FPU64
+ - fixed CD minimum read speed measurement
+ - fixed Award BIOS message string detection
+ - fixed Sound Blaster OEM string detection
+ - fixed i810 chipset info
+ - fixed Athlon clock rate
+
+Version: 1071A - Released: Aug-31-1999
+ - added 3Dfx Voodoo Rush 3D accelerator
+ - added Award BIOS message string detection
+ - added Guillemot Maxi Gamer Xentor & Maxi Gamer Xentor 32 video cards
+ - added Guillemot Maxi Gamer Phoenix & Maxi Gamer Phoenix 2 video cards
+ - added several new entry to the monitor info database
+ - added sensor support for Abit BP6 motherboard
+
+Version: 1070A - Released: Aug-24-1999
+ - added nVIDIA RIVA TNT2 Model 64 video chipset
+ - added Hercules Dynamite TNT2 M64 & ULTRA video cards
+ - added Sound Blaster OEM string detection
+ - added ESS AudioDrive type detection
+ - added VESA DDC monitor max. resolution, horizontal & vertical frequency
+ - added VESA DDC monitor supported display modes list
+ - fixed SDRAM clock speed detection
+ - fixed Savage3D & Savage4 3D accelerator info
+ - fixed VT82C686A sensor info
+
+Version: 1068A - Released: Aug-16-1999
+ - added AS99127F sensor
+ - added Award BIOS type & OEM string detection
+ - added chipset information for VIA Apollo Pro133 chipset
+ - fixed SiS 530 chipset L2 cache size
+ - fixed VIA Apollo Pro Plus/133 detection
+ - fixed ALi chipset SMBus lockup
+
+Version: 1066A - Released: Aug-15-1999
+ - added LPT PnP device support
+ - added motherboard model detection via multiprocessor info
+ - added SDRAM clock speed detection
+ - added several new sensors (LM75, LM79, MX1617, W83782D etc.)
+ - added chipset information for VIA Apollo Pro Plus chipset
+ - added total hard disk capacity via EIDE autodetection
+ - added SMBus support for Intel PIIX4 & ICH, VIA 596 & 686, ALi 7101
+ - added physical CPU info for Rise mP6
+ - fixed UDMA mode detection
+ - fixed TNT2 & TNT2 Ultra detection
+ - fixed TNT2 Ultra memory size
+ - fixed cache size detection via cache benchmarks
+ - fixed VIA Apollo Pro chipset information
+ - fixed VESA DDC detection
+ - fixed sensor info
+
+Version: 1055A - Released: Aug-01-1999
+ - added CPU multiplier detection for IDT WinChip 2, WinChip 2A & WinChip 3
+ - added intuitive CPU multiplier detection
+ - added Trident Blade3D, Diamond Viper V730 & V770 Ultra video cards
+ - added Intel Whitney chipset integrated i752 video adapter
+ - added Creative Labs SB 64V, Crystal Sound CS4232 & CS4236 sound chips
+ - added Diamond Monster Sound, C-Media CMI8338 & CMI8738 sound chips
+ - added chipset information for Intel Whitney (i810) & Camino (i820) chipsets
+ - added chipset information for SiS 530, SiS 620 & VIA MVP4 chipsets
+ - added parallel port type detection
+ - added support for Winbond W83781D sensor
+ - added 128-bit SSE read/write/move support for memory benchmark
+ - added cache benchmark & cacheable memory range detection
+ - added built-in font sets
+ - fixed Athlon L2 cache speed
+ - fixed VIA Apollo Pro detection
+ - fixed ALi M1541 L2 cache size
+ - fixed DRAM slot list
+
+Version: 1040A - Released: Jul-12-1999
+ - added AMD Athlon
+ - added Cyrix-VIA MII-PR400 & PR433
+ - added Matrox Millennium G400 & G400 DualHead video cards
+ - added Creative Labs 3D Blaster Savage4 video card
+ - added 3D accelerator info for G400, Savage4 & Voodoo3
+ - added maximum transfer mode to HDD autodetect
+ - added detection of VMware
+ - added 280, 285, 475, 523 & 525 MHz clocks
+ - added 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900 & 2000 MHz clocks
+ - added tweaks for better support of Linux DOSEMU & VMWare
+ - added tips & tricks
+ - added built-in help system
+ - new MIPSxx, FPUxx, MMMIPS, M3DIPS: all works fine up to P3000-like speed
+
+Version: 1030 beta - Released: Jun-12-1999
+ - added IDT WinChip 2A & WinChip 3
+ - added detection of AMD Enhanced 3DNow! instructions
+ - added 190, 480, 560, 616, 620 & 672 MHz clocks
+ - fixed 3DNow! detection
+
+Version: 1029 beta - Released: Apr-25-1999
+ - added report of maximum allowed frequency (for Intel Pentium III+ CPUs)
+ - added 3Dfx Voodoo3 2000 & 3000, STB Lightspeed 3300 video cards
+ - fixed SiS 559x chipset L2 cache size
+ - fixed K6-III L2 cache speed
+ - fixed PCI device list
+
+Version: 1028 beta - Released: Apr-18-1999
+ - added Intel Coppermine (Pentium III with integrated 256K L2 cache)
+ - added ASPI devices (CD-ROM, CD-R, ZIP drive etc.) list to summary page
+ - fixed Nx586 clock rate
+
+Version: 1027 beta - Released: Apr-11-1999
+ - added CPU multiplier detection for P6/P2/Celeron/CeleronA/PIII
+ - added CPU multiplier detection for 6x86/6x86MX/MII
+ - added CPU multiplier detection for K6-2-CXT/K6-III
+ - added COM port PnP device support
+ - added chipset information for VIA Apollo Pro chipset
+
+Version: 1026 beta - Released: Apr-08-1999
+ - added S3 Savage4 & Matrox G400 video chipsets
+ - added Diamond Stealth III S540 video card
+ - added autodetection of large HDDs
+ - added physical CPU info for K7, K6-III & Mobile K6-2
+ - fixed NexGen CPU detection
+ - fixed L2 cache speed detection
+ - fixed Pentium III Xeon detection
+
+Version: 1025 beta - Released: Apr-06-1999
+ - added ESS ES1969 & SB PCI128 sound cards
+ - added Diamond Sonic Impact S90 & Monster Sound MX300 sound cards
+ - added ViewTop Titan 4000 & 5000 video cards
+
+Version: 1024 beta - Released: Apr-04-1999
+ - added Intel Pentium III Xeon (Pentium II Xeon with SSE)
+ - added IA Processor Serial Number
+ - added chipset information for SiS 600 chipset
+ - added Hercules Dynamite TNT/2 video card
+ - fixed Asus V3800TNT & Diamond Viper V550 memory size
+ - fixed 3D accelerator info
+ - fixed compact disc info
+ - fixed LM78 info
+
+Version: 1023 beta - Released: Mar-28-1999
+ - added nVIDIA RIVA TNT2 & Vanta video chipsets
+ - added Diamond Viper V770 & Asus V3800TNT2 video cards
+ - added SB Live! Value sound card
+ - added precise detection of DRAM modules
+ - added multiple comparison pages to MIPS16/MIPS32/MIPSPO/FPU24/FPU64
+
+Version: 1022 beta - Released: Feb-28-1999
+ - added Intel Dixon (Pentium II with integrated 256K L2 cache)
+ - added AMD-K6-III (K6-2 with integrated L2 cache)
+ - added L3 cache size detection for K6-III
+ - added some new VESA DDC compliant monitors
+ - fixed modem detection
+ - fixed PCI device search
+ - fixed OpenDOS EMM386 exception
+
+Version: 1021 beta - Released: Feb-07-1999
+ - added Intel Pentium III (Pentium II with KNI/SSE)
+ - fixed Xeon detection
+ - fixed i450GX, i450KX & i450NX chipset info
+ - fixed identification of AMI BIOS based motherboards
+
+Version: 1020 beta - Released: Jan-31-1999
+ - added 380 & 420 MHz clocks
+ - fixed RIVA128ZX detection
+
+Version: 1018 beta - Released: Jan-15-1999
+ - added physical CPU info for Tonga & Mobile K6
+ - added Rendition Verite 1000 & 2200 video chipsets
+ - added 460 MHz clock
+ - added ESS 1978SA sound chip
+ - fixed system PnP devices list
+
+Version: 1017 beta - Released: Dec-31-1998
+ - added WinChip C2 (C6 with 3DNow!)
+ - added physical CPU info for Socket370 Celeron-A
+ - added physical motherboard info
+ - added partition type NTFS
+ - fixed NexGen CPU detection
+
+Version: 1013 beta - Released: Dec-12-1998
+ - added K6-2-CXT (K6-2 with advanced core)
+ - added Rise mP6 (new CPU with IA MMX)
+ - added 5 new 3D accelerators
+ - added 3Dfx Voodoo3 chipset
+ - added Aureal Vortex sound chip
+ - added SB Live! sound card
+ - added physical CPU info
+ - added new method to detect Y2K flaw
+
+Version: 1012 beta - Released: Nov-15-1998
+ - added new method to identify newer AMI BIOS based motherboards
+ - fixed NE1000/NE2000 detection
+
+Version: 1011 beta - Released: Nov-08-1998
+ - added 6 new 3D accelerators
+ - added 158, 310 & 315 MHz clocks
+
+Version: 1009 beta - Released: Oct-25-1998
+ - added Pentium II Mobile (Tonga)
+ - added new method to detect mobile CPUs
+ - added CMI 8330 & Yamaha DS-XG sound cards
+ - more accurate Cyrix 6x86MX PR-ratings
+ - new HDD read speed routines measuring linear & buffered read speed
+ - fixed WinChip C6 L1 cache size
+
+Version: 1008 beta - Released: Oct-17-1998
+ - added 3D accelerator info
+ - added AdLib MSC32 3D sound card
+ - added 345, 360 & 440 MHz clocks
+ - new comparison (MIPS16+MIPS32+2.5*FPU24+2.5*FPU64)
+ - fixed PCI MXIC video cards detection
+
+Version: 1006 beta - Released: Oct-05-1998
+ - added nVIDIA RIVA TNT video chipset
+ - added 448 & 504 MHz clocks for Celeron(A)
+ - added new method to measure HDD maximum access
+ - added 22 video card brands
+ - new FPU24 & FPU64 to measure real speed of P6/P2/Celeron
+ - new comparison (MIPS16+MIPS32+FPU24+FPU64)
+ - fixed AWE32/64 memory detection
+ - fixed Celeron-A detection
+
+Version: 1000 beta - Released: Sep-21-1998
+ - added support for ATAPI DVD-ROM, DVD-RAM, ZIP-100, LS-120 drives
+ - added detection of mono VGA displays
+ - added 150 video card brands
+ - added 7 new network cards
+ - added hardware address and IRQ detection for network cards
+ - added 24-bit precision FPU speed test called FPU24
+ - added S3 SonicVibes & Ensoniq AudioPCI sound cards
+ - added detection for multiple 3D accelerators
+ - fixed NE2000 detection
+
+Version: 997 beta - Released: Aug-31-1998
+ - added detection for AMI BIOS based motherboards
+ - added ESS ES1968 Maestro 2 sound card
+ - added L2 cache speed detection for P6/P2 family
+ - fixed K5 detection
+
+Version: 996 beta - Released: Aug-25-1998
+ - added Intel Katmai (Pentium II with KNI)
+ - fixed Xeon detection
+
+Version: 995 beta - Released: Aug-17-1998
+ - added support for Commodore Amiga machines
+ - added Yamaha OPL3-SA & OPL3-SAx PnP sound cards
+ - fixed phantom PCI devices detection on non-PCI machines
+ - fixed modem detection
+
+Version: 994 beta - Released: Aug-16-1998
+ - added chipset information for SiS 5591 chipset
+ - added 32-bit MIPS to measure the power of P6/P2 CPUs
+ - added GUS Extreme sound card
+ - added Matrox G100, Matrox G200, Intel i740 video cards
+ - added LM78 info
+ - added some new PCI & PnP devices
+ - fixed modem detection
+ - fixed VXPro+ (VIA Apollo VPX) chipset info
+ - fixed SiS 5581/5597 chipset info
+ - fixed ALi M1487/1489 chipset info
+
+Version: 993 beta - Released: Aug-04-1998
+ - added chipset information for Intel 430JX chipset
+ - added System Memory Map (SMAP) detection 
+ - added memory size detection by SMAP
+ - added Pentium II L2 cache ECC type detection
+ - added IBM BIOS detection
+ - added memory speed measurement
+ - added 3DNow! benchmark called M3DIPS
+ - new MIPS, MPOIPS, MFPIPS, MMMIPS
+ - fixed WinChip C6 clock rate
+
+Version: 992 beta - Released: Jul-20-1998
+ - fixed AMD 3DNow! detection
+ - fixed SB AWE64 detection
+ - fixed MMXIPS calculation
+
+Version: 991 beta - Released: Jul-19-1998
+ - added some new ISA/VL SCSI host adapters
+ - added detection of Norton Commander
+ - added many new country codes
+ - fixed AMD 3DNow! detection
+ - fixed K6-2 clock rate
+ - fixed Aladdin V chipset info
+
+Version: 990 beta - Released: Jul-15-1998
+ - added Intel Dixon (Celeron with 256K cache)
+ - added i440GX & i450NX chipsets
+ - added SiS 85C501, 5101 & 5581 chipsets
+ - added Registered SDRAM memory module type
+ - added Cyrix Extended MMX detection
+ - added iDX2 CPUID and iP54C MSR#14h bug
+ - added K6-3 L2 cache size detection
+ - added Matrox Mystique 220 video card
+ - added SB 16 mixer info
+ - added Award BIOS CMOS setup informations
+ - added AMI PCI BIOS-based motherboard ID detection
+ - added 40 new Intel motherboards
+ - added MMXIPS (MMX benchmark)
+ - new TSC CPU clock calculation
+ - new MIPS: works fine up to 1700 MIPS (÷Pentium 2200 MHz)
+ - new FPUB: works fine up to 9200 FPUB (÷Pentium 4600 MHz)
+ - fixed K6 FMUL bug detection
+ - fixed Pentium II Xeon CPU detection
+ - fixed i440BX, VIA VP3 and MVP3 chipset info
+ - fixed hard disk Ultra DMA support detection
+ - fixed ASPI SCSI devices list
+ - fixed TBDriver detection
+
+Version: 989 beta - Released: Jul-01-1998
+ - added Intel Mendocino (Celeron with 128K cache)
+ - added Intel Deschutes Mobile (233 & 266 MHz)
+ - added Intel Pentium MMX Mobile
+ - added AMD K7
+ - added Cyrix M-II (6x86MX >208 MHz)
+ - added IDT WinChip C6+
+ - added CPU alias
+ - added detection of AMD 3DNow! instructions
+ - added some new bits of CPUID feature word
+ - added K6 FMUL bug
+ - added hard disk Ultra DMA support detection
+ - added ATAPI device type & DMA support to ATAPI auto detection
+ - added some new SVGA chipsets
+ - new name of K6 3D is K6-2
+ - new name of K6+ 3D is K6-3
+ - fixed PCI devices list
+ - fixed 3DLabs Permedia and Permedia2 detection
+ - fixed Tseng ET6100 detection
+ - fixed WinChip C6 CPU detection
+ - fixed FIST bug detection
+ - fixed VIA VP3 and MVP3 chipset info
+
+Version: 986 beta - Released: May-24-1998
+ - added RAM type 'Mixed'
+
+Version: 985 beta - Released: May-03-1998
+ - added Pentium II Xeon CPU
+ - fixed DMI detection
+ - fixed Intel Deschutes detection
+
+Version: 984 beta - Released: Apr-23-1998
+ - added DMI informations
+ - added i440EX & i440BX chipsets
+ - added Pentium-optimized MIPS
+ - new MIPS page
+ - fixed Intel Celeron detection
+
+Version: 983 beta - Released: Apr-14-1998
+ - added Intel Celeron (Pentium II without L2 cache)
+ - added Intel Deschutes (Pentium II with >512K L2 cache)
+ - added MMX2 detection
+ - added SDRAM II memory module type
+ - added Intel chipsets: Aries, Mercury/Neptune, Orion, Saturn
+ - added VIA chipsets: VT82C597VP, VT82C598VP, VT82C680 Apollo P6
+ - added misc chipsets: Acer M1489/M1511/M1521/M1541, SiS496/5511/5596/5597
+ - added benchmarks for 1280x1024x64K mode
+ - added CD-ROM manufacturer identification
+ - added CPU clock speed calculation in multitasking environments
+ - added ViBRA16X sound card
+ - added some new PCI devices and SVGA chipsets
+ - fixed 6x86 and 6x86MX PR-ratings
+
+Version: 982 beta - Released: Apr-05-1998
+ - added U486Sx CPU
+ - added seven Matrox 3D accelerators
+ - added some clock rates (up to 1000 MHz)
+ - added benchmarks for 800x600x64K, 1024x768x64K, 1280x1024x256 modes
+ - fixed modem detection code
+ - fixed some clock rates
+
+Version: 981 beta - Released: Mar-22-1998
+ - added ESS Maestro sound card
+ - added ten new 3D accelerators
+ - added some new PCI devices and video chipsets
+ - fixed VESA DDC monitor serial number
+
+Version: 980 beta - Released: Mar-15-1998
+ - added EGA/VGA screen frequency calculation
+ - added some new PnP and PCI devices
+
+Version: 979 beta - Released: Mar-08-1998
+ - added Acer M1531 chipset info
+ - added Cyrix GXm, AMD K6 3D and AMD K6+ 3D CPUs
+ - fixed VIA Apollo chipset info
+
+Version: 978 beta - Released: Mar-01-1998
+ - added 3Dfx Voodoo2 3D accelerator
+ - added GUS Ace and SB AWE64 Gold sound cards
+ - added Aztech Sound Galaxy Nova 16, Pro 16 and Washington 16 sound cards
+ - added some new PnP and PCI devices
+ - added unknown ISA PnP device detection
+ - fixed VIA Apollo chipset info
+ - fixed CD maximum read speed calculation
+ - fixed ISA PnP detection
+
+Version: 972 beta - Released: Feb-22-1998
+ - added VIA Apollo chipset info
+ - added partition type FAT32
+ - added ISA PnP safe mode
+ - added nVIDIA RIVA128 detection
+ - fixed many bugs in the chipset info routines
+ - fixed many Cx6x86MX related bugs
+ - fixed Year2000-bug lockup under OS/2
+ - fixed P2 'division by zero' bug
+
+Version: 971 beta - Released: Feb-15-1998
+ - added VESA DDC monitor info
+ - added some mainboard names
+ - added summary page to report file
+ - fixed Alliance video chipset bug
+ - fixed free environment space lockup
+
+Version: 970 beta - Released: Feb-08-1998
+ - added SiS video chipsets
+ - added K6 PR2 rating (PR2-xxx)
+ - added 6x86MX PRxxxGP rating (PRxxxGP)
+ - added maximum CD read speed
+ - new performance rating calculation on systems with more than one CPU
+ - fixed many CD-ROM related bugs
+ - fixed a bug in the SB version & DSP copyright detection
+
+Version: 967 beta - Released: Dec-21-1997
+ - added Creative SB 32 and ViBRA16C sound cards
+ - added twelve 3D accelerators
+ - added ISA PnP device list
+ - fixed AWE64 detection
+ - fixed 6x86MX clock rate
+
+Version: 950 beta - Released: Nov-30-1997
+ - added motherboard model detection
+ - added PnP system device nodes list
+ - added Enhanced AMD DX4, WB Enh Intel DX2, WB Enh Intel DX4 CPU
+ - added Pentium Mobile CPU
+ - added Alliance video chipsets
+ - added OPTi 82C928, 82C929, 82C930, 82C931 sound chips
+ - added Sound Blaster DSP copyright string
+ - new FPUB: slower but more accurate
+ - fixed AWE32 routines
+ - fixed Cyrix 6x86MX (M2) internal cache size
+
+Version: 942 beta - Released: Nov-16-1997
+ - added Pentium Classic/MMX LOCK-CMPXCHG8B bug
+ - fixed some errors under Linux
+ - Sound safe mode automaticially activated under Linux
+
+Version: 941 beta - Released: Nov-10-1997
+ - added SB AWE64 sound card
+ - fixed AWE32 routines
+ - fixed iTX chipset DRAM type bug
+
+Version: 940 beta - Released: Oct-25-1997
+ - added IDT WinChip C6 CPU
+ - added Ethernet & MSR safe mode
+ - fixed Vertos ATAPI autodetection
+ - fixed FPU detection
+ - fixed phantom Jazz sound card bug
+
+Version: 939 beta - Released: Oct-12-1997
+ - added FPUB(ench) value, works fine up to 3000 FPUB (÷Pentium 1400 MHz)
+ - added chipset information for Intel 440LX chipset
+ - fixed FPU detection
+ - fixed phantom Natoma chipset bug
+ - fixed Cirrus 'stack-overflow' bug
+
+Version: 938 beta - Released: Oct-05-1997
+ - added video benchmark for 640x480x64K VESA mode
+ - added Advanced Graphics Port (AGP)
+ - added AMD K5-PR150 and PR200
+ - fixed Pentium MMX clock rate
+
+Version: 934 beta - Released: Sep-26-1997
+ - added chipset information for AMD 640 chipset
+ - added Cyrix MediaGX (CxGx86) and 6x86L CPU
+ - fixed free environment exception problem
+ - fixed Cyrix 6x86MX (M2) detecting
+
+Version: 930 beta - Released: Sep-14-1997
+ - added chipset information for Intel 430TX chipset
+ - added Windows 98 (Memphis) detection
+ - fixed SVGA VESA 2.0 bug
+ - fixed LPT ports
+ - fixed hard disk info
+ - fixed Cirrus identification
+ - fixed video speed benchmark
+ - fixed some K6 related bugs
+
+Version: 929 beta - Released: Jul-14-1997
+ - added country code for Russia
+ - fixed some benchmarks
+ - fixed GUS environment variable info
+ - fixed Windows NT and Linux problems
+ - fixed ASPI SCSI devices list
+ - fixed total XMS bug
+ - fixed Intel chipset info
+
+Version: 925 beta - Released: Jun-29-1997
+ - added GUS PnP mixer info
+ - added CD-QUICK cache and size
+ - fixed SVGA VESA detections
+ - fixed UNIVBE detection
+
+Version: 922 beta - Released: Jun-24-1997
+ - added PUSH-POP (POP fail after PUSH) bug
+ - added Media Vision Jazz sound card & TSR mixer
+ - new Pentium optimized mix
+ - fixed Windows NT detection
+ - fixed AST BIOS detection
+ - fixed total and free XMS bug over 64 MB
+ - fixed total memory problem over 64 MB: all chipsets
+
+Version: 917 beta - Released: Jun-21-1997
+ - added summary page
+ - added report summary switch /RS
+ - added single page dumping with F5 key
+ - added detection of RTC clock Year2000 bug
+ - fixed GUS DRAM size and revision
+ - fixed S3 Trio64 V2/DX and Tseng6000 memory size
+ - fixed Cyrix 5x86 detection and clock rate
+ - fixed Pentium Pro/Pentium II MSR problem
+
+Version: 913 beta - Released: Jun-12-1997
+ - added chipset information for Intel 440FX Natoma chipset
+ - added BEDO RAM detection
+ - added Pentium Pro MIPS line
+ - added modem safe mode
+ - added motherboard name
+ - fixed Pentium Pro detection, external cache size and clock rate
+ - fixed multiprocessor detection
+ - fixed total memory problem over 64 MB: only Triton & Natoma chipsets
+
+Version: 907 beta - Released: Jun-07-1997
+ - added Win95 OSR2 and OS/2 v4.x identification
+ - added filename specification to /R switch
+ - added DK.COM resident macro utility
+ - added SCSI safe mode (for ASPI lockup)
+ - added Pentium Pro/Pentium II safe mode (by switching cpu safe ON)
+ - fixed Pentium Pro/Pentium II MSR problem
+
+Version: 906 beta - Released: Jun-03-1997
+ - added K5 P rating (PRxxx)
+ - added 6x86 P rating (Pxxx+)
+ - added 6x86 MIPS line
+ - added 6x86MX ("M2" 6x86 MMX) CPU
+ - added clock rates: 116, 188, 208 & 225 MHz
+ - fixed iTritonFX chipset DRAM type bug
+ - fixed video card memory size problem
+ - fixed 6x86 detection, clock rate and CPUID enabler
+ - fixed 6k86 detection
+
+Version: 905 beta - Released: May-25-1997
+ - added some new PCI devices
+ - added Pentium Pro/Pentium II FIST (Dan-0411) bug detection
+ - fixed iTritonVX chipset DRAM list bug
+ - fixed total memory problem over 32 MB
+
+Version: 904 beta - Released: May-18-1997
+ - added 27 new TSRs and the Headroom task switcher
+ - added 5 new memory resident viruses
+ - new MIPS: works fine up to 1300 MIPS (÷Pentium 1400 MHz)
+ - fixed false detection of 10NET under Windows 95
+
+Version: 877 beta - Released: Apr-11-1997
+ - added open files list
+ - added ASPI SCSI devices list
+ - added clock rates: 250, 350, 450 & 500 MHz
+ - fixed external cache memory size and type
+ - fixed iTriton chipset info
+ - fixed DOS BUFFERS setting calculation
+
+Version: 874 beta - Released: Apr-06-1997
+ - added chipset information for Intel 430FX/MX/VX/HX chipsets
+ - added Pentium II
+ - added AST BIOS detection
+ - added 99 Pentium Pro model specific registers
+ - added clock rates for Pentium II: 400 & 433 MHz
+ - new MIPS and performance rating calculation
+ - fixed 6x86 detection
+ - fixed Gravis Ultrasound memory problem
+ - fixed K5 model specific register problem
+ - fixed K6 internal cache size bug
+
+Version: 870 beta - Released: Dec-19-1996
+ - first public release

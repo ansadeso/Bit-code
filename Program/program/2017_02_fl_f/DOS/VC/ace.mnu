@@ -1,0 +1,23 @@
+N:      Compress with ACE (input archive name)
+        ACE a ![(path) archive name] @!@
+        
+A:      Compress with ACE (auto archive name)
+        ACE a !~ @!@
+
+L:      Compress files from current selected list
+        ACE a ![(path) archive name] @!~.!
+
+B:      Compress into 1.38 MByte blocks with ACE
+        ACE a -v1456 ![(path) archive name] @!@
+
+V:      Compress as Multi Volume Archive with ACE
+        ACE a -v![Volume Size in kB  (nothing for autodetecting)] ![(path) archive name] @!@
+
+F3:     List all files in current ACE archive
+        ACE v !.!
+
+F9:     Run ACE GUI
+        ACE.EXE
+
+F10:	Main Menu
+	vc.mnu

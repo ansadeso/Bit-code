@@ -1,0 +1,79 @@
+﻿color white/black yellow/cyan white/black
+timeout 10
+default 2
+# setvbe 800x600x32
+# setvbe 1024x768x32
+
+
+# password qwerty
+# configfile (hd0,0)/boot/grub/menu.lst
+
+# Файлы GRUB4DOS
+# menu.lst
+
+title [0] Boot HDD#0\nBoot from HDD#0
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+title [1] Boot HDD#1\nBoot from HDD#1
+map (hd1) (hd0)
+map --rehook
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+title [2] AdminPE (x86/x64)\nBoot WinPE5 TechAdmin (x86/x64)
+find --set-root --ignore-floppies /bootmgr
+chainloader /bootmgr
+
+iftitle [if exist /S386/SETUPLDR.BIN] [3] SonyaPE Rescue CD\nBoot SonyaPE LiveCD
+chainloader /S386/SETUPLDR.BIN
+
+iftitle [if exist /io.sys] [4]  MS-DOS
+find --set-root /io.sys
+chainloader /io.sys
+
+iftitle [if exist /boot/img/hiren.ima] [5] Hirens BootCD 15.1 Rus
+map --mem /boot/img/hiren.ima (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title [6] Main Menu\nEnter to main menu - graphic mode
+lock
+find --set-root /boot/grub/gfxmenu.lst
+configfile /boot/grub/gfxmenu.lst
+
+title [7] Setup NT Systems\nEnter to NT-systems setup menu
+lock
+find --set-root /boot/grub/setupntmenu.lst
+configfile /boot/grub/setupntmenu.lst
+
+title [8] Rescue NT Systems\nEnter to Live Rescue tools menu
+lock
+find --set-root /boot/grub/rescuentmenu.lst
+configfile /boot/grub/rescuentmenu.lst
+
+title [9] Hard Disk Tools\nEnter to hard disk tools menu
+lock
+find --set-root /boot/grub/hddmenu.lst
+configfile /boot/grub/hddmenu.lst
+
+title [10] Advanced Tools\nEnter to advanced tools menu
+lock
+configfile /boot/grub/toolsmenu.lst
+
+title [11] Text Menu\nEnter to main menu - text mode
+lock
+configfile /boot/grub/txtmenu.lst
+
+title [12] Boot menu\nEnter to Main boot menu
+configfile /boot/grub/bootmenu.lst
+
+title [13] Restart PC\nRestart the system
+reboot
+
+title [14] Shutdown Power\nShutdown PC
+halt
+

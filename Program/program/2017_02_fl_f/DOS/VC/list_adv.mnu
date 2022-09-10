@@ -1,0 +1,104 @@
+X:      ... Back
+        LIST.MNU
+
+C:      Create the list of files (VC.LST) (Short names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "!~@"
+        IF EXIST COMBILST.LST combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        IF NOT EXIST COMBILST.LST combilst.exe "!~@" "!1"
+        @COPY combilst.lst !:!~\VC.LST
+        @del combilst.lst
+	@ECHO The list of files was created in VC.LST file
+        !:
+        cd !~\.
+
+R:      Create the list of files with relative path (long or short)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        @REM Do not remove this line ![(path) list name  (to save long names activate the view of LFNs)]
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "!@"
+        IF EXIST COMBILST.LST combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        IF NOT EXIST COMBILST.LST combilst.exe "!@" "!2"
+        @COPY combilst.lst !0
+        @del combilst.lst
+	@ECHO The list of files was created in !0
+
+S:      Create list with full path (no drive letter) (Short names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        @REM Do not remove this line ![(path) list name]
+        combilst.exe !:!~\ !~@
+        flstedit.exe combilst.lst /noDrive
+        @del combilst.lst
+        @ren flstedit.lst combilst.lst
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "combilst.lst"
+        combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        @COPY combilst.lst !0
+        @del combilst.lst
+        @del flstedit.lst
+	@ECHO The list of files was created in !0
+
+L:      Create list with full path (no drive letter) (Long names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        @REM Do not remove this line ![(path) list name    (the view of long names must be activated)]
+        combilst.exe "!:!\" "!@"
+        flstedit.exe combilst.lst /noDrive
+        @del combilst.lst
+        @ren flstedit.lst combilst.lst
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "combilst.lst"
+        combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        @COPY combilst.lst !0
+        @del combilst.lst
+        @del flstedit.lst
+	@ECHO The list of files was created in !0
+
+D:      Create list with full path incl. drive letter (Short names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        @REM Do not remove this line ![(path) list name]
+        combilst.exe !:!~\ !~@
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "combilst.lst"
+        combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        @COPY combilst.lst !0
+        @del combilst.lst
+	@ECHO The list of files was created in !0
+
+F:      Create list with full path incl. drive letter (Long names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        @del combilst.lst
+        @REM Do not remove this line ![(path) list name    (the view of long names must be activated)]
+        combilst.exe "!:!\" "!@"
+        combilst.exe "![Add Text String before every line (Cannot contain " )]" "combilst.lst"
+        combilst.exe "combilst.lst" "![Add Text String after every line (Cannot contain " )]"
+        @COPY combilst.lst !0
+        @del combilst.lst
+	@ECHO The list of files was created in !0
+
+F10:	Main Menu
+	vc.mnu

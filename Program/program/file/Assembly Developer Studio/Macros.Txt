@@ -1,0 +1,49 @@
+; ----------------------------------------------------------------------------
+; Macro begins with line: [...macro title here...]
+; Macro ends with line: [end]
+; Parameters are enclosed in '%': example - %ProcName%
+; ----------------------------------------------------------------------------
+[Implementation of VMT in Data Segment]
+	VtblImpl%ClassName%	VtblDef%ClassName% \
+		<%ClassName%Constructor, \
+		%ClassName%Destructor>
+[end]
+
+[Definition of VMT]
+VtblDef%ClassName% Struc
+	pfnConstructor	Dd	?
+	pfnDestructor	Dd	?
+	; --- Append the virtual methods here...
+VtblDef%ClassName% EndS
+[end]
+
+[Function with local 'this' pointer]
+; ----------------------------------------------------------------------------
+; INPUT:
+;	EBX <= 'this'
+; ----------------------------------------------------------------------------
+%ProcName% Proc
+	Local	pThis:Dword=VarSize
+	Enter	VarSize, 0
+	mov	pThis, ebx
+
+@_%ProcName%_Exit:
+	Leave
+	ret
+%ProcName% EndP
+[end]
+
+[Function with local variables]
+; ----------------------------------------------------------------------------
+; INPUT:
+; OUTPUT:
+; ----------------------------------------------------------------------------
+%ProcName% Proc
+	Local	Var:Dword=VarSize
+	Enter	VarSize, 0
+
+@_%ProcName%_Exit:
+	Leave
+	ret
+%ProcName% EndP
+[end]

@@ -1,0 +1,20 @@
+Contents of DE_30.ZIP  (DE [Disk Editor] V3.0 by Jim Webster)
+Note: This program is a freebee!
+
+CONTENTS.TXT ---- This file.
+DSKSTATS.FRM ---- A personal "Request For Drive Spec Information" form, if
+                  DE is having trouble reading a drive on your system.
+                  Is 2 single-sided sheets long.
+DE_MINI .DOC ---- Scaled down DOC file. Is 3 single-sided sheets long.
+PRINT_IT.BAT ---- Batch file to print the full-scale DOC file, being
+                  DE1.DOC thru DE4.DOC. Is 46 single-sided sheets long.
+                  Allows you to abort the batch file, if desired.
+DE1     .DOC ---- DOC file 1 of 4. Pages  1-13.
+DE2     .DOC ---- DOC file 2 of 4. Pages 14-25.
+DE3     .DOC ---- DOC file 3 of 4. Pages 26-36.
+DE4     .DOC ---- DOC file 4 of 4. Pages 37-46.
+DE      .EXE ---- The executable file.
+DEHELP  .BIN ---- Binary help file required by DE for the help screens, etc.
+MYCURSOR.COM ---- Simple COM program that restores the command line cursor.
+NOMOUSE .COM ---- Simple COM program that disables a rougue mouse cursor.
+

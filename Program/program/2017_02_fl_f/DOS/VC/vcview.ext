@@ -1,0 +1,32 @@
+' !, %       - file name without extension
+' !.!, %.%   - file name
+' !\, %\     - path
+' !:, %:     - drive
+' !@, %@     - file list
+' !~, %~     - short file name without extension
+' !~.!, %~.% - short file name
+' !~\, %~\   - short path
+' !~@, %~@   - list of short file names
+' ![text]    - input string
+' !0...!9    - use input string #0...9 again
+
+lzh:
+*.ice:
+arj;a0?:
+zip:
+arc:
+pak:
+hyp:
+zoo:
+lim:	arcview.exe
+
+
+
+*:	wpview.exe
+
+jpg:  pictview.exe !~.!
+jpe:  pictview.exe !~.!
+jpeg:  pictview.exe !~.!
+bmp:  pictview.exe !~.!
+gif:  pictview.exe !~.!
+psd:  pictview.exe !~.!

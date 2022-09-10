@@ -1,0 +1,61 @@
+C:	Create the list of files (standard VC.LST) (Short names)
+        @COPY !~@ VC.LST
+	@ECHO The list of files was created in VC.LST file
+
+R:      Create the list of files with relative path (long or short)
+        @COPY !@ ![(path) list name  (to save long names activate the view of LFNs)]
+	@ECHO The list of files was created in !0
+
+S:      Create list with full path (no drive letter) (Short names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe !:!~\ !~@
+        flstedit.exe combilst.lst /noDrive
+        @COPY flstedit.lst ![(path) list name]
+        @del  combilst.lst
+        @del  flstedit.lst
+	@ECHO The list of files was created in !0
+
+L:      Create list with full path (no drive letter) (Long names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!\" "!@"
+        flstedit.exe combilst.lst /noDrive
+        @COPY flstedit.lst ![(path) list name    (the view of long names must be activated)]
+        @del  combilst.lst
+        @del  flstedit.lst
+	@ECHO The list of files was created in !0
+
+D:      Create list with full path incl. drive letter (Short names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe !:!~\ !~@
+        @COPY combilst.lst ![(path) list name]
+        @del  combilst.lst
+	@ECHO The list of files was created in !0
+
+F:      Create list with full path incl. drive letter (Long names)
+        C:
+        %%TEMP%%\
+        cd \
+        cd %%TEMP%%\.
+        cd %%TEMP%%.\
+        combilst.exe "!:!\" "!@"
+        @COPY combilst.lst ![(path) list name    (the view of long names must be activated)]
+        @del  combilst.lst
+	@ECHO The list of files was created in !0
+
+A:      Advanced List: Add Text Strings or Commands to the List...
+        list_adv.mnu
+
+F10:	Main Menu
+	vc.mnu

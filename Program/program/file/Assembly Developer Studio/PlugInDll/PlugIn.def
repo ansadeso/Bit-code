@@ -1,0 +1,5 @@
+LIBRARY PlugIn
+DESCRIPTION "Plug-In Wizard for AsmDev"
+EXPORTS
+	ProvideGUI	@1
+	DoIt	@2

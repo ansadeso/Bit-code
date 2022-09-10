@@ -1,0 +1,479 @@
+PowerQuest PartitionInfo -- DOS engine edition.
+Date Generated: 02/10/2011 11:10:00
+
+CPU: "   "
+CPU Vendor: "GenuineIntel"
+CPU Signature: 00000f65    CPU Features bfebfbff
+
+
+****************************  CONFIG.SYS  ****************************
+
+[COMMON]
+SWITCHES=/F /N
+
+[MENU]
+MENUITEM=GIGASATAIDE, DOS Navigator
+MENUITEM=GHOST, Ghost v8
+MENUITEM=GHOST11, Ghost v11
+MENUITEM=VICTORIA, Victoria v3.5
+MENUITEM=PQPM, PartitionMagic
+MENUITEM=SST, System Speed Test v4.78
+MENUITEM=NONE,NONE
+MENUITEM=RESTART,RESTART PC
+
+[COMMON]
+BREAK=OFF
+DOS=HIGH
+FILES=40
+LASTDRIVE=H
+SHELL=COMMAND.COM /P /E:1024
+country=007,866,DOS\driver\country.sys
+
+[GIGASATAIDE]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+[GHOST]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+[GHOST11]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+[VICTORIA]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+[PQPM]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+[SST]
+DEVICE=DOS\driver\vide-cdd.SYS /D:MSCD000 /C0
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD001 /C1
+DEVICE=DOS\driver\GCDROM.SYS /D:MSCD002 /C2
+
+
+[RESTART]
+
+[NONE]
+
+***************************  AUTOEXEC.BAT  ***************************
+
+IF "%CONFIG%"=="NONE" GOTO NONE
+IF "%CONFIG%"=="SST" GOTO SST
+DOS\driver\MSCDEX.EXE /D:MSCD000 /D:MSCD001 /D:MSCD002
+lh DOS\driver\keyrus.com
+lh DOS\driver\smartdrv.exe
+lh DOS\driver\mouse.com
+set shell=command.com
+SET PATH=C:\DOS
+IF "%CONFIG%"=="GHOST" GOTO GHOST
+IF "%CONFIG%"=="GHOST11" GOTO GHOST11
+IF "%CONFIG%"=="VICTORIA" GOTO VICTORIA
+IF "%CONFIG%"=="PQPM" GOTO PQPM
+IF "%CONFIG%"=="RESTART" GOTO RESTART
+GOTO DN
+
+:NONE
+DOS\driver\SMARTDRV.EXE
+DOS\driver\DOSKEY.COM
+SET DISCMD=/O:GNE
+SET PATH=C:\DOS
+
+:GHOST
+DOS\GHOST\ghost.exe
+GOTO DN
+
+:GHOST11
+DOS\GHOST11\ghost.exe
+GOTO DN
+
+:VICTORIA
+DOS\VICTORIA\vcr352.com
+GOTO DN
+
+:PQPM
+DOS\PQPM\PQMAGIC.EXE
+GOTO DN
+
+:SST
+DOS\SST\SPEEDSYS.EXE
+GOTO DN
+
+:DN
+DOS\DN\DN.com
+
+:RESTART
+DOS\driver\restart.com
+
+****************************  END PREPEND  ***************************
+
+Running Program - C:\DOS\PQPM\PQMAGIC.OVL
+
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+EGeo 0x0006 256 255 63 4126720 0 512
+Extended BIOS calls not used
+
+============================================================================
+Disk 0:  256 Cylinders, 255 Heads, 63 Sectors/Track.
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+The BIOS supports INT 13h extensions for this drive.
+============================ Partition Tables ==============================
+Partition          -----Begin----      ------End-----     Start     Num
+Sector     # Boot   Cyl Head Sect  FS   Cyl Head Sect     Sect      Sects
+---------- - ----  ---- ---- ----  --  ---- ---- ----  ---------- ----------
+         0 0 80       0    1    1  0B   255  254   63          63    4112577
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+EGeo 0x0000 16383 16 63 312579695 0 512
+Disk Geometry requires extended BIOS support
+
+============================================================================
+Disk 1:  19457 Cylinders, 255 Heads, 63 Sectors/Track.
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+The BIOS supports INT 13h extensions for this drive.
+============================ Partition Tables ==============================
+Partition          -----Begin----      ------End-----     Start     Num
+Sector     # Boot   Cyl Head Sect  FS   Cyl Head Sect     Sect      Sects
+---------- - ----  ---- ---- ----  --  ---- ---- ----  ---------- ----------
+         0 0 80       0    1    1  07 [1023  254   63]         63   31471272 [Large Drive Placeholders]
+                      0    1    1      1958  254   63                         Actual Values
+         0 1 00   [1023    0    1] 05 [1023  254   63]   31471335  281105370 [Large Drive Placeholders]
+                   1959    0    1     19456  254   63                         Actual Values
+  31471335 0 00   [1023    1    1] 07 [1023  254   63]   31471398  281105307 [Large Drive Placeholders]
+                   1959    1    1     19456  254   63                         Actual Values
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+EGeo 0x0000 16383 16 63 234493056 0 512
+Disk Geometry requires extended BIOS support
+
+============================================================================
+Disk 2:  14596 Cylinders, 255 Heads, 63 Sectors/Track.
+BiosExtensions: 0x3000 Subsets (0x00000005): Access EDD
+The BIOS supports INT 13h extensions for this drive.
+============================ Partition Tables ==============================
+Partition          -----Begin----      ------End-----     Start     Num
+Sector     # Boot   Cyl Head Sect  FS   Cyl Head Sect     Sect      Sects
+---------- - ----  ---- ---- ----  --  ---- ---- ----  ---------- ----------
+Info: No partition table present on this drive.
+
+
+==================================================================================
+Disk 0:  2008.1 Megabytes
+============================= Partition Information ==============================
+Volume        Partition                         Partition        Start     Total
+Letter:Label  Type            Status   Size MB  Sector     #     Sector    Sectors
+------------- --------------- -------- -------- ---------- - ---------- ----------
+C:            FAT32           Pri,Boot   2008.1          0 0         63    4112577
+
+
+==================================================================================
+Disk 1:  152625.3 Megabytes
+============================= Partition Information ==============================
+Volume        Partition                         Partition        Start     Total
+Letter:Label  Type            Status   Size MB  Sector     #     Sector    Sectors
+------------- --------------- -------- -------- ---------- - ---------- ----------
+  System      NTFS            Pri,Boot  15366.8          0 0         63   31471272
+              Extended        Pri      137258.5          0 1   31471335  281105370
+              EPBR            Log      137258.5       None -   31471335  281105370
+  Data        NTFS            Log      137258.5   31471335 0   31471398  281105307
+
+
+==================================================================================
+Disk 2:  114494.5 Megabytes
+============================= Partition Information ==============================
+Volume        Partition                         Partition        Start     Total
+Letter:Label  Type            Status   Size MB  Sector     #     Sector    Sectors
+------------- --------------- -------- -------- ---------- - ---------- ----------
+              Unallocated     Pri      114494.5       None -          0  234484740
+
+
+
+========================================================================
+Boot Sector for drive C: Drive 1, Starting Sector: 63, Type: FAT32
+========================================================================
+1. Jump:                    EB 58 90
+2. OEM Name:                MSDOS5.0
+3. Bytes Per Sector:        512
+4. Sectors Per Cluster:     8
+5. Reserved Sectors:        38
+6. Number of FAT's:         2
+7. Reserved:                0x0000
+8. Reserved:                0x0000
+9. Media Descriptor:        0xF8
+10. Sectors Per FAT:        0
+11. Sectors Per Track:      63  (0x3F)
+12. Number of Heads:        255  (0xFF)
+13. Hidden Sectors:         63  (0x3F)
+14. Big Total Sectors:      4112577  (0x3EC0C1)
+15. Big Sectors Per FAT:    4009
+16. Extended Flags:         0x0000
+17. FS Version:             0
+18. First Cluster of Root:  2 (0x2)
+19. FS Info Sector:         1
+20. Backup Boot Sector:     6
+21. Reserved:               0x00 00 00 00 00 00 00 00 00 00 00 00 
+22. Drive ID:               0x00
+23. Reserved for NT:        0x00
+24. Extended Boot Sig:      0x29
+25. Serial Number:          0x1C8A4DD6
+26. Volume Name:            NO NAME    
+27. File System Type:       FAT32   
+28. Boot Signature:         0xAA55
+
+
+========================================================================
+Boot Sector for drive *: Drive 2, Starting Sector: 63, Type: NTFS
+========================================================================
+1. Jump:                    EB 52 90
+2. OEM Name:                NTFS    
+3. Bytes Per Sector:        512
+4. Sectors Per Cluster:     8
+5. Reserved Sectors:        0
+6. Number of FAT's:         0
+7. Root Dir Entries:        0
+8. Total Sectors:           0  (0x0)
+9. Media Descriptor:        0xF8
+10. Sectors Per FAT:        0
+11. Sectors Per Track:      63  (0x3F)
+12. Number of Heads:        255  (0xFF)
+13. Hidden Sectors:         63  (0x3F)
+14. Big Total Sectors:      0  (0x0)
+15. Unused:                 0x80 00 80 00
+16. Total NTFS Sectors:     31471271  (0x1E036A7)
+17. MFT Start Cluster:      786432  (0xC0000)
+18. MFT Mirror Start Clust: 16  (0x10)
+19. Clusters per FRS:       246
+20. Size per Index Buffer: 1
+21. Serial Number:          0x171F9AB38A1F4001
+22. Checksum:               0x00000000
+23. Boot Signature:         0xAA55
+
+
+========================================================================
+Boot Sector for drive *: Drive 2, Starting Sector: 31471398, Type: NTFS
+========================================================================
+1. Jump:                    EB 52 90
+2. OEM Name:                NTFS    
+3. Bytes Per Sector:        512
+4. Sectors Per Cluster:     8
+5. Reserved Sectors:        0
+6. Number of FAT's:         0
+7. Root Dir Entries:        0
+8. Total Sectors:           0  (0x0)
+9. Media Descriptor:        0xF8
+10. Sectors Per FAT:        0
+11. Sectors Per Track:      63  (0x3F)
+12. Number of Heads:        255  (0xFF)
+13. Hidden Sectors:         63  (0x3F)
+14. Big Total Sectors:      0  (0x0)
+15. Unused:                 0x80 00 80 00
+16. Total NTFS Sectors:     281105304  (0x10C15398)
+17. MFT Start Cluster:      1973226  (0x1E1BEA)
+18. MFT Mirror Start Clust: 18162478  (0x115232E)
+19. Clusters per FRS:       246
+20. Size per Index Buffer: 1
+21. Serial Number:          0x2A889E1B889DE59B
+22. Checksum:               0x00000000
+23. Boot Signature:         0xAA55
+
+}
+Exiting enStartEngine...  Return value: 0  Time = 0:12
+Reading FAT - 4009 sectors at 38
+Creating BLOCK_TABLE with 1000 available entries.
+Destroying BLOCK_TABLE with 502 used entries.
+CalcMinSotf: Minimum allowable resize = 7431992 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 1131584
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)CalcMinSotf: Minimum allowable resize = 56634048 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 41030608
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)[Error]: errno = 1. No such file or directory
+pqFileOpen - File: C:\boot.ini. Used OS I/O. Flags 0x1002. Open failed.
+pqFileOpen: Partition type: 0xB, FS type: 0xF, DriveLetter: C.
+BootIni::Init:  Error 301 opening the file \boot.ini.
+
+
+ntRegGetProductType ... (C)
+[Error]: errno = 1. No such file or directory
+pqFileOpen - File: C:\winnt\system32\config\system. Used OS I/O. Flags 0x2. Open failed.
+pqFileOpen: Partition type: 0xB, FS type: 0xF, DriveLetter: C.
+
+ntRegGetProductType: Unable to determine the product type 2.VDrive::CreatePartition. . .begin
+Initializing batch operation
+Changing freespace partition.
+Assigning an mbr ordinal.
+Assigning drive letter.
+Updating extended space.
+Adding freespace partitions - deleting existing freespace partitions.
+Resetting legal operation flags.
+Creating the batch operation.
+VDrive::CreatePartition. . .end
+Reading FAT - 4009 sectors at 38
+Creating BLOCK_TABLE with 1000 available entries.
+Destroying BLOCK_TABLE with 502 used entries.
+CalcMinSotf: Minimum allowable resize = 7431992 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 1131584
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)CalcMinSotf: Minimum allowable resize = 56634048 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 41030608
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)VDrive::CreatePartition. . .begin
+Initializing batch operation
+Changing freespace partition.
+Assigning an mbr ordinal.
+Assigning drive letter.
+Updating extended space.
+Adding freespace partitions - deleting existing freespace partitions.
+Resetting legal operation flags.
+Creating the batch operation.
+VDrive::CreatePartition. . .end
+VDrive::CreatePartition. . .begin
+Creating an extended partition.
+VDrive::CreatePartition. . .begin
+Initializing batch operation
+Changing freespace partition.
+Assigning drive letter.
+Updating extended space.
+Adding freespace partitions - deleting existing freespace partitions.
+Resetting legal operation flags.
+Creating the batch operation.
+VDrive::CreatePartition. . .end
+Extended partition created.
+Initializing batch operation
+Changing freespace partition.
+Assigning drive letter.
+Updating extended space.
+Adding freespace partitions - deleting existing freespace partitions.
+Resetting legal operation flags.
+Creating the batch operation.
+VDrive::CreatePartition. . .end
+pqFileDelete - File: C:\DOS\PQPM\PQ_BATCH.005. Result == 504
+DOS_FILE::Rename: pqRet = 504
+[Error]: errno = 1. No such file or directory
+pqFileDelete - File: C:\DOS\PQPM\PQ_BATCH.004. Result == 504
+DOS_FILE::Rename: pqRet = 504
+[Error]: errno = 1. No such file or directory
+pqFileDelete - File: C:\DOS\PQPM\PQ_BATCH.003. Result == 504
+DOS_FILE::Rename: pqRet = 504
+[Error]: errno = 1. No such file or directory
+pqFileDelete - File: C:\DOS\PQPM\PQ_BATCH.002. Result == 504
+DOS_FILE::Rename: pqRet = 504
+[Error]: errno = 1. No such file or directory
+pqFileDelete - File: C:\DOS\PQPM\PQ_BATCH.001. Result == 504
+DOS_FILE::Rename: pqRet = 504
+[Error]: errno = 1. No such file or directory
+Batch File - C:\DOS\PQPM\PQ_BATCH.PQB
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+	Begin Batch Execution ...
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Beginning Execution of batch operation 1 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Creating partition: *:SYSTEM 
+    (NTFS, Primary volume, 15366.8 MB on Disk:3)
+
+enCreate (*) ...
+enFormat (*) ...pqLogLock (pqhandle == 0) ...
+pqLogLock complete (pqRet == 0)
+Testing 64 sectors starting at sector 32
+Testing 16555 sectors starting at sector 4194304
+pqLogUnlock (pqhandle == 0) ...
+pqLogUnlock complete (pqRet == 0)
+
+enFormat complete (pqRet == 0)REBOOT_MANAGER::PartitionCreated (Disk = 2 StartSector = 63)
+REBOOT_MANAGER::PartitionHidden (Disk = 2 StartSector = 63) - cancelled out previous create or unhide
+[Error]: errno = 1. No such file or directory
+pqFileOpen - File: C:\BOOT.INI. Used OS I/O. Flags 0x1004. Open failed.
+pqFileOpen: Partition type: 0xB, FS type: 0xF, DriveLetter: C.
+UpdateNTBootFiles: Unable to update boot.ini on partition C
+
+enCreate complete (pqRet == 0)
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Ending Execution of batch operation 1 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Beginning Execution of batch operation 2 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Creating partition: *: 
+    (Extended, Extended volume, 99127.6 MB on Disk:3)
+
+enCreate (*) ...REBOOT_MANAGER::PartitionCreated (Disk = 2 StartSector = 31471335)
+REBOOT_MANAGER::PartitionHidden (Disk = 2 StartSector = 31471335) - cancelled out previous create or unhide
+
+enCreate complete (pqRet == 0)
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Ending Execution of batch operation 2 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Beginning Execution of batch operation 3 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Creating partition: *:DATA 
+    (NTFS, Logical volume, 99127.6 MB on Disk:3)
+
+enCreate (*) ...
+enFormat (*) ...pqLogLock (pqhandle == 0) ...
+pqLogLock complete (pqRet == 0)
+Testing 64 sectors starting at sector 32
+Testing 17209 sectors starting at sector 4194304
+pqLogUnlock (pqhandle == 0) ...
+pqLogUnlock complete (pqRet == 0)
+
+enFormat complete (pqRet == 0)REBOOT_MANAGER::PartitionCreated (Disk = 2 StartSector = 31471398)
+REBOOT_MANAGER::PartitionHidden (Disk = 2 StartSector = 31471398) - cancelled out previous create or unhide
+[Error]: errno = 1. No such file or directory
+pqFileOpen - File: C:\BOOT.INI. Used OS I/O. Flags 0x1004. Open failed.
+pqFileOpen: Partition type: 0xB, FS type: 0xF, DriveLetter: C.
+UpdateNTBootFiles: Unable to update boot.ini on partition C
+
+enCreate complete (pqRet == 0)
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+	Ending Execution of batch operation 3 of 3 ...
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+TagBatchFileProcessed ... 
+TagBatchFileProcessed ... SWITCH_WRB is not set
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+	End Batch Execution (pqRet == 0)
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Reading FAT - 4009 sectors at 38
+Creating BLOCK_TABLE with 1000 available entries.
+Destroying BLOCK_TABLE with 502 used entries.
+CalcMinSotf: Minimum allowable resize = 7431992 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 1131584
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)CalcMinSotf: Minimum allowable resize = 56634048 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 41030608
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)CalcMinSotf: Minimum allowable resize = 4326368 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 776
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)CalcMinSotf: Minimum allowable resize = 4331600 sectors
+CalcMinSotf: Number of sectors to relocate in a minimum resize = 776
+
+enInfo (*:) ...
+enInfo complete (pqRet == 0)Entering enStopEngine(...)  ID:193  File:Engine.cpp  Line:390
+{
+DbgMgr->Uninit

@@ -1,0 +1,20 @@
+N:      Compress with ARJ (input archive name) 
+        ARJ A -a ![(path) archive name] !!!@
+
+A:      Compress with ARJ (auto archive name)
+        ARJ A -a ! !!!@
+
+L:      Compress files from current selected list
+        ARJ A -a ![(path) archive name] !!!~.!
+
+B:      Compress into 1.38 MByte blocks with ARJ
+        ARJ A -a -v1440 -y ![(path) archive name] !!!@
+
+F3:     List all files in current ARJ archive
+        ARJ l !.! | more
+
+F4:     Convert current ARJ archive into self-extracting EXE file
+        ARJ y -je1 !.!
+
+F10:    Main Menu
+        vc.mnu

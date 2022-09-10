@@ -1,0 +1,31 @@
+[shared-]
+	pmark=
+	version=3
+[debug-]
+	target="a:\dos\tools\codeview\key.exe"
+	synonym=;A:\DOS\TOOLS\CODEVIEW
+	memwin=vm1b DS:0 
+	memwin=vm2b DS:0 
+[cv]
+	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
+	wndstate=1 80 9 0 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=2 34 9 33 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=3 62 30 0 1 1 1 0 0 0 132 128 0 0 -1
+	wndstate=4 67 12 3 13 0 0 0 0 0 0 0 0 0 -1
+	wndstate=5 62 13 0 31 0 1 0 0 0 0 0 0 0 -1
+	wndstate=6 77 16 1 27 0 1 0 0 0 0 0 0 0 -1
+	wndstate=7 18 43 62 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=8 67 9 0 31 0 0 0 0 0 0 0 0 0 -1
+	wndstate=9 80 5 0 44 0 1 0 1 0 16 14 0 0 -1
+	command=use auto
+	command=n10
+	screensize=50
+	command=oh+
+	command=ov+
+	command=oa+
+	command=vs1
+	command=oc+
+	command=of-
+	command=o3+
+	command=ollf   
+	tracespeed=250

@@ -1,0 +1,594 @@
+----------------------------------------------------------------------------
+EXIT DE <Alone-F10>
+
+     If you are viewing/editing the "Current File", will return you to the
+FileDir Menu (same as <Shift-F10> Exit CF).
+
+     Otherwise, the prompt below will appear:
+
+         Exit this session and return to DOS ?  <Y>es   <N>o
+
+     NOTE: The procedures below (less {"Y" is chosen, and}) occurs whenever
+you institute a drive, sector, or cluster change. To save a lot of over
+explaining, it is referenced in a number of places in this DOC file.
+
+     If "Y" is chosen, and there are unsaved sector changes, the prompt
+below will appear. If using the keyboard, press "A", "Y", "N", or "P" and
+then Enter. If using a mouse, double left click over "<A>", "<Y>", "<N>",
+or "<P>". The first left click chooses the character, and displays it onto
+the screen. The second left click issues an Enter. A right mouse click
+equals erase the displayed character or "<A>bort". This is a lot of fuss,
+but it helps to prevent human error.
+
+     [F1=Help] Save changes to disk ?  <A>bort, <Y>es, <N>o, or <P>rint-out: 
+
+If "P" is chosen, the (sub)prompt below will appear. If the printer is not
+On Line, and you press ESC (to abort the print-out), this will be treated
+as "<N>o".
+
+Requires one full sheet. Changes will not be saved! <L>ast menu <P>rint-out.
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | <A>bort = Exit back to the previous   |
+             |    session. Changes not saved to disk.|
+             | <Y>es   = Save changes to disk.       |
+             | <N>o    = Do not save changes to disk.|
+             | <P>rint-out = Do not save changes to  |
+             |    disk, but make a print out of the  |
+             |    changes. NOTE: This will bring up  |
+             |    a sub-menu that will allow you to  |
+             |    come back to this menu, if desired.|
+             |                                       |
+             | To execute: Press A,Y,N, or P <Enter>.|
+             |   Or a double left button mouse click.|
+             +---------------------------------------+
+
+
+
+
+
+
+                                                                 Page 26
+----------------------------------------------------------------------------
+SAVECLR <Shift-F2> - Introduction.
+
+     This menu MUST be used in order to save your sector changes to disk or
+to totally clear the Edit Byte Buffer (which will store a maximum of 1024
+edited bytes, for later restore by pressing BACKSPACE over an edited byte
+in the sector window). The options menu shown below will appear. From the
+keyboard, use the up and down arrows to move the highlight bar to the desired
+option, and then press Enter. If using a mouse, double left click over the
+desired option. A right mouse click equals ESC (exit)!
+
+             +-|ESC|---------------------------------+
+             | Save the sector changes made to disk! |
+             | Clear the Edit Byte buffer!           |
+             +---------------------|Dn |-|Up |-|CR |-+
+
+     If either option is chosen, and the Edit Byte Buffer is empty, the
+message below will appear:
+
+             +-|ESC|---------------------------------+
+             |    The Edit Byte buffer is empty!     |
+             +---------------------------------------+
+
+     NOTE: If you attempt to edit more than 1024 bytes in the current sector,
+without saving any changes, the message below will appear:
+
+             +-|ESC|---------------------------------+
+             |    The Edit Byte buffer is full!      |
+             +---------------------------------------+
+
+----------------------------------------------------------------------------
+SAVECLR <Shift-F2> MENU - Save the sector changes made to disk!
+
+     If option #1 is chosen, and the Edit Byte Buffer is not empty, the
+procedure is the same as <Alone-F10> Exit DE.
+Then press ESC in order to exit out of the SaveClr session.
+
+----------------------------------------------------------------------------
+SAVECLR <Shift-F2> MENU - Clear the Edit Byte buffer!
+
+     If option #2 is chosen, and the Edit Byte Buffer is not empty, the
+message below will appear. This flushes the internal buffer and then
+restores the edited byte(s) back to their original value!
+Then press ESC twice in order to exit out of the SaveClr session.
+
+             +-|ESC|---------------------------------+
+             | The Edit Byte buffer is now empty!    |
+             +---------------------------------------+
+
+
+
+
+
+                                                                 Page 27
+----------------------------------------------------------------------------
+CLUSTER <Shift-F5>
+
+     Enter new cluster to view (ESC to abort) [2-xxxxx]: _
+
+Please note that cluster numbering begins at 2 !
+In the FAT (File Allocation Table), what would be Cluster #0 is the Media
+Descriptor Byte. Which is now pretty useless, but is kept there for backward
+compatibility. And what would be Cluster #1 is not used. Its content is
+always FFFh (for a 12-bit FAT) or FFFFh (for a 16-bit FAT).
+xxxxx = the maximum cluster number that you can input, in decimal.
+To input the desired cluster number in hexidecimal, end it with an "h".
+For example: 1111h<Enter>
+
+If you have an individual file loaded for editing, the allowable clusters
+are restricted to the clusters that belong to that file.
+(This is done via <Alone-F7> FileDir, and the file is known as the
+"Current File".) And the prompt would then be:
+
+     Enter new file cluster to view (ESC or ENTER alone to exit): _
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+FYI. The BOOT, FAT, and ROOT DIRECTORY sector(s) are not a part of the
+cluster numbering scheme. The quantity of sectors taken up by each one of
+these is determined during the formatting process and is stored in the BOOT
+sector (sector 0) of the disk. Which is how DE knows where to find them.
+     One cluster = x amount of sectors. All files and directories are stored
+in sectors on the disk. It is the fixed quantity of these sectors that is
+referred to as a cluster. And EACH file and directory is stored in a minimum
+of 1 cluster. If a file is 1 byte long, it takes up 1 cluster of disk space.
+Though preformatted High Density disks are 1 sector per cluster, the DOS
+Format command will only allow a minimum of 2 sectors per cluster.
+The number of "sectors per cluster" will always be a power of 2. Meaning
+that you will either have 1, 2, 4, 8, 16, 32, 64, or 128 sectors per cluster.
+The larger the hard disk, the larger the value.
+This is a limitation by/of DOS for 2 main reasons:
+  1.) To limit the size of the FAT(s) in order to have more space for file
+      storage (remember that floppy disks started at 160K and hard disks
+      at 10MB!), and
+  2.) The maximum size of a cluster number is a word value (16 bits). And
+      since the values FFF0h through FFFFh have special meanings, FFEFh is
+      the largest cluster number possible. Which equates to 65,518 clusters.
+      Which is why huge hard disks may have say, 64 sectors per cluster
+      and 4096 bytes per sector. What this boils down to, is that the
+      larger the hard drive, the greater the quantity of unused sectors
+      (wasted disk space) that you will have.
+
+
+
+
+
+                                                                 Page 28
+CLUSTER <Shift-F5> (cont.)
+
+FAT32 (in Windows NT and Windows 95+) overcomes this barrier, but in a
+half-baked manner. Each has its own 32-bit FAT scheme and they are not
+compatible with each other. They both are set up as proprietary schemes
+for the business enviroment, which means security and not public domain.
+From a programming standpoint, the calling convention for accessing a
+FAT32 disk is completely different than that of a 12 or 16-bit FAT.
+Which means that for DE to handle all three types of FATs, the program
+would increase in size by a minimum of 150%. And possibly containing a
+mixture of 16 and 32-bit code. Talk about a debugging nightmare! With the
+advent of Terrabyte hard disks (as standard features) just around the
+corner, it would seem that Microsoft, IBM, and maybe 4DOS, would get off
+their hindquarters and come up with a generic, public domain 32-bit FAT!
+
+----------------------------------------------------------------------------
+DSKSTAT <Shift-F6>
+
+     Displays the physical characteristics of the logged drive. Plus other
+miscellaneous information. You will see one of the prompts below. From the
+keyboard, press "PgDn" (or "Page Down"), "PgUp" (or "Page Up"), or "P".
+If using a mouse, left click over "<PgDn>", "<PgUp>", or "< P >".
+A right click equals ESC (exit)!
+
+         Press:  <PgDn>, < P > for print-out, or ESC to exit...
+                                  or
+         Press:  <PgUp>, < P > for print-out, or ESC to exit...
+
+     NOTE: If DE is having trouble reading a particular drive in your
+system, I would be most greatful if you would do a few things for me!
+1.) Make a print-out of the file "DSKSTATS.FRM".
+2.) Use a REAL program to help fill in as many blanks of this form as
+    possible.
+3.) If possible, send me a copy of the disks boot sector (sector 0).
+    This can be a printed copy or a binary copy on a floppy disk.
+4.) And mail them to me.
+Just before I started recoding DE to handle large drives and files, I had
+a 5.3 Gigabyte hard drive installed in my system. Is partitioned into
+(2) 2 Gigabyte drives and (1) 1 Gigabyte drive. Drive manufacturers use
+some crazy schemes in order to get DOS to recognize these large drives.
+Had to create a SAFE_DIVIDE routine to handle some of the calcs that you
+see with <Shift-F6> DskStat. Was getting "Divide Overflow" messages from
+DOS and program crashes. It could be that I've overlooked another place
+in the code that needs SAFE_DIVIDE or the like. Thanks!
+
+
+
+
+
+
+
+
+
+                                                                 Page 29
+----------------------------------------------------------------------------
+CF INFO <Shift-F7>
+
+     Displays the "Current File"s clusters and sectors. You will see the
+prompt shown below. From the keyboard, use the Up, Down, Right, and Left
+Arrows #or# Home, End, Ctrl-Home, and Ctrl-End to move the highlight bar
+to the desired cluster or sector to view, and press Enter.
+Press ESC to abort the CF Info Menu.
+
+>These are the Clusters and Sectors that are assigned to the "Current File"<
+
+     The "LEGEND", at the right side of the CF Info Menu, is a simple help
+screen of allowable key presses. If using a mouse, a right or left click
+over any command, will execute that command.
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+     Pressing F1 brings up the help screen below. If using a mouse, press
+both the left and right buttons at the same time.
+
+             +-|ESC|---------------------------------+
+             | Position the cursor over the desired  |
+             | Cluster or Sector to view and press   |
+             | <Enter>. The Clusters and Sectors     |
+             | shown apply to the "Current File"     |
+             | only! Pressing ESC will abort this    |
+             | session with nothing affected.        |
+             | Only 2 sectors of each cluster are    |
+             | shown at a time. Use the right and    |
+             | left arrow to increment/decrement the |
+             | sector numbers. ^Home and ^End move   |
+             | the cursor to the very begining and   |
+             | ending sector number, respectively.   |
+             +---------------------------------------+
+
+     NOTE: Though the screen display can handle a cluster size up to 128
+sectors, the print-out routine can only handle a cluster size up to 64
+sectors. If an attempt is made to print out a 128 sector cluster, you will
+hear a beep from the PC speaker.
+
+----------------------------------------------------------------------------
+EXIT CF <Shift-F10>
+
+     If you are viewing/editing the "Current File", will return you to the
+FileDir Menu (you may also use <Alone-F10> Exit DE). If there are unsaved
+sector changes, the procedure is the same as <Alone-F10> Exit DE.
+
+
+
+
+
+
+                                                                 Page 30
+----------------------------------------------------------------------------
+ABSGOTO <Ctrl-F5>
+
+     This is a shortcut to the different areas of the disk. You will see
+the prompt below. From the keyboard, press "B", "F", "T", "R", or "D".
+If using a mouse, left click over the desired option. A right click equals
+ESC (exit)!
+
+Go to starting sector of: <B>oot, <F>AT#1, FA<T>#2, <R>oot Dir, or <D>ata ?
+
+     If there are unsaved sector changes, the procedure is the same as
+<Alone-F10> Exit DE.
+
+     Pressing F1 brings up the help screen below. If using a mouse, press
+both the left and right buttons at the same time.
+
+             +-|ESC|---------------------------------+
+             | ESC = Exit and do nothing.            |
+             | The other key presses load the speci- |
+             | fied sector into the Window, making   |
+             | it the current sector to View/Edit.   |
+             +---------------------------------------+
+
+----------------------------------------------------------------------------
+TESTCF  <Ctrl-F6>
+
+     NOTE: If this test is run on an erased file or directory, it will
+report any bad clusters found, but will not relocate them.
+
+     Performs a test read of the "Current File" clusters (sectors), to
+determine the integrity of the files data. You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the cluster test will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | This session performs a test read     |
+             | of all clusters that are allocated    |
+             | to the "Current File".                |
+             | If a bad cluster is detected, you     |
+             | have the OPTION of moving the         |
+             | cluster to a safe area of the disk.   |
+             | All output is sent to the screen and  |
+             | optionally the printer.               |
+             | ESC = abort this session.             |
+             +---------------------------------------+
+
+                                                                 Page 31
+TESTCF  <Ctrl-F6> (cont.)
+
+     After selecting the printer option, the prompt below will appear.
+xxxx = the cluster number (in hexidecimal) that is currently being tested.
+To abort the cluster test, before it is finished, press ESC.
+
+>>> Performing test read of all "Current File" clusters. <<<   Cluster: xxxx
+
+     If there were no read errors detected, the prompt below will appear.
+
+         No errors found in reading the "Current File" clusters!
+
+     If there were read errors detected, the clusters that the read errors
+occurred in will be displayed on the screen (and sent to the printer, if the
+print-out option was chosen). And the message below will appear.
+To relocate each clusters file data to a good cluster on the disk, press "Y"
+on the keyboard, or a left mouse click over "Y". To abort and exit, without
+relocating the bad clusters, press "ESC" or "N" on the keyboard. Or a left
+mouse click over "ESC" or "N".
+
+             +-|ESC|---------------------------------+
+             |  Move the bad cluster(s) to a safe    |
+             |  area of the disk!? Each bad cluster  |
+             |  will also be marked as such, in the  |
+             |  FAT, to prevent it from being later  |
+             |  reused.                              |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+     If "Y" is chosen, and DE detects that the next available free cluster
+is bad (DE checks the integrity of the free cluster before continuing), the
+message below will appear. To mark the cluster as bad, in the FAT(s),
+press "Y" on the keyboard, or a left mouse click over "Y". To skip marking
+the cluster as bad, in the FAT(s), press "ESC" or "N" on the keyboard. Or a
+left mouse click over "ESC" or "N". Regardless of the option chosen, DE will
+then continue its search for the next free cluster.
+
+             +-|ESC|---------------------------------+
+             |  In parsing the FAT for the next free |
+             |  cluster, and then test reading it,   |
+             |  a bad cluster was detected.          |
+             |  Mark it as bad!?  ESC or <N> = no.   |
+             |                                       |
+             |            Continue <Y/N> ?           |
+             +---------------------------------------+
+
+     If there are no more available free clusters, the message below will
+appear. Press "ESC" on the keyboard, or a left mouse click over "ESC",
+to end the Test CF session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: The disk is full! There are no |
+             | more free clusters available.         |
+             +---------------------------------------+           Page 32
+TESTCF  <Ctrl-F6> (cont.)
+
+     NOTE: If there were read errors detected in some of the "Current File" 
+clusters, but you have never had a problem with the file, I would recommend
+not relocating the bad clusters. And if you haven't already done so, I would
+recommend running the <Alt-F7> SecTest, with the print-out option. If it
+reports a great number of bad sectors, its probably a good time to perform
+a complete backup, and then low-level format the drive. This will restore
+the magnetic field of the disk. Please reference SECTEST <Alt-F7> for a
+more comprehensive explaination of all this.
+
+     NOTE: In order to limit the file size of DE, it uses memory allocation
+to perform this test. If in running this session with the least amount of
+memory required, there would still not be enough free memory, you would see
+see the message below. Press "ESC" on the keyboard, or a left mouse click
+over "ESC", to end the Test CF session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: There is not enough free memory|
+             | to run the Test Current File session! |
+             +---------------------------------------+
+
+----------------------------------------------------------------------------
+FILTEST <Ctrl-F7>
+
+     Performs a test read of all clusters (sectors), for each Directory and
+File on the logged drive, to determine the integrity of the Directory or
+Files data. As each Directory or File is tested, it is displayed as the
+"Current File". You will see the prompt below.
+Choose the printer option by pressing "Y" or "N" on the keyboard, or a
+left mouse click over the "Y" or "N". To abort, press "ESC" on the keyboard,
+or a right mouse click. If "Y" is chosen, and the printer is not On Line,
+and you press ESC (to abort the print-out), the cluster test will continue.
+
+     [F1=Help] Do you wish to have the output sent to the printer (Y/N) ?
+
+Pressing "F1" on the keyboard, or a left mouse click over "[F1=Help]", will
+pop-up the help screen below:
+
+             +-|ESC|---------------------------------+
+             | This session performs a test read     |
+             | of all clusters for each Directory    |
+             | and File on the logged drive.         |
+             | If a bad cluster is detected, you     |
+             | have the OPTION of moving the         |
+             | cluster to a safe area of the disk.   |
+             | All output is sent to the screen and  |
+             | optionally the printer.               |
+             | ESC = abort this session.             |
+             +---------------------------------------+
+
+
+
+                                                                 Page 33
+FILTEST <Ctrl-F7> (cont.)
+
+     After selecting the printer option, the prompt below will appear.
+xxxx = the cluster number (in hexidecimal) that is currently being tested.
+The "Current File" display, at the top left-hand corner of the screen, will
+show the Directory or File that is currently being tested.
+To abort the cluster test, before it is finished, press ESC.
+
+>> Performing test read of all Directory and File clusters. <<  Cluster: xxxx
+
+     If there were no read errors detected, the prompt below will appear.
+
+         No errors found in reading the Directory and File clusters!
+
+     If there were read errors detected, the clusters that the read errors
+occurred in and the "Current File" will be displayed on the screen (and sent
+to the printer, if the print-out option was chosen). And the message below
+will appear. To relocate each clusters file data to a good cluster on the
+disk, press "Y" on the keyboard, or a left mouse click over "Y". To abort
+and exit, without relocating the bad clusters, press "ESC" or "N" on the
+keyboard. Or a left mouse click over "ESC" or "N". Regardless of the option
+chosen, DE will then continue with the next Directory or File.
+
+             +-|ESC|---------------------------------+
+             |  Move the bad cluster(s) to a safe    |
+             |  area of the disk!? Each bad cluster  |
+             |  will also be marked as such, in the  |
+             |  FAT, to prevent it from being later  |
+             |  reused.                              |
+             |           Continue <Y/N> ?            |
+             +---------------------------------------+
+
+     If "Y" is chosen, and DE detects that the next available free cluster
+is bad (DE checks the integrity of the free cluster before continuing), the
+message below will appear. To mark the cluster as bad, in the FAT(s),
+press "Y" on the keyboard, or a left mouse click over "Y". To skip marking
+the cluster as bad, in the FAT(s), press "ESC" or "N" on the keyboard. Or a
+left mouse click over "ESC" or "N". Regardless of the option chosen, DE will
+then continue its search for the next free cluster.
+
+             +-|ESC|---------------------------------+
+             |  In parsing the FAT for the next free |
+             |  cluster, and then test reading it,   |
+             |  a bad cluster was detected.          |
+             |  Mark it as bad!?  ESC or <N> = no.   |
+             |                                       |
+             |            Continue <Y/N> ?           |
+             +---------------------------------------+
+
+
+
+
+
+                                                                 Page 34
+FILTEST <Ctrl-F7> (cont.)
+
+     If there are no more available free clusters, the message below will
+appear. Press "ESC" on the keyboard, or a left mouse click over "ESC",
+to end the FilTest session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: The disk is full! There are no |
+             | more free clusters available.         |
+             +---------------------------------------+
+
+     NOTE: If there were read errors detected in some of the "Current File" 
+clusters, but you have never had a problem with the file, I would recommend
+not relocating the bad clusters. And if you haven't already done so, I would
+recommend running the <Alt-F7> SecTest, with the print-out option. If it
+reports a great number of bad sectors, its probably a good time to perform
+a complete backup, and then low-level format the drive. This will restore
+the magnetic field of the disk. Please reference SECTEST <Alt-F7> for a
+more comprehensive explaination of all this.
+
+     NOTE: In order to limit the file size of DE, it uses memory allocation
+to perform this test. If in running this session with the least amount of
+memory required, there would still not be enough free memory, you would see
+see the message below. Press "ESC" on the keyboard, or a left mouse click
+over "ESC", to end the FilTest session.
+
+             +-|ESC|---------------------------------+
+             | SORRY: There is not enough free memory|
+             | to run the <DIR>/File Test session!   |
+             +---------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                 Page 35
+----------------------------------------------------------------------------
+DOSHELL <Ctrl-F10>
+
+     Allows you to shell out to the operating system in order to perform
+mundane tasks. DE will not allow you to shell out if you have a "Current
+File" loaded for viewing/editing. Once you have exitted back to DE, the
+program completely rebuilds the FileDir Menu. This is a safety feature to
+protect both you and I. If the shell out is successful, the screen will
+be cleared, and the following message will appear.
+
+         Type EXIT to return to DiskEditor...
+
+         C:\>_    <---- Will be whatever "COMSPEC=" is in the Enviroment.
+
+     In the event of a shell error, one of below messages will appear.
+
+         FILENAME.EXT not found!
+         Press ESC to continue...
+
+         Not enough free memory!
+         Press ESC to continue...
+
+         Bad Enviroment (reason unknown)!
+         Press ESC to continue...
+
+         Unknown Error!
+         Press ESC to continue...
+
+     DE will not allow you to shell out a second time if one of the above
+shell errors occurs. Could possibly crash the system, forcing you to reboot.
+In the event that you do try, the below message will appear. Press "ESC" on
+the keyboard, or a left mouse click over "ESC", to end the DOShell session.
+
+             +-|ESC|---------------------------------+
+             | Sorry!! Attempting to invoke the DOS  |
+             | shell again could crash the computer. |
+             +---------------------------------------+
+
+     If DE could not locate "COMSPEC=" in the Enviroment, then it will not
+attempt to shell out, and the below message will appear. Press "ESC" on the
+keyboard, or a left mouse click over "ESC", to end the DOShell session.
+
+             +-|ESC|---------------------------------+
+             | Sorry!! Could not locate COMSPEC= in  |
+             | the Enviroment Variable area.         |
+             +---------------------------------------+
+
+
+
+
+
+
+
+                                                                 Page 36

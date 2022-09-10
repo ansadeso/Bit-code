@@ -1,0 +1,5 @@
+FILES=50
+BUFFERS=25
+lastdrive=z
+
+SHELL=COMMAND.COM /E:512 /P

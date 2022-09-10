@@ -1,0 +1,81 @@
+
+                      History of Changes
+        The Volkov Commander versions 4.99.00 - 4.99.08
+
+- Fixed bugs
++ New features
+* Changes
+
+
+Changes in version 4.99.08 alpha (02-Jun-2000)
+
+- Can't enter to directories with long names on some CD-ROMs
+- Error level 6 is returned by ARJ 2.60 when enter to archive
+- Trying to enter to large non-archive file causes big delay
+- Color of panels becomes white when Black & White screen colors
+  are selected and error reading file in Quick View panel occurs
+- Association of group of extension with command works only with
+  first extension (i. e. 'txt;doc: view.exe' works only for txt)
+- Size and free space of some disks are displayed as zero
+- Changing  drive  to  another one leaves Dirinfo window in info
+  panel when can't read new drive
+- First  line  is displayed incorrectly in internal viewer after
+  switching from Unicode character table
+- Can't  view  files  with long name from archive using archiver
+  which is not support long names
+- Function Zoom in Quick View mode does not hide cursor
+* Removed confirmation dialg box on deleting read-only directory
++ Added item 'Skip all' to all dialog boxes of group operations
+* Menu  cursor  in  dialog boxes remembers its previous position
+  during group operations.
+* Keystrokes  Ctrl-Q,  Ctrl-A, Ctrl-F quit speed search mode and
+  do appropriate action
+* Keystrokes  Ctrl-Left,  Ctrl-Right,  Ctrl-Home,  Ctrl-End move
+  cursor in speed search string
+- If  archive  contains  files and directories with illegal date
+  (for example 0-0-80), they are not displayed
+- Alt-F10  in  Copy/Move  dialog sets cursor bar to directory of
+  inactive  panel instead of current directory if inactive panel
+  is  displayed  contents  of the same disk as active panel, but
+  another directory
+- Entering  characters  in  Copy/Move  dialog  box  after  path,
+  inserted by Tree function, clears input line
+- Can't  enter  into  sinle  volume ZIP archive created by PKZIP
+  with option -&
+* Ctrl-R  does  not unselect files and move cursor to first file
+  until removable media is not changed in drive
+- Error reading some ZIP archives with long file names
+- Incorrect  path is inserted in command line if press Ctrl-[ or
+  Ctrl-] to insert path of panel that is switched off
+- Text message does not appears returning from graphic mode when
+  ANSI driver is loaded and some codes were used
+- Error 'Program too big to fit in memory' running  VC in XMS or
+  EMS mode after compressing VC.OVL by PKLITE
+- Pressing  PgDn  in hexadecimal viewer at the end of file jumps
+  to the beginning of the file in some cases
+- Deleting  directory  with  archive  opened  in  inactive panel
+  causes error message
+- Deleting  archive  with  included in archives leaves temporary
+  files
+- Incorrect total and free space of DriveSpace 3 disks
+- Incorrect total and free space of  FAT-32  disks are displayed
+  if TSR manager is on
+- Filter, Tree  and Directory sizes functions highlights item in
+  menu bar correctly
+- Command  line  overlaps  clock  and menu bar if it is in first
+  line
+* Ctrl-Enter inserts file to command line after '@' symbol
+- Fixed error displaying list of video modes on some VGA
+* Removed handler 'Divide overflow'
+* Format  of  year in function 'File Attributes' is changed from
+  2-digit to 4-digit
+- Fixed  problem exiting from VC if critical error occurs during
+  loading command processor or VC.COM when TSR manager is on
+- Call  Copy/Move/Delete functions via pull-down menu just after
+  start  of  VC  sometimes process only single file under cursor
+  even if some files were selected
+- Fixed  error  searching  for  previous match (Ctrl-F7) in long
+  files in viewer
+- Pointer  in Tree panel does not follow current directory after
+  rescanning tree
++ Added 'Find File' function

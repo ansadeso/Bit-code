@@ -1,0 +1,325 @@
+
+                    Registry Viewer for Win9x/Me/NT/2K/XP
+
+                                User manual
+
+
+
+
+
+                                Introduction
+                             Exterior of program
+                            Extended viewing mode
+                      Removing the keys and parameters
+                                  Editing
+                                Data export
+                          OEM codings and unicode
+                                  Plugins
+                            
+
+
+
+
+               
+                                 INTRODUCTION
+
+                 The  Registry  Viewer is intended for viewing
+                 the   registry   files  of  Win9x/Me/NT/2K/XP
+                 without use WinAPI.
+
+                 For   registry  files  of  Win9x/Me  possible
+                 editing  the  keys,  parameters and values of
+                 parameters without change the size.
+
+                 For  registry  files  of WinNT/2K/XP possible
+                 only editing the values of parameters without
+                 change the size.
+
+                 For  all  types  of  registry  files possible
+                 removing   the   parameters   and  keys  with
+                 subkeys.
+
+                 The  possibility of export of selecteded keys
+                 to  text  file in REGEDIT4 format is provided
+                 for all types of registry files (for Win2K/XP
+                 translation to unicode is not produced).
+
+                 For  all  types of registry files is possible
+                 calling   the   plugins,  described  in  file
+                 RegVPlug.ini (inhere in directory "Plugins").
+
+                 The  registry  file  is openned in write mode
+                 with    blocking    the   change   by   other
+                 applications,  in  the  event  of failure the
+                 file be open for read only.
+
+                 Since  no  possibility  uniquely  to registry
+                 filename  with  some  root  key (HKEY_<some>)
+                 then  instead  of  he  takes  real  root name
+                 prescribed  in  registry  file (for instance,
+                 $$$PROTO.HIV);  when real key name is absent,
+                 it equales to registry filename.
+
+                 At   export   in   text  file  is  given  the
+                 possibility to choose suitabling name of root
+                 key.         
+
+                              EXTERIOR OF PROGRAM                              
+
+                 Main window of program is separate on 6 parts
+                  ------------ information line -------------
+                 ÚÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                 ³Panel of   ³Panel of   ³Panel of           ³
+                 ³keys       ³parameters ³parameters         ³
+                 ³           ³           ³values             ³
+                 ³           ³           ³                   ³
+                 ³           ³           ³                   ³
+                 ³           ³           ³                   ³
+                 ÃÄÄÄÄÄÄÄÄÄÄÄ´           ³                   ³
+                 ³Panel of   ³           ³                   ³
+                 ³path       ³           ³                   ³
+                 ÀÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                  --------------- line of help --------------
+
+                 In information line inheres information about
+                 version   of  program,  about  type  of  open
+                 registry  file  and  about  mode of access to
+                 file  (R/W  - available for read/write, R/O -
+                 available for read only).
+
+                 The  line  of  help  contains the list of the
+                 main  keys  necessary in process of work (the
+                 full  list for current view mode is pop up on
+                 key "F1").
+
+                 The  names  of  keys  of  current  level  are
+                 displayed   in  panels  of  keys.  The  keys,
+                 containing  subkeys,  stand  out  the  bright
+                 white  colour.  For  turning  on level below,
+                 enough  to  press "Enter" ("Ctrl-PgDn", "Gray
+                 plus")   on  selecteded  element.  Return  on
+                 previous level is produced on key "Backspace"
+                 ("Ctrl-Enter",  "Ctrl-PgUp",  "Gray  minus").
+                 For  moving  the cursor are reserved standard
+                 keys  -  "Up", "Down", "Home", "End", "PgUp",
+                 "PgDn"; also possible use quick searching for
+                 on  name  of  key,  way  of set several first
+                 symbols  of name. If key name does not fit in
+                 borders of window (is marked with one or both
+                 edges  by marks "<" or ">"), possible use for
+                 viewing  by  horizontal  rolling ("Alt-Left",
+                 "Alt-Right"  -  on  one  symbol;  "Alt-Home",
+                 "Alt-End"  -  in  beginning  and  the newline
+                 accordingly).
+
+                 For  quit  from  program  is provided several
+                 variants of keys: "Esc", "F10", "Alt-X".
+
+                 All  passed  keys of top-levels are displayed
+                 in  path  panels in inverse order. Rolling is
+                 provided  for  viewing the big list of passed
+                 keys ("Ctrl-Up" and "Ctrl-Down").
+
+                 The panel of parameters contains the names of
+                 parameters  of  current  key and is connected
+                 with  panel  of  parameters  value.  In  her,
+                 either   as   in  panel  of  keys,  there  is
+                 possibility  of  rolling  of  long parameters
+                 names.  Switching  between  panel of keys and
+                 panel  of  parameters  is  produced  on  keys
+                 "Left", "Right" or "Tab".
+
+                 For   viewing   of  parameter  value  wholly,
+                 necessary   to  enter  to  mode  of  extended
+                 viewing.  For this on chosen parameter enough
+                 to press "Enter" ("Ctrl-PgDn", "Gray plus").
+
+                 For  keys in registry files WinNT/2K/XP it is
+                 provided  a viewing the class name of key and
+                 key  of  protection  ("Shift-F1"  on selected
+                 key).  The view mode is identical the mode of
+                 extended viewing the parameters.
+
+                 In  registry files WinNT/2K/XP for parameters
+                 is not indicated in what type is kept name of
+                 parameter  - in the manner of usual string or
+                 in  unicode.  For determination of unicode in
+                 program is used the following algorithm: line
+                 is  checked  on  even  number  of characters,
+                 first  or  the  second character must be less
+                 22h.  If  string satisfies this requirements,
+                 is  considered  that  this  is  unicode. This
+                 method  an far from perfection, so can appear
+                 ambiguities   when  working  with  parameters
+                 names  (for instance, symbols of semigraphics
+                 for  coding  866  do  not  correspond to this
+                 determination).   Are  taken  the  offers  on
+                 improvement of method of finding unicode.
+
+
+                             EXTENDED VIEWING MODE
+
+                 When  entering  in  extended  viewing mode is
+                 openned window of following view
+
+                 Ú[Type:size]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                 ³Parameters name                            ³
+                 ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+                 ³Parameters value                           ³
+                 ³                                           ³
+                 ³                                           ³
+                 ³                                           ³
+                 ³                                           ³
+                 ³                                           ³
+                 ³                                           ³
+                 À[Help]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                 In  left  upper  corner is indicated the type
+                 and  size  of  parameter.  Below  -  name  of
+                 parameter (the rolling is supported). In main
+                 field of window is displayed parameters value
+                 in  one  of  the two modes - in the manner of
+                 line or hexadecimal dump. The initial mode is
+                 chosen   on   type  of  parameter.  Switching
+                 between modes is produced on key "Enter". For
+                 quick   transition   to   values   of   other
+                 parameters  of  current  key are intended the
+                 keys: "Ctrl-PgUp" ("Gray minus") - transition
+                 on  one parameter upwards; "Ctrl-PgDn" ("Gray
+                 plus")   -   on   one   parameter  downwards;
+                 "Ctrl-Home", "Ctrl-End" - in beginning and in
+                 the end of list of parameters accordingly.
+
+                 For   return   from   extended  viewing  mode
+                 possible  to  use  one of the following keys:
+                 "Esc", "F10", "Ctrl-Enter", "Backspace".
+
+                 For registry files WinNT/2K/XP in string mode
+                 is  producing  the  automatic  decoding  from
+                 unicode.
+
+
+                        REMOVING THE KEYS AND PARAMETERS
+
+                 Removing  the keys and parameters, as well as
+                 any  change  of  values, possible only in the
+                 event  of  access  to  file  in  write  mode.
+                 Removing  the  selecteded key or parameter is
+                 produced  at  keystroke  "Del".  Removing the
+                 keys   with   subkeys  can  be  long-lasting,
+                 because consecutively all subkeys are deleted
+                 with  parameters. On removing the root key is
+                 installed  prohibition,  though  its removing
+                 possible.
+
+                 For  recovering  the removed keys in registry
+                 files  Win9x/Me  possible  to use the program
+                 Registry  UnDelete.  However,  recovering the
+                 parameters  in  removed  keys  possible  only
+                 provided  that  they  were  not deleted apart
+                 from key.
+
+
+                                    EDITING
+
+                 Change  the  names  of  parameters  and  keys
+                 available   while  only  for  registry  files
+                 Win9x/Me,  and  is caused on key "F4" (return
+                 from  editing  mode:  "Esc"  -  without save,
+                 "Enter" - with save).
+
+                 Modification  of  parameters values available
+                 for  all  types  of  registry files. Enter to
+                 editing mode of parameter value possible from
+                 extended  viewing  mode  on  key "F4" (return
+                 from editing mode: "Esc", "F10", "Ctrl-Enter"
+                 -  without save, "Enter" - with save). Choice
+                 of  editing  mode  (hexadecimal/character) is
+                 produced on key "Tab".
+
+
+                                  DATA EXPORT
+
+                 For  all  types of registry files is provided
+                 the  data  export  to  text  file in REGEDIT4
+                 format  in  source Windows-coding. The export
+                 of   selecteded  key  with  all  subkeys  and
+                 parameters is produced on key "F2" (in panels
+                 of  keys  only).  Before beginning the export
+                 necessary to choose the name of root key from
+                 offereded  list or enter other value (in last
+                 line).
+
+
+                             ÉÍÍ Select root key ÍÍ»
+                             º HKEY_LOCAL_MACHINE  º
+                             º HKEY_USERS          º
+                             º HKEY_CURRENT_USER   º
+                             º HKEY_CLASSES_ROOT   º
+                             º HKEY_CURRENT_CONFIG º
+                             º HKEY_DYN_DATA       º
+                             º HKEY_°°°°°°°°°°°°°° º
+                             ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+                 Then  enter the filename for data export.  If
+                 filename  is  not  specified,  that  will  be
+                 created  (truncated  existing) file with name
+                 "paul_lee.reg".
+
+                 The data export - most long-lasting procedure
+                 on   time  (strongly  recommend  to  use  the
+                 program   of   caching   the   disk  such  as
+                 smartdrv).
+
+
+                            OEM CODINGS AND UNICODE
+
+                 Since version 3.8 the code tables are kept in
+                 separate  files  (regview.oem and regview.uni
+                 for oem-codings and unicode accordingly; must
+                 base  in one directory with program). Default
+                 code  tables  (OEM:  1251_866; Unicode: 1251)
+                 will be used in the absence of these files.
+
+                 Format of files with code tables following:
+                   regview.oem - four tables of 256 bytes:
+                                 Win->OEM,
+                                 OEM->Win,
+                                 OEM->Lower case,
+                                 OEM->Upper case.
+                   regview.uni - one table of 128 words:
+                   conformity  between  unicode  and  codes of
+                   second  half  ASCII  tables (in Win-coding)
+                   i.e. national characters.
+
+
+                                    PLUGINS
+
+                 To  do  not  overstack program functions, was
+                 added  support of plugins. For current moment
+                 a  module  of plugins support passes testing,
+                 and  interface  to  the  main  program not in
+                 final  variant.  Call  of plugins while it is
+                 possible  only  from mode of extended viewing
+                 (editing) on key "F4".
+
+                 In  given  version  from  plugins is possible
+                 access  to  the  name  and  value  of current
+                 parameter,  access to some service functions,
+                 possibility  to  return the modified value to
+                 the main program.
+
+                 All  plugins  must  be  situated in directory
+                 "Plugins"  of directory with program and must
+                 be described in file RegVPlug.ini, finding in
+                 same directory.
+
+                 On  today  there  is four plugins (the source
+                 texts  are  enclosed), one of which allows to
+                 write the changes to registry file.
+
+                                                                  Paul Lee
+                                                                  2002.07.22
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ mailto:mail@paullee.ru ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ http://paullee.ru
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
